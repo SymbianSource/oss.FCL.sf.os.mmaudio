@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="mmaudio" name="Multimedia Audio/DevSound" levels="adaptation hw-if device-fw devices middleware app-if">
+   <collection id="mmaudio_config" name="mmaudio config">
+    <component id="mmaudio_config_comp" name="mmaudio configuration">
+     <unit bldFile="mmaudio_config/group"/>
+    </component>
+   </collection>
    <collection id="devsound" name="Sound Device" level="devices">
    <component id="devsoundapi" name="DevSound API" introduced="7.0s" purpose="mandatory">
     <unit bldFile="devsound/devsoundapi/group" mrp="devsound/devsoundapi/group/multimedia_mdf_devsound_api.mrp"/>
@@ -475,13 +480,21 @@
   <collection id="frametable_stub" name="Frametable Stub" level="device-fw">
 	<!-- collection is really a component. Needs to move down a directory -->
    <component id="frametable_stub_build" name="Frametable Stub Build" filter="s60,mmaudio_stub" introduced="^4">
-    <unit bldFile="frametable_stub/group"/>
+    <meta rel="config">
+     <pick version="all"><defined condition="SYMBIAN_MMAUDIO_STUBS_ON_TARGET"/></pick>
+    </meta>
+    <unit version="all" bldFile="frametable_stub/group"/>
+    <unit version="winscw-only" bldFile="frametable_stub/emgroup"/>
    </component>
   </collection>
   <collection id="eaacplusutil_stub" name="eAAC Plus Utils Stub" level="hw-if">
 	<!-- collection is really a component. Needs to move down a directory -->
    <component id="eaacplusutil_stub_build" name="eAAC Plus Utils Stub Build" filter="s60,mmaudio_stub" introduced="^4">
-    <unit bldFile="eaacplusutil_stub/group"/>
+    <meta rel="config">
+     <pick version="all"><defined condition="SYMBIAN_MMAUDIO_STUBS_ON_TARGET"/></pick>
+    </meta>
+    <unit version="all" bldFile="eaacplusutil_stub/group"/>
+    <unit version="winscw-only" bldFile="eaacplusutil_stub/emgroup"/>
    </component>
   </collection>
   </package>

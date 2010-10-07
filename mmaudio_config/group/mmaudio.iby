@@ -1,0 +1,45 @@
+// Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+
+
+
+#ifndef MMAUDIO_IBY
+#define MMAUDIO_IBY
+
+#include <acf.iby>
+#include <a3fdevsound.iby>
+
+#include <mmf.iby>
+#include <ASR.iby>
+#include <mmcommon.iby>
+
+//The following are exported to CORE_OS_LAYER_IBY_EXPORT_PATH
+#include <RestrictedAudioOutput.iby>
+#include <GlobalAudioSettings.iby>
+#include <Effects.iby>
+#include <DrmAudioPlayer.iby>
+#include <TelephonyAudioRouting.iby>
+#include <MmfCustomInterfaces.iby>
+#include <AddedDevSoundControl.iby>
+#include <ciextnfactoryplugins.iby>
+#include <MMExtFw.iby>
+#include <EffectsPresets.iby>
+#include <AudioRouting.iby>
+
+
+#endif // MMAUDIO_IBY
+
+
+

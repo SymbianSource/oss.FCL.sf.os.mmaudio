@@ -17,7 +17,7 @@
 				<unit name="mmfw" unitID="sos.mmfw" mrp="" bldFile="&layer_real_source_path;/mmlibs/mmfw/group"/>
 				<unit name="mmfcodecs" unitID="sos.mmfcodecs" mrp="" bldFile="&layer_real_source_path;/mmlibs/mmfw/codecs/group"/>				
 			</module>
-			<module name="">
+			<module name="mmaudio_effectspresets">
 				<unit unitID="AudioEqualizerUtility" mrp="" bldFile="&layer_real_source_path;/devsoundextensions/effectspresets/AudioEqualizerUtility/group" filter="!dfs_build" name="AudioEqualizerUtility" />
 				<unit unitID="EnvironmentalReverbUtility" mrp="" bldFile="&layer_real_source_path;/devsoundextensions/effectspresets/EnvironmentalReverbUtility/group" filter="!dfs_build" name="EnvironmentalReverbUtility" />
 			</module>
@@ -49,7 +49,7 @@
 			</module>
 		</layer>
 			
-  	<layer name="stub_layer">
+  	<layer name="stubs_layer">
 			<module name="mmaudio.nokia.ref">
 				<unit unitID="frametablestub" mrp="" bldFile="&layer_real_source_path;/frametable_stub/group" name="frametablestub" />
 				<unit unitID="eaacplusutilstub" mrp="" bldFile="&layer_real_source_path;/eaacplusutil_stub/group" name="eaacplusutilstub" />
