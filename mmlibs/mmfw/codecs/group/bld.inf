@@ -1,0 +1,59 @@
+// Copyright (c) 2003-2010 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+// Note:: This is intended to be included in ...\MMF\group\bld.inf.
+// 
+//
+
+PRJ_PLATFORMS
+// specify the platforms your component needs to be built for here
+// may add platform for OMAP, Helen etc
+DEFAULT
+
+PRJ_EXPORTS
+
+// Romkit include files
+//..\inc\MMFCodecCommon.iby       \epoc32\rom\include\  
+//..\inc\MMFGsmCodecCommon.iby    \epoc32\rom\include\
+
+../Inc/MMFCodecCommon/MMFAudioALawToS16PcmCodec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudioalawtos16pcmcodec.h)
+../Inc/MMFCodecCommon/MMFAudioCodecBase.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiocodecbase.h)
+../Inc/MMFCodecCommon/MMFAudioDataSettings.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiodatasettings.h)
+../Inc/MMFCodecCommon/MMFAudioImaAdpcmToS16PcmCodec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudioimaadpcmtos16pcmcodec.h)
+../Inc/MMFCodecCommon/MMFAudioMuLawToS16PcmCodec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiomulawtos16pcmcodec.h)
+../Inc/MMFCodecCommon/MMFAudioPcm16SwapEndianCodecCommon.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiopcm16swapendiancodeccommon.h)
+../Inc/MMFCodecCommon/MMFAudioPcm16ToImaAdpcmCodec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiopcm16toimaadpcmcodec.h)
+../Inc/MMFCodecCommon/MMFAudioPcm16ToPcmU16BECodec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiopcm16topcmu16becodec.h)
+../Inc/MMFCodecCommon/MMFAudioPcm16ToPcmU16Codec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiopcm16topcmu16codec.h)
+../Inc/MMFCodecCommon/MMFAudioPcm8ToPcm16Codec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiopcm8topcm16codec.h)
+../Inc/MMFCodecCommon/MMFAudioPcmS16ToPcmS8Codec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiopcms16topcms8codec.h)
+../Inc/MMFCodecCommon/MMFAudioPcmU16BeToPcmS16Codec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiopcmu16betopcms16codec.h)
+../Inc/MMFCodecCommon/MMFAudioS16ToU8PcmCodec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudios16tou8pcmcodec.h)
+../Inc/MMFCodecCommon/MMFAudioSPcm16ToALawCodec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiospcm16toalawcodec.h)
+../Inc/MMFCodecCommon/MMFAudioSPcm16ToMuLawCodec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiospcm16tomulawcodec.h)
+../Inc/MMFCodecCommon/MMFAudioU16ToS16PcmCodec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiou16tos16pcmcodec.h)
+../Inc/MMFCodecCommon/MMFAudioU8ToS16PcmCodec.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfaudiou8tos16pcmcodec.h)
+../Inc/MMFCodecCommon/MMFImaAudioCodecState.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/mmfimaaudiocodecstate.h)
+
+// GSM 06.10 encoder/decoder interfaces and factories
+../Inc/Gsm610CodecCommon/gsm610common.h SYMBIAN_OS_LAYER_PLATFORM_EXPORT_PATH(mmfcodec/gsm610/gsm610common.h)
+
+PRJ_MMPFILES
+../MmpFiles/MMFCodecCommon.mmp
+../MmpFiles/Gsm610CodecCommon.mmp
+
+
+PRJ_TESTMMPFILES
+PRJ_TESTEXPORTS
+
+// Romkit include files - additional test files

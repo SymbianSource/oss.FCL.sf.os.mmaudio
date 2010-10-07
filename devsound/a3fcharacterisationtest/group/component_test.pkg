@@ -1,0 +1,29 @@
+; Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies).
+; All rights reserved.
+; This component and the accompanying materials are made available
+; under the terms of "Eclipse Public License v1.0"
+; which accompanies this distribution, and is available
+; at the URL "http://www.eclipse.org/legal/epl-v10.html".
+;
+; Initial Contributors:
+; Nokia Corporation - initial contribution.
+;
+; Contributors:
+;
+; Description:
+;
+;*Files To Copy...<src> <destination>
+
+"\epoc32\data\c\mm_a3f_devsound_init.script"-"c:\mm_a3f_devsound_init.script"
+"\epoc32\data\c\mm_a3f_devsound_init.ini"-"c:\mm_a3f_devsound_init.ini"
+"\epoc32\data\c\mm_a3f_devsound_play_raw.script"-"c:\mm_a3f_devsound_play_raw.script"
+"\epoc32\data\c\mm_a3f_devsound_play_raw_reference_hw.ini"-"c:\mm_a3f_devsound_play_raw.ini"
+"\epoc32\data\c\mm_a3f_devsound_play_tone.script"-"c:\mm_a3f_devsound_play_tone.script"
+"\epoc32\data\c\mm_a3f_devsound_play_tone_reference_hw.ini"-"c:\mm_a3f_devsound_play_tone.ini"
+"\epoc32\data\c\mm_a3f_devsound_record_raw.script"-"c:\mm_a3f_devsound_record_raw.script"
+"\epoc32\data\c\mm_a3f_devsound_record_raw_reference_hw.ini"-"c:\mm_a3f_devsound_record_raw.ini"
+
+"\epoc32\data\c\char_a3f_devsound_test_data\cerrodelasilla.raw"-"c:\char_a3f_devsound_test_data\cerrodelasilla.raw"
+"\epoc32\data\c\char_a3f_devsound_test_data\testing123.raw"-"c:\char_a3f_devsound_test_data\testing123.raw"
+"\epoc32\data\c\char_a3f_devsound_test_data\sample.aud"-"c:\char_a3f_devsound_test_data\sample.aud"
+"\epoc32\data\c\char_a3f_devsound_test_data\recordC.raw"-"c:\char_a3f_devsound_test_data\recordC.raw"

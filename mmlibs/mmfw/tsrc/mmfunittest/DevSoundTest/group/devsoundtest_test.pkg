@@ -1,0 +1,75 @@
+; Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies).
+; All rights reserved.
+; This component and the accompanying materials are made available
+; under the terms of "Eclipse Public License v1.0"
+; which accompanies this distribution, and is available
+; at the URL "http://www.eclipse.org/legal/epl-v10.html".
+;
+; Initial Contributors:
+; Nokia Corporation - initial contribution.
+;
+; Contributors:
+;
+; Description:
+;
+;*Files To Copy...<src> <destination>
+
+"\epoc32\release\$(platform)\udeb\TSU_MMF_DEVSOUND_SUITE.DLL "-"c:\Sys\bin\TSU_MMF_DEVSOUND_SUITE.DLL"
+"\epoc32\release\$(platform)\urel\TSU_MMF_DEVSOUND_NOTIFICATION_SUITE.DLL"-"c:\Sys\bin\TSU_MMF_DEVSOUND_NOTIFICATION_SUITE.DLL"
+
+"\epoc32\data\z\resource\plugins\tsu_mmf_devsound_testinterface.rsc"-"c:\resource\plugins\tsu_mmf_devsound_testinterface.rsc"
+"\epoc32\localisation\102070af\rsc\102070af.rpp"-"c:\localisation\102070af\rsc\102070af.rpp"
+"\epoc32\localisation\group\102070af.info"-"c:\localisation\group\102070af.info"
+
+"\epoc32\data\z\resource\plugins\tsu_mmf_devsound_testinterface1.rsc"-"c:\resource\plugins\tsu_mmf_devsound_testinterface1.rsc"
+"\epoc32\localisation\1028664d\rsc\1028664d.rpp"-"c:\localisation\1028664d\rsc\1028664d.rpp"
+"\epoc32\localisation\group\1028664d.info"-"c:\localisation\group\1028664d.info"
+
+"\epoc32\release\$(platform)\urel\devsoundciutestdevices.dll"-"c:\sys\bin\devsoundciutestdevices.dll"
+"\epoc32\data\z\resource\plugins\devsoundciutestdevices.rsc"-"c:\resource\plugins\devsoundciutestdevices.rsc"
+"\epoc32\release\$(platform)\urel\a3fcistubextn.dll"-"c:\sys\bin\a3fcistubextn.dll"
+"\epoc32\data\z\resource\plugins\a3fcistubextn.rsc"-"c:\resource\plugins\a3fcistubextn.rsc"
+"\epoc32\release\$(platform)\urel\tsu_mmf_devsound_testinterface.dll"-"c:\sys\bin\tsu_mmf_devsound_testinterface.dll"
+"\epoc32\release\$(platform)\urel\tsu_mmf_devsound_testinterface1.dll"-"c:\sys\bin\tsu_mmf_devsound_testinterface1.dll"
+"\epoc32\data\z\resource\plugins\tsu_mmf_devsound_testinterface.rsc"-"c:\resource\plugins\tsu_mmf_devsound_testinterface.rsc"
+
+"\epoc32\data\c\mm\TSU_MMF_DEVSOUND_SUITE_MUXDEMUX.script"-"c:\TSU_MMF_DEVSOUND_SUITE_MUXDEMUX.script"
+"\epoc32\data\c\mm\tsu_mmf_devsound_suite_truepause.script"-"c:\tsu_mmf_devsound_suite_truepause.script"
+//"\epoc32\data\c\mm\tsu_mmf_devsound_suite_nona3f.script"-"c:\tsu_mmf_devsound_suite_nona3f.script"
+//"\epoc32\data\c\mm\tsu_mmf_devsound_suite_manual.script"-"c:\tsu_mmf_devsound_suite_manual.script"
+"\epoc32\data\c\tsu_mmf_devsound_play_tone.ini"-"c:\tsu_mmf_devsound_play_tone.ini"
+"\epoc32\data\c\tsu_mmf_devsound_record.ini"-"c:\tsu_mmf_devsound_record.ini"
+"\epoc32\data\c\tsu_mmf_truepause_devsound.ini"-"c:\tsu_mmf_truepause_devsound.ini"
+
+"\epoc32\data\c\mm\TSU_MMF_DEVSOUND_SUITE_debug.script"-"c:\TSU_MMF_DEVSOUND_SUITE_debug.script"
+"\epoc32\data\c\mm\TSU_MMF_DEVSOUND_SUITE_Alloc.script"-"c:\TSU_MMF_DEVSOUND_SUITE_Alloc.script"
+"\epoc32\data\c\mm\TSU_MMF_DEVSOUND_NOTIFICATION_SUITE_notsupported.script"-"c:\TSU_MMF_DEVSOUND_NOTIFICATION_SUITE_notsupported.script"
+//"\epoc32\data\c\mm\TSU_MMF_DEVSOUND_SUITE_PREEMPTION.script"-"c:\TSU_MMF_DEVSOUND_SUITE_PREEMPTION.script"
+"\epoc32\data\c\mm\TSU_MMF_SDEVSOUND_SUITE.script"-"c:\TSU_MMF_SDEVSOUND_SUITE.script"
+"\epoc32\data\c\mm\TSU_MMF_DEVSOUND_SUITE_NOCAP.script"-"c:\TSU_MMF_DEVSOUND_SUITE_NOCAP.script"
+"\epoc32\data\c\mm\TSU_MMF_DEVSOUND_SUITE_MMDDCAP.script"-"c:\TSU_MMF_DEVSOUND_SUITE_MMDDCAP.script"
+"\epoc32\data\c\mm\TSU_MMF_DEVSOUND_SUITE_UECAP.script"-"c:\TSU_MMF_DEVSOUND_SUITE_UECAP.script"
+
+
+// DEVSOUND data files
+
+"\epoc32\data\c\tsu_mmf_devsound_suite\input\PCM_08_16_m.raw"-"c:\tsu_mmf_devsound_suite\input\pcm_08_16_m.raw"
+"\epoc32\data\c\tsu_mmf_devsound_suite\input\PCM_08_08_m.raw"-"c:\tsu_mmf_devsound_suite\input\PCM_08_08_m.raw"
+"\epoc32\data\c\tsu_mmf_devsound_suite\input\garbage.raw"-"c:\tsu_mmf_devsound_suite\input\garbage.raw"
+"\epoc32\data\c\tsu_mmf_devsound_suite\input\PCMU8Source.raw"-"c:\tsu_mmf_devsound_suite\input\PCMU8Source.raw"
+"\epoc32\data\c\tsu_mmf_devsound_suite\input\PCM_08_16_s.raw"-"c:\tsu_mmf_devsound_suite\input\PCM_08_16_s.raw"
+"\epoc32\data\c\tsu_mmf_devsound_suite\input\PCM_16_16_m.raw"-"c:\tsu_mmf_devsound_suite\input\PCM_16_16_m.raw"
+
+
+"\epoc32\data\c\mm\mmf\testfiles\truepause_devsound_test_data\cerrodelasilla.raw"-"c:\mm\mmf\testfiles\truepause_devsound_test_data\cerrodelasilla.raw"
+"\epoc32\data\c\mm\mmf\testfiles\truepause_devsound_test_data\testing123.raw"-"c:\mm\mmf\testfiles\truepause_devsound_test_data\testing123.raw"
+"\epoc32\data\c\mm\mmf\testfiles\truepause_devsound_test_data\sample.aud"-"c:\mm\mmf\testfiles\truepause_devsound_test_data\sample.aud"
+"\epoc32\data\c\mm\mmf\testfiles\truepause_devsound_test_data\recordC.raw"-"c:\mm\mmf\testfiles\truepause_devsound_test_data\recordC.raw"
+"\epoc32\data\c\mm\mmf\testfiles\truepause_devsound_test_data\maintst3.ogg"-"c:\mm\mmf\testfiles\truepause_devsound_test_data\maintst3.ogg"
+"\epoc32\data\c\mm\mmf\testfiles\truepause_devsound_test_data\record_1.raw"-"c:\mm\mmf\testfiles\truepause_devsound_test_data\record_1.raw"
+"\epoc32\data\c\mm\mmf\testfiles\truepause_devsound_test_data\record_2.raw"-"c:\mm\mmf\testfiles\truepause_devsound_test_data\record_2.raw"
+"\epoc32\data\c\mm\mmf\testfiles\truepause_devsound_test_data\record_3.ogg"-"c:\mm\mmf\testfiles\truepause_devsound_test_data\record_3.ogg"
+"\epoc32\data\c\mm\mmf\testfiles\truepause_devsound_test_data\record_4.raw"-"c:\mm\mmf\testfiles\truepause_devsound_test_data\record_4.raw"
+"\epoc32\data\c\mm\mmf\testfiles\truepause_devsound_test_data\record_5.raw"-"c:\mm\mmf\testfiles\truepause_devsound_test_data\record_5.raw"
+
+

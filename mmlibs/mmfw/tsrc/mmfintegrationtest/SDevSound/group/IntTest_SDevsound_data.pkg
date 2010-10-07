@@ -1,0 +1,17 @@
+"\epoc32\release\$(platform)\urel\tsi_mmf_sdevsound.dll"-"c:\sys\bin\tsi_mmf_sdevsound.dll"
+"\epoc32\release\$(platform)\urel\sdsmmddtestserver.exe"-"c:\sys\bin\sdsmmddtestserver.exe"
+"\epoc32\release\$(platform)\urel\sdscaptestserver.exe"-"c:\sys\bin\sdscaptestserver.exe"
+
+// script files
+"\epoc32\data\c\TSI_MMF_SDEVSOUND_01.script"-"c:\TSI_MMF_SDEVSOUND_01.script"
+"\epoc32\data\c\TSI_MMF_SDEVSOUND_01_Panic.script"-"c:\TSI_MMF_SDEVSOUND_01_Panic.script"
+"\epoc32\data\c\TSI_MMF_SDEVSOUND_01_PREEMPTION.script"-"c:\TSI_MMF_SDEVSOUND_01_PREEMPTION.script"
+"\epoc32\data\c\TSI_MMF_SDEVSOUND_MMDDCAP.script"-"c:\TSI_MMF_SDEVSOUND_MMDDCAP.script"
+"\epoc32\data\c\TSI_MMF_SDEVSOUND_NOCAP.script"-"c:\TSI_MMF_SDEVSOUND_NOCAP.script"
+"\epoc32\data\c\TSI_MMF_SDEVSOUND_UECAP.script"-"c:\TSI_MMF_SDEVSOUND_UECAP.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\SDevSound\scriptFiles\sdevsound_audio.ini"-"c:\sdevsound_audio.ini"
+
+// Data files
+"\epoc32\data\c\sdevsoundinttestdata\8bitmPcm.wav"-"c:\sdevsoundinttestdata\8bitmPcm.wav"
+"\epoc32\data\c\sdevsoundinttestdata\mainTst.wav"-"c:\sdevsoundinttestdata\mainTst.wav"
+"\epoc32\data\c\sdevsoundinttestdata\PCM_08_16_m.raw"-"c:\sdevsoundinttestdata\PCM_08_16_m.raw"

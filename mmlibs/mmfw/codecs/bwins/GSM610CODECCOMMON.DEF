@@ -1,0 +1,14 @@
+EXPORTS
+	??1CGSM610FR_Decoder@@QAE@XZ @ 1 NONAME ABSENT 
+	??1CGSM610FR_Encoder@@QAE@XZ @ 2 NONAME ABSENT 
+	?ConstructL@CGSM610FR_Decoder@@QAEXXZ @ 3 NONAME ABSENT 
+	?ConstructL@CGSM610FR_Encoder@@QAEXXZ @ 4 NONAME ABSENT 
+	?ExecuteL@CGSM610FR_Decoder@@QAEXPAE0@Z @ 5 NONAME ABSENT 
+	?ExecuteL@CGSM610FR_Encoder@@QAEXPAE0@Z @ 6 NONAME ABSENT ; public: void __thiscall CGSM610FR_Encoder::ExecuteL(unsigned char *,unsigned char *)
+	?StartL@CGSM610FR_Decoder@@QAEXXZ @ 7 NONAME ABSENT 
+	?StartL@CGSM610FR_Encoder@@QAEXXZ @ 8 NONAME ABSENT 
+	?StopL@CGSM610FR_Decoder@@QAEXXZ @ 9 NONAME ABSENT 
+	?StopL@CGSM610FR_Encoder@@QAEXXZ @ 10 NONAME ABSENT 
+	?CreateEncoderL@GSM610FR_EncoderFactory@@SAPAVMGSM610FR_Encoder@@XZ @ 11 NONAME ; class MGSM610FR_Encoder * GSM610FR_EncoderFactory::CreateEncoderL(void)
+	?CreateDecoderL@GSM610FR_DecoderFactory@@SAPAVMGSM610FR_Decoder@@XZ @ 12 NONAME ; class MGSM610FR_Decoder * GSM610FR_DecoderFactory::CreateDecoderL(void)
+

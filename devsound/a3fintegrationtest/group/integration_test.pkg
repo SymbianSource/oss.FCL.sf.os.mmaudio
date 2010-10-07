@@ -1,0 +1,62 @@
+; Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies).
+; All rights reserved.
+; This component and the accompanying materials are made available
+; under the terms of "Eclipse Public License v1.0"
+; which accompanies this distribution, and is available
+; at the URL "http://www.eclipse.org/legal/epl-v10.html".
+;
+; Initial Contributors:
+; Nokia Corporation - initial contribution.
+;
+; Contributors:
+;
+; Description:
+;
+;*Files To Copy...<src> <destination>
+
+
+"\epoc32\data\c\tsi_a3f_devsound\tsi_a3f_devsound_pcm_record.script"-"c:\tsi_a3f_devsound_pcm_record.script"
+// To be uncommented if long record script required
+"\epoc32\data\c\tsi_a3f_devsound\tsi_a3f_devsound_pcm_long_record.script"-"c:\tsi_a3f_devsound_pcm_long_record.script"
+
+"\epoc32\data\c\tsi_a3f_devsound\tsi_a3f_devsound_pcm_play.script"-"c:\tsi_a3f_devsound_pcm_play.script"
+"\epoc32\data\c\tsi_a3f_devsound\tsi_a3f_devsound_pcm_play2.script"-"c:\tsi_a3f_devsound_pcm_play2.script"
+"\epoc32\data\c\tsi_a3f_devsound\tsi_a3f_devsound_pcm_play3.script"-"c:\tsi_a3f_devsound_pcm_play3.script"
+"\epoc32\data\c\tsi_a3f_devsound\tsi_a3f_devsound_pcm_play4.script"-"c:\tsi_a3f_devsound_pcm_play4.script"
+// To be uncommented if long playback script required
+//"\epoc32\data\c\tsi_a3f_devsound\tsi_a3f_devsound_pcm_long_play.script"-"c:\tsi_a3f_devsound_pcm_long_play.script"
+
+"\epoc32\data\c\tsi_a3f_devsound\tsi_a3f_devsound_tone.script"-"c:\tsi_a3f_devsound_tone.script"
+
+// Configuration files
+"\epoc32\data\c\tsi_a3f_devsound\tsi_a3f_devsound_record.ini"-"c:\tsi_a3f_devsound\tsi_a3f_devsound_record.ini"
+//Navi engine ini file
+//"\epoc32\data\c\tsi_a3f_devsound\tsi_a3f_devsound_record_ne.ini"-"c:\tsi_a3f_devsound\tsi_a3f_devsound_record_ne.ini"
+"\epoc32\data\c\tsi_a3f_devsound\tsi_a3f_devsound_play.ini"-"c:\tsi_a3f_devsound\tsi_a3f_devsound_play.ini"
+"\epoc32\data\c\tsi_a3f_devsound\tsi_a3f_devsound_tone.ini"-"c:\tsi_a3f_devsound\tsi_a3f_devsound_tone.ini"
+
+// test data
+"\epoc32\data\c\tsi_a3f_devsound\corrupt.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\corrupt.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\main11.025kmo.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\main11.025kmo.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\main11.025kster.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\main11.025kster.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\main22.05kmo.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\main22.05kmo.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\main32000mo.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\main32000mo.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\main32000ster.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\main32000ster.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\empty.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\empty.pcm"
+Disabled temporarly as ats fail to upload
+//"\epoc32\data\c\tsi_a3f_devsound\PCM_48k_16b_signed_st_1kHzsine.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\pcm_48k_16b_signed_st_1khzsine.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\PCM_48k_16b_signed_mono_Test1.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\pcm_48k_16b_signed_mono_test1.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\PCM_48k_16b_signed_st_speech3.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\pcm_48k_16b_signed_st_speech3.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\PCM_8k_16b_signed_mono_Test1.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\pcm_8k_16b_signed_mono_test1.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\PCM_8k_16b_signed_st_Test1.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\pcm_8k_16b_signed_st_test1.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\PCM_16k_16b_signed_mono_Test2.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\pcm_16k_16b_signed_mono_test2.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\PCM_16k_16b_signed_st_Test2.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\pcm_16k_16b_signed_st_test2.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\PCM_22.05k_16b_signed_st_Test1.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\pcm_22.05k_16b_signed_st_test1.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\PCM_44.1k_16b_signed_mono_Test2.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\pcm_44.1k_16b_signed_mono_test2.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\PCM_44.1k_16b_signed_st_Test2.pcm"-"e:\inttest\a3f\tsi_a3f_devsound\pcm_44.1k_16b_signed_st_test2.pcm"
+"\epoc32\data\c\tsi_a3f_devsound\8bitmupcm.raw"-"e:\inttest\a3f\tsi_a3f_devsound\8bitmupcm.raw"
+
+
+// note: 181min.wav is pre-copied to f:\inttest\a3f\tsi_a3f_devsound\181min.wav
+// To be uncommented if long playback test (MM-A3F-DEVSOUND-PLAY-PCM-LONG-I-0001) required
+//"\epoc32\data\c\tsi_a3f_devsound\181min.wav"-"e:\inttest\a3f\tsi_a3f_devsound\181min.wav"

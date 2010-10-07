@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE SystemDefinition SYSTEM "sysdef_1_4_0.dtd" [
+  <!ENTITY layer_real_source_path "sf/os/mmaudio" >
+]> 
+
+<SystemDefinition name="mmaudio" schema="1.4.0">
+	<systemModel>
+  <!-- Common file for prebuild layers-->
+  	<layer name="os_layer">
+			<module name="mmaudio">
+				<unit unitID="mmaudioplat" mrp="" bldFile="&layer_real_source_path;/mmaudio_plat/group" name="mmauidoplat" />
+				<unit unitID="mmaudiopub" mrp="" bldFile="&layer_real_source_path;/mmaudio_pub/group" name="mmaudiopub" />
+				<unit unitID="devsoundextensions" mrp="" bldFile="&layer_real_source_path;/devsoundextensions/group" name="devsoundextensions" />
+			</module>
+			<module name="mmaudio_mmlibs">
+				<unit name="mmutilitylib" unitID="sos.mmutilitylib" mrp="" bldFile="&layer_real_source_path;/mmlibs/mmutilitylib/group"/>
+				<unit name="mmfw" unitID="sos.mmfw" mrp="" bldFile="&layer_real_source_path;/mmlibs/mmfw/group"/>
+				<unit name="mmfcodecs" unitID="sos.mmfcodecs" mrp="" bldFile="&layer_real_source_path;/mmlibs/mmfw/codecs/group"/>				
+			</module>
+			<module name="">
+				<unit unitID="AudioEqualizerUtility" mrp="" bldFile="&layer_real_source_path;/devsoundextensions/effectspresets/AudioEqualizerUtility/group" filter="!dfs_build" name="AudioEqualizerUtility" />
+				<unit unitID="EnvironmentalReverbUtility" mrp="" bldFile="&layer_real_source_path;/devsoundextensions/effectspresets/EnvironmentalReverbUtility/group" filter="!dfs_build" name="EnvironmentalReverbUtility" />
+			</module>
+		</layer>    
+
+  	<layer name="api_test_layer">
+			<module name="mm_tsrc">
+				<unit unitID="mm_tsrc" name="mm_tsrc" bldFile="&layer_real_source_path;/tsrc/group" mrp="" />
+			</module>
+    </layer>   
+
+
+  	<layer name="pref_test_layer">
+			<module name="mm_tsrc_group">
+				<unit unitID="mm_tsrc_group" name="mm_tsrc_group" bldFile="&layer_real_source_path;/tsrc/group" mrp="" filter="TA_MM" />
+			</module>
+    </layer>    
+
+ 
+  	<layer name="os_mm_layer">
+			<module name="mmaudio_group">
+				<unit unitID="mmaudioplat_group" mrp="" bldFile="&layer_real_source_path;/mmaudio_plat/group" name="mmaudioplat_group" />
+				<unit unitID="mmaudiopub_group" mrp="" bldFile="&layer_real_source_path;/mmaudio_pub/group" name="mmaudiopub_group" />
+				<unit unitID="devsoundextensions_group" mrp="" bldFile="&layer_real_source_path;/devsoundextensions/group" name="devsoundextensions_group" />
+			</module>
+			<module name="">
+				<unit unitID="AudioEqualizerUtility_group" mrp="" bldFile="&layer_real_source_path;/devsoundextensions/effectspresets/AudioEqualizerUtility/group" filter="!dfs_build" name="AudioEqualizerUtility_group" />
+				<unit unitID="EnvironmentalReverbUtility_group" mrp="" bldFile="&layer_real_source_path;/devsoundextensions/effectspresets/EnvironmentalReverbUtility/group" filter="!dfs_build" name="EnvironmentalReverbUtility_group" />
+			</module>
+		</layer>
+			
+  	<layer name="stub_layer">
+			<module name="mmaudio.nokia.ref">
+				<unit unitID="frametablestub" mrp="" bldFile="&layer_real_source_path;/frametable_stub/group" name="frametablestub" />
+				<unit unitID="eaacplusutilstub" mrp="" bldFile="&layer_real_source_path;/eaacplusutil_stub/group" name="eaacplusutilstub" />
+			</module>
+		</layer>			
+
+  </systemModel>
+</SystemDefinition>
