@@ -39,8 +39,9 @@ EXPORT_C CRestrictedAudioOutputMessageHandler* CRestrictedAudioOutputMessageHand
     {
     CRestrictedAudioOutput* audioOutput = (CRestrictedAudioOutput*)aCustomInterface;
     CRestrictedAudioOutputMessageHandler* self = new (ELeave) CRestrictedAudioOutputMessageHandler(audioOutput);
-
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
     

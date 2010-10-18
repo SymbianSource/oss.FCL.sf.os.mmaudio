@@ -47,7 +47,9 @@ EXPORT_C CLoudnessMessageHandler* CLoudnessMessageHandler::NewL(
     {
     CLoudness* aLoudness = (CLoudness*)aCustomInterface;
     CLoudnessMessageHandler* self = new (ELeave) CLoudnessMessageHandler(aLoudness);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

@@ -48,7 +48,9 @@ EXPORT_C CAudioEqualizerMessageHandler* CAudioEqualizerMessageHandler::NewL(
     {
     CAudioEqualizer* audioEqualizer = (CAudioEqualizer*)aCustomInterface;
     CAudioEqualizerMessageHandler* self = new (ELeave) CAudioEqualizerMessageHandler(audioEqualizer);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

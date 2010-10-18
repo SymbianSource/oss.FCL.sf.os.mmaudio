@@ -52,7 +52,9 @@ EXPORT_C CAudioOutputProxy* CAudioOutputProxy::NewL(TMMFMessageDestinationPckg a
 							CCustomInterfaceUtility* aCustomInterfaceUtility)
     {
     CAudioOutputProxy* self = new(ELeave) CAudioOutputProxy(aMessageHandler,aCustomCommand,aCustomInterfaceUtility);
+    CleanupStack::PushL(self);
     self->ConstructL();
+    CleanupStack::Pop(self);
     return self;
     }
 

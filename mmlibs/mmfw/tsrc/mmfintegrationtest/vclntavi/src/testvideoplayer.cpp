@@ -2947,3 +2947,131 @@ void RTestVideoPlayAutoScale::FsmL(TVclntTestPlayEvents aEventCode)
             }
         }
     }
+
+
+//
+// RTestVclntExternalDisplayControl
+//
+
+/**
+ * RTestVclntExternalDisplayControl::Constructor
+ */
+RTestVclntExternalDisplayControl::RTestVclntExternalDisplayControl(const TDesC& aTestName, const TDesC& aSectName, const TDesC& aKeyName, TInt aExpectedError, const TBool aPlay)
+    : RTestVclntAviPlayerStep(aTestName, aSectName, aKeyName, aExpectedError), iPlay(aPlay)
+    {
+    iHeapSize = 2000000; //-2MB
+    }
+
+/**
+ * RTestVclntExternalDisplayControl::NewL
+ */
+RTestVclntExternalDisplayControl* RTestVclntExternalDisplayControl::NewL(const TDesC& aTestName, const TDesC& aSectName,const TDesC& aKeyName, TInt aExpectedError,const TBool aPlay)
+    {
+    RTestVclntExternalDisplayControl* self = new (ELeave) RTestVclntExternalDisplayControl(aTestName, aSectName, aKeyName, aExpectedError, aPlay);
+    return self;
+    }
+
+/**
+ * RTestVclntExternalDisplayControl::DoTestStepL
+ */
+TVerdict RTestVclntExternalDisplayControl::DoTestStepL()
+    {
+    // read external display control
+    SetExternalDisplayControl();
+    
+     // WDP:We are going to start the test now
+     // Ensure we set paging memory to appropriate cache size for tests which need it
+     //ignore other tests
+    TVerdict verdict=SetCacheSize();
+    if(verdict!=EPass)
+        {
+        return verdict;
+        }
+     
+    // Call the state handler from IDLE state
+    FsmL(EVPIdle);
+    User::LeaveIfError(iError);
+    // Start the scheduler - Done only once !
+    CActiveScheduler::Start();
+    
+    return iTestStepResult;
+    }
+
+//Default SetCache size
+TVerdict RTestVclntExternalDisplayControl::SetCacheSize()
+    {
+    //Do not try to increase cache size for tests which dont need it
+    return EPass;
+            
+    }
+
+/**
+ * RTestVclntExternalDisplayControl::FsmL
+ */
+void RTestVclntExternalDisplayControl::FsmL(TVclntTestPlayEvents aEventCode)
+    {
+    if (FsmCheck(aEventCode))
+        {
+        //TInt err = KErrNone;
+        switch (aEventCode)
+            {
+            case EVPIdle:
+                // Open iVideoPlayer
+                INFO_PRINTF2(_L("iVideoPlayer->OpenFileL() %S"), &iFilename);
+                TRAP(iError, iVideoPlayer->OpenFileL(iFilename, ControllerUid()));
+                PrepareState(EVPOpenComplete, KErrNone);
+                break;
+            case EVPOpenComplete:
+                // set external display control
+                iVideoPlayer->SetExternalDisplaySwitchingL((*iScreen).GetScreenNumber(), iExternalDisplayControl);
+                // Prepare iVideoPlayer
+                INFO_PRINTF1(_L("iVideoPlayer->Prepare()"));
+                iVideoPlayer->Prepare();
+                PrepareState(EVPPrepareComplete, KErrNone);
+                break;
+            case EVPPrepareComplete:
+                iTestStepResult = DoTestL(iVideoPlayer);
+                break;
+            case EVPPlayComplete:
+                iTestStepResult = EPass;
+                CActiveScheduler::Stop();
+                break;
+            }
+        }
+    }
+
+/**
+ * RTestVclntExternalDisplayControl::DoTestL
+ */
+TVerdict RTestVclntExternalDisplayControl::DoTestL(CVideoPlayerUtility* /*aPlayer*/)
+    {
+    TVerdict ret = EFail;
+
+    if(iPlay)
+        {
+        iError = KErrTimedOut;
+        INFO_PRINTF1(_L("iVideoPlayer->Play()"));
+        PrepareState(EVPPlayComplete, KErrNone);
+        iVideoPlayer->Play();
+        }
+    else
+        {
+        CActiveScheduler::Stop();
+        ret = EPass;
+        }
+        
+    return ret;
+    }
+
+TVerdict RTestVclntExternalDisplayControl::SetExternalDisplayControl()
+    {
+    if(GetBoolFromConfig(iSectName, _L("externalDisplayControl"), iExternalDisplayControl))
+        {
+        INFO_PRINTF2(_L("External display switch control set to %d"), iExternalDisplayControl);
+        }
+    else
+        {
+        return EInconclusive;
+        }
+    return EPass;
+    }

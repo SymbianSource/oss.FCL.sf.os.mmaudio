@@ -47,7 +47,9 @@ EXPORT_C CDistanceAttenuationMessageHandler* CDistanceAttenuationMessageHandler:
     {
     CDistanceAttenuation* aDistanceAttenuation = (CDistanceAttenuation*)aCustomInterface;
     CDistanceAttenuationMessageHandler* self = new (ELeave) CDistanceAttenuationMessageHandler(aDistanceAttenuation);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

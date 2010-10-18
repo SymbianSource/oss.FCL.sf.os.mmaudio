@@ -49,7 +49,9 @@ EXPORT_C CRoomLevelMessageHandler* CRoomLevelMessageHandler::NewL(
     {
     CRoomLevel* roomLevel = (CRoomLevel*)aCustomInterface;
     CRoomLevelMessageHandler* self = new (ELeave) CRoomLevelMessageHandler(roomLevel);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

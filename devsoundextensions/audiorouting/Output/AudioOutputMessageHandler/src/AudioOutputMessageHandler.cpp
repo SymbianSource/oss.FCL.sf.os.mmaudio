@@ -47,8 +47,9 @@ EXPORT_C CAudioOutputMessageHandler* CAudioOutputMessageHandler::NewL(TAny*     
     CAudioOutput* audioOutput = (CAudioOutput*)aCustomInterface;
     CAudioOutputMessageHandler* self = new (ELeave) CAudioOutputMessageHandler(audioOutput,
                                                                                aContainer);
-
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

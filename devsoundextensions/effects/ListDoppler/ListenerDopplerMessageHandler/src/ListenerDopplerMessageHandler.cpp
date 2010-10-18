@@ -48,7 +48,9 @@ EXPORT_C CListenerDopplerMessageHandler* CListenerDopplerMessageHandler::NewL(
     {
     CListenerDoppler* doppler = (CListenerDoppler*)aCustomInterface;
     CListenerDopplerMessageHandler* self = new (ELeave) CListenerDopplerMessageHandler(doppler);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

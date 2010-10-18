@@ -89,7 +89,7 @@ EXPORT_C CSrtSubtitleDecoder* CSrtSubtitleDecoder::NewL(MSubtitleSource& aSubtit
 void CSrtSubtitleDecoder::ConstructL()
     {
     iFrameParser = CSrtFrame::NewL();
-    iDecodeBuffer.Create(KSubtitleDecoderBufferLength);
+    iDecodeBuffer.CreateL(KSubtitleDecoderBufferLength);
     }
     
 EXPORT_C TInt CSrtSubtitleDecoder::CalculateSubtitleRegion(const TRect& aScreenSize, TRect& aSubtitleRegion)

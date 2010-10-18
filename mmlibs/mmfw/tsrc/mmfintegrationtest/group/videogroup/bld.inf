@@ -24,4 +24,12 @@
 
 #include "../../vclnt/group/bld.inf"
 #include "../../vclntavi/group/bld.inf"
+#include "../../mmfmediaclienttestplugin/group/bld.inf"
+
+PRJ_TESTEXPORTS
+
+// centrep repo for external display tests
+../../conf/externaldisplaytest_1020730b.txt	/epoc32/release/winscw/udeb/z/private/10202be9/1020730b.txt
+../../conf/externaldisplaytest_1020730b.txt	/epoc32/release/winscw/urel/z/private/10202be9/1020730b.txt
+../../conf/externaldisplaytest_1020730b.txt	/epoc32/data/z/private/10202be9/1020730b.txt
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2007-2009 Nokia Corporation and/or its subsidiary(-ies).
+// Copyright (c) 2007-2010 Nokia Corporation and/or its subsidiary(-ies).
 // All rights reserved.
 // This component and the accompanying materials are made available
 // under the terms of "Eclipse Public License v1.0"
@@ -270,6 +270,228 @@ TEST_COMPLETE
 //!@SYMTestActions            Initialise video utility with a video file and play.
 //!@SYMTestExpectedResults    KErrNone
 RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-0435 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1201
+//!@SYMTestCaseDesc           Test HDMI external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate HDMI display is connected.
+//!@                          HDMI is mapped to display 0 as no display 1 is available.
+//!@                          Set exetrnal display to be enabled.
+//!@                          Initialise video utility with a video file and play.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1201 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1202
+//!@SYMTestCaseDesc           Test HDMI external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate HDMI display is connected.
+//!@                          HDMI is mapped to display 0 as no display 1 is available.
+//!@                          Set exetrnal display to be disabled.
+//!@                          Initialise video utility with a video file and play.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1202 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1203
+//!@SYMTestCaseDesc           Test Analog (aka. composite or TV Out) external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate analog display is connected.
+//!@                          Analog is mapped to display 0 as no display 1 is available.
+//!@                          Set exetrnal display to be enabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Switch to analog is not expected for this test as cenrep setting is unavailable.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1203 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1204
+//!@SYMTestCaseDesc           Test Analog (aka. composite or TV Out) external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate analog display is connected.
+//!@                          Analog is mapped to display 0 as no display 1 is available.
+//!@                          Set exetrnal display to be disabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Switch to analog is not expected for this test as cenrep setting is unavailable.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1204 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1205
+//!@SYMTestCaseDesc           Test Switch from disconnected external display to HDMI external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate external display is disconnected.
+//!@                          Set exetrnal display to be enabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Configure external display test plugin to indicate HDMI external display has been
+//!@                          connected.
+//!@                          HDMI is mapped to display 0 as no display 1 is available.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1205 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1206
+//!@SYMTestCaseDesc           Test Switch from disconnected external display to HDMI external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate external display is disconnected.
+//!@                          Set exetrnal display to be disabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Configure external display test plugin to indicate HDMI external display has been
+//!@                          connected.
+//!@                          HDMI is mapped to display 0 as no display 1 is available.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1206 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1207
+//!@SYMTestCaseDesc           Test Switch from HDMI external display to disconnected external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate HDMI display is connected.
+//!@                          HDMI is mapped to display 0 as no display 1 is available.
+//!@                          Set exetrnal display to be enabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Configure external display test plugin to indicate external display has been
+//!@                          disconnected.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1207 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1208
+//!@SYMTestCaseDesc           Test Switch from HDMI external display to disconnected external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate HDMI display is connected.
+//!@                          HDMI is mapped to display 0 as no display 1 is available.
+//!@                          Set external display to be disabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Configure external display test plugin to indicate external display has been
+//!@                          disconnected.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1208 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1209
+//!@SYMTestCaseDesc           Test Switch from disconnected external display to Analog external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate external display is disconnected.
+//!@                          Set external display to be enabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Configure external display test plugin to indicate Analog external display has been
+//!@                          connected.
+//!@                          Analog is mapped to display 0 as no display 1 is available.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1209 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1210
+//!@SYMTestCaseDesc           Test Switch from disconnected external display to Analog external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate external display is disconnected.
+//!@                          Set external display to be disabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Configure external display test plugin to indicate Analog external display has been
+//!@                          connected.
+//!@                          Analog is mapped to display 0 as no display 1 is available.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1210 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1211
+//!@SYMTestCaseDesc           Test Switch from Analog external display to disconnected external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate Analog display is connected.
+//!@                          Analog is mapped to display 0 as no display 1 is available.
+//!@                          Set external display to be enabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Configure external display test plugin to indicate external display has been
+//!@                          disconnected.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1211 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1212
+//!@SYMTestCaseDesc           Test Switch from Analog external display to disconnected external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate Analog display is connected.
+//!@                          Analog is mapped to display 0 as no display 1 is available.
+//!@                          Set external display to be disabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Configure external display test plugin to indicate external display has been
+//!@                          disconnected.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1212 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1213
+//!@SYMTestCaseDesc           Test Switch from HDMI external display to Analog external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate HDMI display is connected.
+//!@                          HDMI is mapped to display 0 as no display 1 is available.
+//!@                          Set external display to be enabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Configure external display test plugin to indicate HDMI external display has been
+//!@                          disconnected and Analog external display has been connected.
+//!@                          Analog is mapped to display 0 as no display 1 is available.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1213 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1214
+//!@SYMTestCaseDesc           Test Switch from HDMI external display to Analog external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate HDMI display is connected.
+//!@                          HDMI is mapped to display 0 as no display 1 is available.
+//!@                          Set external display to be disabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Configure external display test plugin to indicate HDMI external display has been
+//!@                          disconnected and Analog external display has been connected.
+//!@                          Analog is mapped to display 0 as no display 1 is available.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1214 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1215
+//!@SYMTestCaseDesc           Test Switch from Analog external display to HDMI external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate Analog display is connected.
+//!@                          Analog is mapped to display 0 as no display 1 is available.
+//!@                          Set external display to be enabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Configure external display test plugin to indicate Analog external display has been
+//!@                          disconnected and HDMI external display has been connected.
+//!@                          HDMI is mapped to display 0 as no display 1 is available.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1215 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1216
+//!@SYMTestCaseDesc           Test Switch from Analog external display to HDMI external display.
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Configure external display test plugin to indicate Analog display is connected.
+//!@                          Analog is mapped to display 0 as no display 1 is available.
+//!@                          Set external display to be disabled.
+//!@                          Initialise video utility with a video file and play.
+//!@                          Configure external display test plugin to indicate Analog external display has been
+//!@                          disconnected and HDMI external display has been connected.
+//!@                          HDMI is mapped to display 0 as no display 1 is available.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1216 c:\vclntavi\video_avi.ini
 TEST_COMPLETE
 
 /////////////////////////////// NEGATIVE TESTS /////////////////////////////////////

@@ -1160,7 +1160,9 @@ CMMFMetaDataEntry* CMMFDrmAudioPlayerUtility::GetMetaDataEntryL(
     s.Open(*iMetaDataBuffer);
     CleanupClosePushL(s);
     CMMFMetaDataEntry* theMetaDataEntry  = CMMFMetaDataEntry::NewL();
+    CleanupStack::PushL(theMetaDataEntry);
     theMetaDataEntry->InternalizeL(s);
+    CleanupStack::Pop(theMetaDataEntry);
     CleanupStack::PopAndDestroy();//s
     return theMetaDataEntry;
     }

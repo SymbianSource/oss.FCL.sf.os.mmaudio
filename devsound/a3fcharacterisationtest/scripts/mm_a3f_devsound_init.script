@@ -48,6 +48,7 @@ TEST_COMPLETE
 //4. Start CPeriodic to trigger timer events.
 //5. Call CancelInitialize() before receiving InitializeComplete() callback.
 //6. Wait 2 seconds to verify that InitializeComplete() callback is not received.
+//7. Repeat steps 3 to 6 one more time to ensure a call to Initialise passes after CancelInitialize is called. 
 //!@SYMTestExpectedResults: 
 //CancelInitialize() returns KErrNone. InitializeComplete() callback shall be not received.
 PRINT Play tone initialisation - Call CancelInitialize() to abort initialisation for tones
@@ -166,6 +167,7 @@ TEST_COMPLETE
 //4. Start CPeriodic to trigger timer events every 2 seconds.
 //5. Call CancelInitialize() before receiving InitializeComplete() callback .
 //6. On timer event, verify that InitializeComplete() callback was not received.
+//7. Repeat steps 3 to 6 one more time to ensure a call to Initialise passes after CancelInitialize is called. 
 //!@SYMTestExpectedResults: 
 //CancelInitialize() returns KErrNone.
 //InitializeComplete(KErrNone) callback shall be not received.

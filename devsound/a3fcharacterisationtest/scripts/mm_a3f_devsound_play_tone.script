@@ -1140,3 +1140,21 @@ TEST_COMPLETE
 PRINT Play tone - Tone sequence - Pause. The client wants to play a tone sequence and pause it.
 RUN_TEST_STEP 15000, char_a3f_devsound, MM-A3F-DEVSOUND-CHRTZ-TONE-0050, c:\mm_a3f_devsound_play_tone.ini
 TEST_COMPLETE
+
+//!@SYMTestCaseID: MM-A3F-DEVSOUND-CHRTZ-TONE-0064
+//!@SYMREQ: 
+//!@SYMPREQ: 
+//!@SYMTestCaseDec: Play tone - Tone sequence - Pause. The client wants to play a tone sequence and pause it.
+//!@SYMTestPriority: Normal
+//!@SYMTestType: Alternative Usecase
+//!@SYMTestActions: 
+//1. Create and Initialize DevSound instance to play tones.
+//1.1 Wait for InitializeComplete(KErrNone) callback response.
+//2. Call CMMFDevSound->FixedSequenceCount() this should return 0
+//3. Call CMMFDevSound->FixedSequenceName() this should return KNullDesC
+//4. Call CMMFDevSound->PlayFixedSequenceL this should leave with KErrNotSupported
+//!@SYMTestExpectedResults: 
+//Calls to depricated api should return correct values
+PRINT Tone - Call deprocated API's
+RUN_TEST_STEP 15000, char_a3f_devsound, MM-A3F-DEVSOUND-CHRTZ-TONE-0064, c:\mm_a3f_devsound_play_tone.ini
+TEST_COMPLETE

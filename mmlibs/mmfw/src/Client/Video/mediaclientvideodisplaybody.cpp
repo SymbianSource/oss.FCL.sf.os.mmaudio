@@ -1313,20 +1313,29 @@ void CMediaClientVideoDisplayBody::MedcpcExtDisplayNotifyConnected(TExtDisplayCo
             // HDMI is preferred over AV Out.
         
             // update external display window data
-            iExtDisplayHandler->UpdateWindow();
-            TRect externalDisplayRect(TPoint(0, 0), iExtDisplayHandler->DisplaySizeInPixels());
-            (*iWindowsArrayPtr)[0].iClipRect = externalDisplayRect;
-            (*iWindowsArrayPtr)[0].iVideoExtent = externalDisplayRect;
-            TRAPD(err, (*iWindowsArrayPtr)[0].iAutoScaleType = ExtDisplayAutoScaleTypeL());
-            if(err == KErrNone)
+            if(iExtDisplayHandler)
                 {
-                RemoveBackgroundSurface(ETrue);
-                RedrawWindows(iCropRegion);
+                iExtDisplayHandler->UpdateWindow();
+                TRect externalDisplayRect(TPoint(0, 0), iExtDisplayHandler->DisplaySizeInPixels());
+                (*iWindowsArrayPtr)[0].iClipRect = externalDisplayRect;
+                (*iWindowsArrayPtr)[0].iVideoExtent = externalDisplayRect;
+                TRAPD(err, (*iWindowsArrayPtr)[0].iAutoScaleType = ExtDisplayAutoScaleTypeL());
+                if(err == KErrNone)
+                    {
+                    RemoveBackgroundSurface(ETrue);
+                    RedrawWindows(iCropRegion);
+                    }
+                else
+                    {
+                    // Not a lot we can do. Just keep as it is but external display output will be incorrect. 
+                    DEBUG_PRINTF2("CMediaClientVideoDisplayBody::MedcpcExtDisplayNotifyConnected ExtDisplayAutoScaleTypeL failed %d", err);
+                    }
                 }
             else
                 {
-                // Not a lot we can do. Just keep as it is but external display output will be incorrect. 
-                DEBUG_PRINTF2("CMediaClientVideoDisplayBody::MedcpcExtDisplayNotifyConnected ExtDisplayAutoScaleTypeL failed %d", err);
+                    // External display handler does not exist, probably because there was a failure during its earlier construction.
+                    // Ignore notification.  
+                    DEBUG_PRINTF("CMediaClientVideoDisplayBody::MedcpcExtDisplayNotifyConnected iExtDisplayHandler does not exist - switch not attempted!");
                 }
             }
 	    }

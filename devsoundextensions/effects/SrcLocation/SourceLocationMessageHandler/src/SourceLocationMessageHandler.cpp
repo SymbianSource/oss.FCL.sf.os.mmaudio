@@ -48,7 +48,9 @@ EXPORT_C CSourceLocationMessageHandler* CSourceLocationMessageHandler::NewL(
     {
     CSourceLocation* bassboost = (CSourceLocation*)aCustomInterface;
     CSourceLocationMessageHandler* self = new (ELeave) CSourceLocationMessageHandler(bassboost);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

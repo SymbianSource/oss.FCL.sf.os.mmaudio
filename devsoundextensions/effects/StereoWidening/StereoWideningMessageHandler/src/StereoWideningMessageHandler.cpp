@@ -47,7 +47,9 @@ EXPORT_C CStereoWideningMessageHandler* CStereoWideningMessageHandler::NewL(
     {
     CStereoWidening* aStereoWidening = (CStereoWidening*)aCustomInterface;
     CStereoWideningMessageHandler* self = new (ELeave) CStereoWideningMessageHandler(aStereoWidening);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

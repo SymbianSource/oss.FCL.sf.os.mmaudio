@@ -1,4 +1,4 @@
-// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// Copyright (c) 2005-2010 Nokia Corporation and/or its subsidiary(-ies).
 // All rights reserved.
 // This component and the accompanying materials are made available
 // under the terms of "Eclipse Public License v1.0"
@@ -537,6 +537,29 @@ protected:
 	TInt iPlayVelocity;
     RFs iFs;
     RFile iFile;
+    };
+
+/**
+ * Load and initialise a video file.
+ * Set external display control
+ *
+ * RTestVclntExternalDisplayControl
+ *
+ */
+class RTestVclntExternalDisplayControl : public RTestVclntAviPlayerStep
+    {
+public:
+    RTestVclntExternalDisplayControl(const TDesC& aTestName, const TDesC& aSectName,const TDesC& aKeyName, TInt aExpectedError, const TBool aPlay);
+    static RTestVclntExternalDisplayControl* NewL(const TDesC& aTestName,const TDesC& aSectName,const TDesC& aKeyName, TInt aExpectedError, const TBool aPlay);
+    virtual TVerdict DoTestStepL();
+    virtual TVerdict DoTestL(CVideoPlayerUtility* aVideo);
+    virtual void FsmL(TVclntTestPlayEvents aEventCode);
+    virtual TVerdict SetCacheSize();
+    TVerdict SetExternalDisplayControl();
+protected:
+    const TBool iPlay;
+    TTimeIntervalMicroSeconds iDuration;
+    TBool iExternalDisplayControl;
     };
 
 #endif //__TESTVIDEOPLAYER_H__

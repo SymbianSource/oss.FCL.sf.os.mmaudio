@@ -38,7 +38,7 @@ EXPORT_C TInt RMMFDRMPluginServerProxy::Open()
 	TInt err = CreateSession(KDrmPluginServerName, TVersion(KMMFDRMPluginServerVersion,
 														KMMFDRMPluginServerMinorVersionNumber,
 														KMMFDRMPluginServerBuildVersionNumber));
-	if(err == KErrNotFound)
+	if(err == KErrNotFound || err == KErrServerTerminated)
 		{
 		// Server not running
 		// Construct the server binary name
@@ -46,7 +46,7 @@ EXPORT_C TInt RMMFDRMPluginServerProxy::Open()
 		RProcess server;
 
 		err = server.Create(KDrmPluginServerFileName, KNullDesC, serverUid);
-		if(err != KErrNone)
+		if(err != KErrNone && err != KErrAlreadyExists)
 			return err;
 		// Synchronise with the server
 		TRequestStatus reqStatus;

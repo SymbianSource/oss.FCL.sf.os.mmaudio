@@ -48,7 +48,9 @@ EXPORT_C CListenerLocationMessageHandler* CListenerLocationMessageHandler::NewL(
     {
     CListenerLocation* bassboost = (CListenerLocation*)aCustomInterface;
     CListenerLocationMessageHandler* self = new (ELeave) CListenerLocationMessageHandler(bassboost);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

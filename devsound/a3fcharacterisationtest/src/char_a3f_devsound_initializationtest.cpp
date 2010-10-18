@@ -147,6 +147,22 @@ void RA3FDevSoundToneCancelInitializeTest::Fsm(TMmfDevSoundEvent aDevSoundEvent,
 					ERR_PRINTF2(_L("Unexpected error on CancelInitialize = %d"), err);
 					StopTest(err);
 					}
+                INFO_PRINTF1(_L("Calling CMMFDevSound::InitializeL"));
+                TRAP(err, iMMFDevSound->InitializeL(*this, EMMFStateTonePlaying));
+                if(err != KErrNone)
+                    {
+                    ERR_PRINTF2(_L("CMMFDevSound::InitializeL left with error = %d"), err);
+                    StopTest(err);
+                    break;
+                    }
+                User::After(2000);
+                INFO_PRINTF1(_L("Calling CMMFDevSound::CancelInitialize")); 
+                err = iMMFDevSound->CancelInitialize();
+                if(err != KErrNone)
+                    {
+                    ERR_PRINTF2(_L("Unexpected error on CancelInitialize = %d"), err);
+                    StopTest(err);
+                    }
 				INFO_PRINTF1(_L("DevSound State: EStateInitializing"));
 				iDevSoundState = EStateInitializing;
 				}
@@ -744,6 +760,22 @@ void RA3FDevSoundPlayCancelInitializeTest::Fsm(TMmfDevSoundEvent aDevSoundEvent,
 					ERR_PRINTF2(_L("Unexpected error on CancelInitialize = %d"), err);
 					StopTest(err);
 					}
+                INFO_PRINTF1(_L("Calling CMMFDevSound::InitializeL"));
+                TRAP(err, iMMFDevSound->InitializeL(*this, iFourCCCode, EMMFStatePlaying));
+                if(err != KErrNone)
+                    {
+                    ERR_PRINTF2(_L("CMMFDevSound::InitializeL left with error = %d"), err);
+                    StopTest(err);
+                    break;
+                    }       
+                User::After(2000);
+                INFO_PRINTF1(_L("Calling CMMFDevSound::CancelInitialize"));
+                err = iMMFDevSound->CancelInitialize();
+                if(err != KErrNone)
+                    {
+                    ERR_PRINTF2(_L("Unexpected error on CancelInitialize = %d"), err);
+                    StopTest(err);
+                    }
 				INFO_PRINTF1(_L("DevSound State: EStateInitializing"));
 				iDevSoundState = EStateInitializing;
 				}

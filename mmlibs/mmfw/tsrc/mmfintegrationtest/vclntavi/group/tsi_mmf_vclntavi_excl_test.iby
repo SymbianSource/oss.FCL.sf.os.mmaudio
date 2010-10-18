@@ -23,6 +23,9 @@ file=ABI_DIR\BUILD_DIR\tsi_mmf_vclntavi.dll 	System\Libs\tsi_mmf_vclntavi.dll
 #include <vclntavi.iby>
 #endif
 
+// central repository repo file for external display testing
+data=ZPRIVATE\10202be9\1020730b.txt		private\10202be9\1020730b.txt // centrep repo
+
 //data files
 //exported using copydatatocf.bat and usbldr.pm, so removed from iby file
 

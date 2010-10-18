@@ -288,22 +288,20 @@ void CMsgQueueHandler::DoBTBFCompleteL()
 	// the chunk has been closed by the server. No action should be taken.
 	TBool requestChunk = iDataBuffer==NULL; // if we have no buffer, tell server we need a chunk handle
 	TInt handle = iDevSoundProxy->BufferToBeFilledData(requestChunk, iSetPckg);
-	if(handle >= KErrNone)
+	User::LeaveIfError(handle);
+	
+	if ( iSetPckg().iChunkOp == EOpen )
 		{
-		if ( iSetPckg().iChunkOp == EOpen )
-			{
-			AssignDataBufferToChunkL(handle);
-			}
-		else
-			{
-			UpdateDataBufferL();
-			}
-		iDataBuffer->SetStatus(EAvailable);
-		
-		// Let the MMF fill the buffer with data
-		
-		iDevSoundObserver.BufferToBeFilled(iDataBuffer);
+		AssignDataBufferToChunkL(handle);
 		}
+	else
+		{
+		UpdateDataBufferL();
+		}
+	iDataBuffer->SetStatus(EAvailable);
+	
+	// Let the MMF fill the buffer with data
+	iDevSoundObserver.BufferToBeFilled(iDataBuffer);
 	SYMBIAN_DEBPRN0(_L("CMsgQueueHandler[0x%x]::DoBTBFCompleteL - Exit"));
 	}
 
@@ -320,16 +318,18 @@ void CMsgQueueHandler::DoBTBECompleteL()
 	// any error is assumed to be due to a pending RecordError(), so the error here is ignored - the RecordError() call will ensure the client remains lively
 	// the chunk has been closed by the server. No action should be taken.
 	TInt handle = iDevSoundProxy->BufferToBeEmptiedData(iSetPckg);
-	if(handle >= KErrNone)
+	User::LeaveIfError(handle);
+	
+	if ( iSetPckg().iChunkOp == EOpen )
 		{
-		if ( iSetPckg().iChunkOp == EOpen )
-			{
-			AssignDataBufferToChunkL(handle);
-			}
-		iDataBuffer->SetStatus(EFull);	
-		iDataBuffer->Data().SetLength(iSetPckg().iRequestSize);
-		iDevSoundObserver.BufferToBeEmptied(iDataBuffer);
+		AssignDataBufferToChunkL(handle);
 		}
+	
+	__ASSERT_ALWAYS(iDataBuffer, User::Leave(KErrGeneral)); //iDataBuffer should never be empty here
+	iDataBuffer->SetStatus(EFull);	
+	iDataBuffer->Data().SetLength(iSetPckg().iRequestSize);
+	iDevSoundObserver.BufferToBeEmptied(iDataBuffer);
+	
 	SYMBIAN_DEBPRN0(_L("CMsgQueueHandler[0x%x]::DoBTBECompleteL - Exit"));
 	}
 
@@ -416,7 +416,7 @@ void CMsgQueueHandler::AssignDataBufferToChunkL(TInt aHandle)
 void CMsgQueueHandler::UpdateDataBufferL()
 	{
     SYMBIAN_DEBPRN0(_L("CMsgQueueHandler[0x%x]::UpdateDataBufferL - Enter"));
-    ASSERT(iDataBuffer); // to get here, we should have a data buffer
+    __ASSERT_ALWAYS(iDataBuffer, User::Leave(KErrGeneral)); // to get here, we should have a data buffer
 	iDataBuffer->SetPtr(iChunkDataPtr);
 	iDataBuffer->SetRequestSizeL(iSetPckg().iRequestSize);
 	iDataBuffer->SetLastBuffer(EFalse);

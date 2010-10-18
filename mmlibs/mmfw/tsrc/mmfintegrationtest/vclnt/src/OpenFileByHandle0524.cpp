@@ -70,7 +70,7 @@ TVerdict CTestMmfVclntOpenFile0524::DoTestStepL()
 	
 	TInt failCount = 1;
 	TBool completed = EFalse;
-	iAllocTestStepResult = EPass; // TODO check?? assume pass
+	iAllocTestStepResult = EPass; // XXX check?? assume pass
 	TBool reachedEnd = EFalse; // Note: declare outside loop to help with debugging
 	for(;;)	
 		{

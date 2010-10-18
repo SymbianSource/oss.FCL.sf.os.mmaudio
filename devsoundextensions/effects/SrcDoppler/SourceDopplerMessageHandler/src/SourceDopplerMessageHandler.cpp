@@ -48,7 +48,9 @@ EXPORT_C CSourceDopplerMessageHandler* CSourceDopplerMessageHandler::NewL(
     {
     CSourceDoppler* doppler = (CSourceDoppler*)aCustomInterface;
     CSourceDopplerMessageHandler* self = new (ELeave) CSourceDopplerMessageHandler(doppler);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// Copyright (c) 2005-2010 Nokia Corporation and/or its subsidiary(-ies).
 // All rights reserved.
 // This component and the accompanying materials are made available
 // under the terms of "Eclipse Public License v1.0"
@@ -351,7 +351,27 @@ void CTestMmfVclntAviSuite::InitialiseL()
     //RTestMediaClientVideoDisplay
     AddTestStepL( RTestMediaClientVideoDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-0435"), _L("SectionFive"), _L("filename"), KErrNone) );
     
-	//
+    // External display
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1201")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1202")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1203")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1204")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1205")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1206")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1207")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1208")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1209")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1210")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1211")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1212")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1213")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1214")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1215")));
+    AddTestStepL( RTestMediaClientExternalDisplay::NewL( _L("MM-MMF-VCLNTAVI-I-1216")));
+    AddTestStepL( RTestVclntExternalDisplayControl::NewL( _L("MM-MMF-VCLNTAVI-I-1220"), _L("MM-MMF-VCLNTAVI-I-1220"), _L("filename"), KErrNone, ETrue) );
+    AddTestStepL( RTestVclntExternalDisplayControl::NewL( _L("MM-MMF-VCLNTAVI-I-1221"), _L("MM-MMF-VCLNTAVI-I-1221"), _L("filename"), KErrNone, ETrue) );
+
+    //
     // PREQ1714 - Video Rendering to a Graphics Surface //
     // NEGATIVE TEST //
     //

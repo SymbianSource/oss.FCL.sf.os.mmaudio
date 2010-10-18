@@ -1351,6 +1351,23 @@ private:
 	TBuf8<KMaxStringLength> iInvalidToneSequence;
 	};
 
+/*
+ *========================================================================================================
+ * MM-A3F-DEVSOUND-CHRTZ-TONE-0064
+ */
+
+class RA3FDevSoundTonePlayToneFixedSequenceTest : public RA3FDevSoundTestBase
+    {
+public:
+    static RA3FDevSoundTonePlayToneFixedSequenceTest* NewL(const TDesC& aTestName);
+private:
+    RA3FDevSoundTonePlayToneFixedSequenceTest(const TDesC& aTestName);
+    void Fsm(TMmfDevSoundEvent aDevSoundEvent, TInt aError);
+    void DoKickoffTestL();
+
+private:
+    TInt iFixedSequenceCount;
+    };
 
 #endif //CHAR_A3F_DEVSOUND_TONETEST_H
 

@@ -362,6 +362,7 @@ void CDRMPlayServerSession::NewFilePlayerL(const RMessage2 aMessage)
     aMessage.Read(1,params);
     aMessage.Read(2,iErrDurPckg);
     HBufC16* inputBuf = HBufC16::NewL(aMessage.GetDesLengthL(3));
+    CleanupStack::PushL(inputBuf);
     TPtr16 ptr = inputBuf->Des();
     aMessage.Read(3,ptr);
     const TDataStruct &theStruct = params();
@@ -371,6 +372,7 @@ void CDRMPlayServerSession::NewFilePlayerL(const RMessage2 aMessage)
                                                        *this,
                                                        iPriority,
                                                        iPref);
+    CleanupStack::Pop(inputBuf);
     delete inputBuf;
     }
 

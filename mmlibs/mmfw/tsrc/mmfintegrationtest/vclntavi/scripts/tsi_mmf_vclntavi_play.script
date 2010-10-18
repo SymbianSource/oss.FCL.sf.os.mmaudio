@@ -446,3 +446,25 @@ DELAY 5000
 RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1013-HP c:\vclntavi\video_avi.ini
 TEST_COMPLETE
 DELAY 5000
+
+//
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1220
+//!@SYMTestCaseDesc           Play video file with external display control enabled  
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Initialise video utility with a video file, enable external display control and play.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1220 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+DELAY 10000
+
+//
+//!@SYMTestCaseID             MM-MMF-VCLNTAVI-I-1221
+//!@SYMTestCaseDesc           Play video file with external display control disabled  
+//!@SYMREQ                    REQ417-72064, SUBREQ417-73832
+//!@SYMTestPriority           1
+//!@SYMTestActions            Initialise video utility with a video file, disabled external display control and play.
+//!@SYMTestExpectedResults    KErrNone
+RUN_TEST_STEP 200000 TSI_MMF_VCLNTAVI MM-MMF-VCLNTAVI-I-1221 c:\vclntavi\video_avi.ini
+TEST_COMPLETE
+DELAY 10000

@@ -30,16 +30,18 @@
 EXPORT_C CCustomInterfaceUtility* CCustomInterfaceUtility::NewL(CMdaAudioConvertUtility& aUtility)
 	{
 	CCustomCommandUtility* customCommandUtility = CCustomCommandUtility::NewL(aUtility);
+	CleanupStack::PushL(customCommandUtility);
 	CProxyCustomInterfaceUtility* util = CProxyCustomInterfaceUtility::NewL(customCommandUtility);
-
+	CleanupStack::Pop(customCommandUtility);
 	return util;
 	}
 
 EXPORT_C CCustomInterfaceUtility* CCustomInterfaceUtility::NewL(CMdaAudioPlayerUtility& aUtility)
 	{
 	CCustomCommandUtility* customCommandUtility = CCustomCommandUtility::NewL(aUtility);
+	CleanupStack::PushL(customCommandUtility);
 	CProxyCustomInterfaceUtility* util = CProxyCustomInterfaceUtility::NewL(customCommandUtility);
-
+	CleanupStack::Pop(customCommandUtility);
 	return util;
 	}
 
@@ -47,8 +49,9 @@ EXPORT_C CCustomInterfaceUtility* CCustomInterfaceUtility::NewL(CMdaAudioRecorde
                                                                 TBool aRecordStream)
 	{
 	CCustomCommandUtility* customCommandUtility = CCustomCommandUtility::NewL(aUtility,aRecordStream);
+	CleanupStack::PushL(customCommandUtility);
 	CProxyCustomInterfaceUtility* util = CProxyCustomInterfaceUtility::NewL(customCommandUtility);
-
+	CleanupStack::Pop(customCommandUtility);
 	return util;
 	}
 
@@ -78,8 +81,9 @@ EXPORT_C CCustomInterfaceUtility* CCustomInterfaceUtility::NewL(CMMFDevSound& /*
 EXPORT_C CCustomInterfaceUtility* CCustomInterfaceUtility::NewL(CMidiClientUtility& aUtility)
 	{
 	CCustomCommandUtility* customCommandUtility = CCustomCommandUtility::NewL(aUtility);
+	CleanupStack::PushL(customCommandUtility);
 	CProxyCustomInterfaceUtility* util = CProxyCustomInterfaceUtility::NewL(customCommandUtility);
-
+	CleanupStack::Pop(customCommandUtility);
 	return util;
 	}
 
@@ -93,24 +97,27 @@ EXPORT_C CCustomInterfaceUtility* CCustomInterfaceUtility::NewL(MCustomCommand& 
 EXPORT_C CCustomInterfaceUtility* CCustomInterfaceUtility::NewL(CDrmPlayerUtility& aUtility)
 	{
 	CCustomCommandUtility* customCommandUtility = CCustomCommandUtility::NewL(aUtility);
+	CleanupStack::PushL(customCommandUtility);
 	CProxyCustomInterfaceUtility* util = CProxyCustomInterfaceUtility::NewL(customCommandUtility);
-
+	CleanupStack::Pop(customCommandUtility);
 	return util;
 	}
 
 EXPORT_C CCustomInterfaceUtility* CCustomInterfaceUtility::NewL(CVideoPlayerUtility& aUtility)
 	{
 	CCustomCommandUtility* customCommandUtility = CCustomCommandUtility::NewL(aUtility);
+	CleanupStack::PushL(customCommandUtility);
 	CProxyCustomInterfaceUtility* util = CProxyCustomInterfaceUtility::NewL(customCommandUtility);
-
+	CleanupStack::Pop(customCommandUtility);
 	return util;
 	}
 
 EXPORT_C CCustomInterfaceUtility* CCustomInterfaceUtility::NewL(CVideoRecorderUtility& aUtility)
 	{
 	CCustomCommandUtility* customCommandUtility = CCustomCommandUtility::NewL(aUtility);
+	CleanupStack::PushL(customCommandUtility);
 	CProxyCustomInterfaceUtility* util = CProxyCustomInterfaceUtility::NewL(customCommandUtility);
-
+	CleanupStack::Pop(customCommandUtility);
 	return util;
 	}
 		

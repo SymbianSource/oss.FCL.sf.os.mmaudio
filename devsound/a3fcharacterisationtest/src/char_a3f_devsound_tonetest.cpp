@@ -8387,3 +8387,78 @@ void RA3FDevSoundTonePlayToneSequenceUsingInvalidDescriptorTest::ToneFinished(TI
 		}
 	}
 
+/*
+ *========================================================================================================
+ * MM-A3F-DEVSOUND-CHRTZ-TONE-0064
+ */
+
+RA3FDevSoundTonePlayToneFixedSequenceTest::RA3FDevSoundTonePlayToneFixedSequenceTest(const TDesC& aTestName)
+    :   RA3FDevSoundTestBase(aTestName)
+    {
+    }
+
+RA3FDevSoundTonePlayToneFixedSequenceTest* RA3FDevSoundTonePlayToneFixedSequenceTest::NewL(const TDesC& aTestName)
+    {
+    RA3FDevSoundTonePlayToneFixedSequenceTest * self = new(ELeave)RA3FDevSoundTonePlayToneFixedSequenceTest(aTestName);
+    return self;
+    }
+
+void RA3FDevSoundTonePlayToneFixedSequenceTest::DoKickoffTestL()
+    {
+    }
+
+void RA3FDevSoundTonePlayToneFixedSequenceTest::Fsm(TMmfDevSoundEvent aDevSoundEvent,  TInt aError)
+    {
+    switch (iDevSoundState)
+        {
+        case EStateCreated:
+           {
+           __ASSERT_ALWAYS((aError == KErrNone), Panic(_L("RA3FDevSoundTonePlayToneFixedSequenceTest"), EFsmIncorrectErrorPassed));
+           if (aDevSoundEvent == EEventInitialize)
+               {
+               //FixedSequenceCount is deprecated and should return 0
+               INFO_PRINTF1(_L("Calling CMMFDevSound->FixedSequenceCount()"));
+               iFixedSequenceCount = iMMFDevSound->FixedSequenceCount();
+               if(iFixedSequenceCount != 0)
+                   {
+                   INFO_PRINTF2(_L("CMMFDevSound->FixedSequenceCount() returned incorrect value %d"),iFixedSequenceCount);
+                   StopTest(EFail);
+                   break;
+                   }
+          
+               //FixedSequenceName is deprecated and should return a Null descriptor
+               INFO_PRINTF1(_L("Calling CMMFDevSound->FixedSequenceName()"));
+               TDesC fSeqName = iMMFDevSound->FixedSequenceName(0);
+               if(fSeqName != KNullDesC)
+                   {
+                   INFO_PRINTF1(_L("CMMFDevSound->FixedSequenceName() returned wrong name"));
+                   StopTest(EFail);
+                   break;
+                   }
+                   
+               //PlayFixedSequenceL is not supported
+               INFO_PRINTF1(_L("Calling iMMFDevSound->PlayFixedSequenceL()"));
+               TRAPD(err, iMMFDevSound->PlayFixedSequenceL(0));
+               if(err!=KErrNotSupported)
+                   {
+                   INFO_PRINTF1(_L("CMMFDevSound->PlayFixedSequenceL() did not leave with KErrNotSupported"));
+                   StopTest(EFail);
+                   break;
+                   }
+               StopTest(); 
+               }
+               break;
+           }
+           
+           default:
+                {
+                ERR_PRINTF2(_L("Invalid DevSound state received: %d"), iDevSoundState);
+                StopTest(aError, EFail);
+                }
+                   
+        }
+        
+    }
+
+
+

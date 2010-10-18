@@ -46,7 +46,7 @@
 // stolen from CMmfVideoTestControllerUIDs.hrh
 #define KMmfVideoTestControllerUid                   0x101F88D9
 
-// Uncomment this line for Jetstream project
+// Uncomment this line for specific project tests
 //#define JETSTREAM_TESTS  1 
 
 

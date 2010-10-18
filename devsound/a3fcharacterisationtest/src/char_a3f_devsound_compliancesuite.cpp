@@ -192,6 +192,7 @@ void CA3FDevSoundComplianceSuite::InitialiseL()
 	AddTestStepL(RA3FDevSoundTonePlayDTMFStringWithoutCallingInitializeTest::NewL(_L("MM-A3F-DEVSOUND-CHRTZ-TONE-0061")));
 	AddTestStepL(RA3FDevSoundTonePlayToneSequenceWithoutCallingInitializeTest::NewL(_L("MM-A3F-DEVSOUND-CHRTZ-TONE-0062")));
 	AddTestStepL(RA3FDevSoundTonePlayToneSequenceUsingInvalidDescriptorTest::NewL(_L("MM-A3F-DEVSOUND-CHRTZ-TONE-0063")));
+	AddTestStepL(RA3FDevSoundTonePlayToneFixedSequenceTest::NewL(_L("MM-A3F-DEVSOUND-CHRTZ-TONE-0064")));
 
 	//- Record Audio Test Cases ---------------------------------------------------------
 	AddTestStepL(RA3FDevSoundRecordConfigurationSetConfigTest::NewL(_L("MM-A3F-DEVSOUND-CHRTZ-REC-RAW-0001")));

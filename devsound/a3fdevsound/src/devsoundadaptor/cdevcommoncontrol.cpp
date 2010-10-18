@@ -640,10 +640,11 @@ void CDevCommonControl::ContextEventUpdateWithoutStateEventNoError() // from CDe
 
     iDevAudio->iActiveState = EDevSoundAdaptorCreated_Uninitialised;
     
+    // This will unregister audio callback observers in case they are registered again
+    ContextEventStopDevSoundNotifications();
+    
     if (iDevAudio->iReinitializing)
         {
-        ContextEventStopDevSoundNotifications();
-        
         TInt err = iDevAudio->Initialize(iDevAudio->iTargetFormat, iDevAudio->iTargetMode);
         if(err)
             {

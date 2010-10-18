@@ -48,7 +48,9 @@ EXPORT_C CSourceOrientationMessageHandler* CSourceOrientationMessageHandler::New
     {
     CSourceOrientation* bassboost = (CSourceOrientation*)aCustomInterface;
     CSourceOrientationMessageHandler* self = new (ELeave) CSourceOrientationMessageHandler(bassboost);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

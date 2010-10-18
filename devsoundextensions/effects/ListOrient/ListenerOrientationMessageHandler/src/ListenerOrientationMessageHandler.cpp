@@ -48,7 +48,9 @@ EXPORT_C CListenerOrientationMessageHandler* CListenerOrientationMessageHandler:
     {
     CListenerOrientation* bassboost = (CListenerOrientation*)aCustomInterface;
     CListenerOrientationMessageHandler* self = new (ELeave) CListenerOrientationMessageHandler(bassboost);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

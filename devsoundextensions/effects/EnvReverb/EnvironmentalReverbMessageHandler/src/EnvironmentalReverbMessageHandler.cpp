@@ -48,7 +48,9 @@ EXPORT_C CEnvironmentalReverbMessageHandler* CEnvironmentalReverbMessageHandler:
     {
     CEnvironmentalReverb* environmentalReverb = (CEnvironmentalReverb*)aCustomInterface;
     CEnvironmentalReverbMessageHandler* self = new (ELeave) CEnvironmentalReverbMessageHandler(environmentalReverb);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

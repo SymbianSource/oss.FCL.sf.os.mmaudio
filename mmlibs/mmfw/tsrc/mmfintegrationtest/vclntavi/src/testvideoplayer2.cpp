@@ -460,6 +460,15 @@ void RTestMediaClientVideoDisplay::HandlePrepareCompleteL()
     iMediaClientVideoDisplay->RemoveDisplayWindow(*iWindow);
     INFO_PRINTF1(_L("iMediaClientVideoDisplay->RemoveDisplayWindow()"));
     
+    iMediaClientVideoDisplay->SetExternalDisplaySwitchingL(ETrue);
+    iMediaClientVideoDisplay->SetExternalDisplaySwitchingL(EFalse);
+    iMediaClientVideoDisplay->SetExternalDisplaySwitchingL(EFalse);
+    iMediaClientVideoDisplay->SetExternalDisplaySwitchingL(ETrue);
+    
+    // create media class with other NewL.
+    delete iMediaClientVideoDisplay;
+    iMediaClientVideoDisplay = CMediaClientVideoDisplay::NewL(displayId, surfaceId, cropRect, par);          
+    
     surfaceManager.CloseSurface(surfaceId);
 	surfaceId = TSurfaceId::CreateNullId();
 	surfaceManager.Close();

@@ -1,4 +1,4 @@
-// Copyright (c) 2007-2009 Nokia Corporation and/or its subsidiary(-ies).
+// Copyright (c) 2007-2010 Nokia Corporation and/or its subsidiary(-ies).
 // All rights reserved.
 // This component and the accompanying materials are made available
 // under the terms of "Eclipse Public License v1.0"
@@ -51,6 +51,44 @@ protected:
     };
 #ifdef SYMBIAN_BUILD_GCE
 /**
+ * Test external display feature using CMediaClientVideoDisplay.
+ *
+ * RTestMediaClientExternalDisplay
+ *
+ */
+class RTestMediaClientExternalDisplay : public RTestVclnt2AviPlayerStep
+    {
+public:
+    static RTestMediaClientExternalDisplay* NewL(const TDesC& aTestName);
+        
+protected:    
+    virtual TVerdict DoTestStepPreambleL();
+    virtual TVerdict DoTestStepPostambleL();
+
+    virtual void FsmL(TVclntTestPlayEvents aEventCode);
+    
+    virtual void HandleIdleL();
+    virtual void HandleOpenCompleteL();
+    virtual void HandlePrepareCompleteL();
+    virtual void HandlePlayCompleteL();
+    
+    // called by HandlePrepareCompleteL to trigger the video playback
+    virtual void StartPlayback();    
+
+    // constructor    
+    RTestMediaClientExternalDisplay(const TDesC& aTestName);
+    
+    TVerdict SetInitialConnectionType();
+    TVerdict SetConnectionTypeNotification();
+    TVerdict SetExternalDisplayControl();
+    
+private:
+    TPtrC iInitialExternalDisplayTypeFilename;
+    TPtrC iNextExternalDisplayTypeFilename;
+    TBool iExternalDisplayControl;
+    };
+    
+/**
  * Test CMediaClientVideoDisplay.This test makes sure that the new dll 
  * (mediaclientvideodisplay) is loaded and used.
  *
@@ -79,7 +117,7 @@ protected:
     // constructor    
     RTestMediaClientVideoDisplay(const TDesC& aTestName, const TDesC& aSectName,const TDesC& aKeyName, TInt aExpectedError);
     };
-    
+
 #endif
 
 

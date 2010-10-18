@@ -109,7 +109,6 @@ TVerdict CTestVclntVideoFile::DoTestStepL()
 		CActiveScheduler::Start();
 		}
 
-	// Until JetStream
 #ifndef JETSTREAM_TESTS
 	if(iError == KErrNotSupported)
 		ret = EPass;
@@ -284,7 +283,6 @@ TVerdict CTestVclntVideoDes::DoTestStepL()
 		CActiveScheduler::Start();
 		}
 
-	// Until JetStream
 #ifndef JETSTREAM_TESTS
 	if(iError == KErrNotSupported)
 		ret = EPass;
@@ -421,7 +419,6 @@ TVerdict CTestVclntVideoUrl::DoTestStepL()
 	INFO_PRINTF1(_L("CVideoPlayerUtility: Opening URL"));
 	CActiveScheduler::Start();
 
-	// Until JetStream
 #ifndef JETSTREAM_TESTS
 	if(iError == KErrNotSupported)
 		ret = EPass;
@@ -939,7 +936,7 @@ TVerdict CTestVclntPlayWindow::DoTestL(CVideoPlayerUtility* aPlayer)
 		}
 	else
 		{
-		// TBD - arguments to be correctly set
+		// XXX - arguments to be correctly set
 		CWsScreenDevice sd;
 		RBlankWindow window;
 		TRect rect, clipRect;

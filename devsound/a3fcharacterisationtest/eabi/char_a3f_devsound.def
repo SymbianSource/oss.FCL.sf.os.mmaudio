@@ -362,4 +362,6 @@ EXPORTS
 	_ZTV44RA3FDevSoundPlayEmptyBuffersWhilePlayingTest @ 361 NONAME
 	_ZTI49RA3FDevSoundPlayPreemptedByToneAfterSetVolumeTest @ 362 NONAME
 	_ZTV49RA3FDevSoundPlayPreemptedByToneAfterSetVolumeTest @ 363 NONAME
+	_ZTI41RA3FDevSoundTonePlayToneFixedSequenceTest @ 364 NONAME
+	_ZTV41RA3FDevSoundTonePlayToneFixedSequenceTest @ 365 NONAME
 

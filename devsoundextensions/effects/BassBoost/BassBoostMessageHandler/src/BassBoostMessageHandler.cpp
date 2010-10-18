@@ -48,7 +48,9 @@ EXPORT_C CBassBoostMessageHandler* CBassBoostMessageHandler::NewL(
     {
     CBassBoost* bassboost = (CBassBoost*)aCustomInterface;
     CBassBoostMessageHandler* self = new (ELeave) CBassBoostMessageHandler(bassboost);
+    CleanupStack::PushL(self);
 	self->ConstructL();
+	CleanupStack::Pop(self);
     return self;
     }
 

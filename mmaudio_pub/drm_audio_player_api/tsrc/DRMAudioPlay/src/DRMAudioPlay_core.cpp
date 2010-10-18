@@ -655,6 +655,11 @@ TInt CDRMAudioPlay::TestCasePlayHandlerWithSetPositionL(CStifSectionParser *sect
 
 		TTimeIntervalMicroSeconds ExpectedDuration = TTimeIntervalMicroSeconds(I64INT(sndPlayer->GetDuration().Int64()) - I64INT(Position.Int64()));
 		iLogger->Log(_L("ExpectedDuration: %d") ,ExpectedDuration.Int64() );
+		
+		//if total duration less than the setposition value, set the expected duration to zero
+		//to handle test cases with setposition >   total duration.
+		if(ExpectedDuration.Int64() < 0)
+		    ExpectedDuration = TTimeIntervalMicroSeconds(I64INT(0));
 
 		if (  Abs(ExpectedDuration.Int64() - PerceivedDuration.Int64()) > ErrorRange.Int64() )
 			{	//Durations too different
