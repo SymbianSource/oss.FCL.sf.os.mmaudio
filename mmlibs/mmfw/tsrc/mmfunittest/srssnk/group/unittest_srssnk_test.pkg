@@ -15,8 +15,18 @@
 
 "\epoc32\release\armv5\udeb\tsu_mmf_srssnk.dll"-"c:\sys\bin\tsu_mmf_srssnk.dll"
 
+"\epoc32\release\armv5\urel\mmfaudiotonetestcontroller.dll"-"c:\sys\bin\mmfaudiotonetestcontroller.dll"
+"\epoc32\localisation\2002C398\rsc\2002C398.rpp"-"c:\localisation\2002C398\rsc\2002C398.rpp"
+"\epoc32\localisation\group\2002C398.info"-"c:\localisation\group\2002C398.info"
+"\epoc32\data\z\resource\plugins\mmfaudiotonetestcontroller.rsc"-"c:\resource\plugins\mmfaudiotonetestcontroller.rsc"
+
+"\epoc32\release\armv5\urel\mmfaudiowavtestcontroller.dll"-"c:\sys\bin\mmfaudiowavtestcontroller.dll"
+"\epoc32\localisation\2002C397\rsc\2002C397.rpp"-"c:\localisation\2002C397\rsc\2002C397.rpp"
+"\epoc32\localisation\group\2002C397.info"-"c:\localisation\group\2002C397.info"
+"\epoc32\data\z\resource\plugins\mmfaudiowavtestcontroller.rsc"-"c:\resource\plugins\mmfaudiowavtestcontroller.rsc"
+
 "\epoc32\release\armv5\urel\mmfmp3format.dll"-"c:\sys\bin\mmfmp3format.dll"
-"\epoc32\localisation\101f7d99\rsc\101f7d99.rpp"-"c:\localisation\101f7d99\rsc\101f7d29.rpp"
+"\epoc32\localisation\101f7d99\rsc\101f7d99.rpp"-"c:\localisation\101f7d99\rsc\101f7d99.rpp"
 "\epoc32\localisation\group\101f7d99.info"-"c:\localisation\group\101f7d99.info"
 "\epoc32\data\z\resource\plugins\mmfmp3format.rsc"-"c:\resource\plugins\mmfmp3format.rsc"
 
@@ -74,13 +84,13 @@
 "\epoc32\release\armv5\urel\ts_cmmftestcustomcommands.dll"-"c:\sys\bin\ts_cmmftestcustomcommands.dll"
 
 // script files
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\srssnk\TSU_MMF_SRSSNK_ALLOC.script"-"c:\TSU_MMF_SRSSNK_ALLOC.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\srssnk\TSU_MMF_SRSSNK_FH_ALLOC.script"-"c:\TSU_MMF_SRSSNK_FH_ALLOC.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\srssnk\TSU_MMF_SRSSNK_Panic.script"-"c:\TSU_MMF_SRSSNK_Panic.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\srssnk\TSU_MMF_SRSSNK_ALLOC.script"-"c:\TSU_MMF_SRSSNK_ALLOC.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\srssnk\TSU_MMF_SRSSNK_FH_ALLOC.script"-"c:\TSU_MMF_SRSSNK_FH_ALLOC.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\srssnk\TSU_MMF_SRSSNK_Panic.script"-"c:\TSU_MMF_SRSSNK_Panic.script"
 
 //data files
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\srssnk\data\MMFTestFile1.dat"-"c:\mm\mmf\testfiles\srssnk\mmftestfile1.dat"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\srssnk\data\MMFTestFile2.dat"-"c:\mm\mmf\testfiles\srssnk\mmftestfile2.dat"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\srssnk\data\MMFTestFile3.dat"-"c:\mm\mmf\testfiles\srssnk\mmftestfile3.dat"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\srssnk\data\mmftestfile1.wav"-"c:\mm\mmf\testfiles\srssnk\mmftestfile1.wav"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\srssnk\data\mmftestfile2.wav"-"c:\mm\mmf\testfiles\srssnk\mmftestfile2.wav"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\srssnk\data\MMFTestFile1.dat"-"c:\mm\mmf\testfiles\srssnk\mmftestfile1.dat"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\srssnk\data\MMFTestFile2.dat"-"c:\mm\mmf\testfiles\srssnk\mmftestfile2.dat"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\srssnk\data\MMFTestFile3.dat"-"c:\mm\mmf\testfiles\srssnk\mmftestfile3.dat"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\srssnk\data\mmftestfile1.wav"-"c:\mm\mmf\testfiles\srssnk\mmftestfile1.wav"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\srssnk\data\mmftestfile2.wav"-"c:\mm\mmf\testfiles\srssnk\mmftestfile2.wav"

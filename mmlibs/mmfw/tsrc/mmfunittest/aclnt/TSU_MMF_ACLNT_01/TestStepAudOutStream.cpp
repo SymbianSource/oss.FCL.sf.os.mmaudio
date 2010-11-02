@@ -62,19 +62,19 @@ const TInt KWaitReadTime = 500000;
 const TConvParameters KTestParameters[] =
 {	
 	// straight encode test
-	{ _S("MM-MMF-ACLNT-U-0631-CP"), KMMFFourCCCodePCMU8,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, _S("PU8Mono1KhzTone.wav"),	KErrNone },
-	{ _S("MM-MMF-ACLNT-U-0632-CP"), KMMFFourCCCodePCMU8,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsStereo, _S("PU8Stereo1KhzTone.wav"),	KErrNone },
-	{ _S("MM-MMF-ACLNT-U-0633-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, _S("PCMExp500hzMono8Khz.wav"),	KErrNone },
+	{ _S("MM-MMF-ACLNT-U-0631-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, 	_S("PCMExp500hzMono8Khz.wav"),		KErrNone },
+	{ _S("MM-MMF-ACLNT-U-0632-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsStereo, _S("PCMExp500hzStereo8Khz.wav"),	KErrNone },
+	{ _S("MM-MMF-ACLNT-U-0633-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, 	_S("PCMExp500hzMono8Khz.wav"),		KErrNone },
 	{ _S("MM-MMF-ACLNT-U-0634-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsStereo, _S("PCMExp500hzStereo8Khz.wav"),	KErrNone },
-	{ _S("MM-MMF-ACLNT-U-0635-CP"), KMMFFourCCCodeALAW,    TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, _S("Mono500hzALw.wav"),	KErrNone },
-	{ _S("MM-MMF-ACLNT-U-0636-CP"), KMMFFourCCCodeALAW,    TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsStereo, _S("Stereo500hzALw.wav"),	KErrNone },
-	{ _S("MM-MMF-ACLNT-U-0637-CP"), KMMFFourCCCodeMuLAW,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, _S("Mono500hzMuLaw.wav"),	KErrNone },
-	{ _S("MM-MMF-ACLNT-U-0638-CP"), KMMFFourCCCodeMuLAW,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsStereo, _S("Stereo500hzMuLaw.wav"),	KErrNone },
-	{ _S("MM-MMF-ACLNT-U-0639-CP"), KMMFFourCCCodeIMAD,    TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, _S("ImaAdpcmMono8khz.wav"),	KErrNone },
-	{ _S("MM-MMF-ACLNT-U-0640-CP"), KMMFFourCCCodePCM16B,  TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, _S("Au16Be8khz500hzMono.au"),	KErrNone },
-	{ _S("MM-MMF-ACLNT-U-0641-CP"), KMMFFourCCCodePCM16B,  TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsStereo, _S("AuStereo8khz500hz.au"),	KErrNone },
-	{ _S("MM-MMF-ACLNT-U-0858-CP"), KMMFFourCCCodeIMAD,    TMdaAudioDataSettings::ESampleRate32000Hz,	TMdaAudioDataSettings::EChannelsMono, _S("ImaAdpcmMono8khz.wav"),	KErrNone },
-	{ _S("MM-MMF-ACLNT-U-0859-CP"), KMMFFourCCCodeIMAD,    TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, _S("ImaAdpcmMono8khz.wav"),	KErrNone }
+	{ _S("MM-MMF-ACLNT-U-0635-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, 	_S("PCMExp500hzMono8Khz.wav"),		KErrNone },
+	{ _S("MM-MMF-ACLNT-U-0636-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsStereo, _S("PCMExp500hzStereo8Khz.wav"),	KErrNone },
+	{ _S("MM-MMF-ACLNT-U-0637-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, 	_S("PCMExp500hzMono8Khz.wav"),		KErrNone },
+	{ _S("MM-MMF-ACLNT-U-0638-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsStereo, _S("PCMExp500hzStereo8Khz.wav"),	KErrNone },
+	{ _S("MM-MMF-ACLNT-U-0639-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, 	_S("PCMExp500hzMono8Khz.wav"),		KErrNone },
+	{ _S("MM-MMF-ACLNT-U-0640-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, 	_S("PCMExp500hzMono8Khz.wav"),		KErrNone },
+	{ _S("MM-MMF-ACLNT-U-0641-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsStereo, _S("PCMExp500hzStereo8Khz.wav"),	KErrNone },
+	{ _S("MM-MMF-ACLNT-U-0858-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsMono, 	_S("PCMExp500hzMono8Khz.wav"),		KErrNone },
+	{ _S("MM-MMF-ACLNT-U-0859-CP"), KMMFFourCCCodePCM16,   TMdaAudioDataSettings::ESampleRate8000Hz,	TMdaAudioDataSettings::EChannelsStereo, _S("PCMExp500hzStereo8Khz.wav"),	KErrNone }
 };
 	
 CTestStepAudOutStream* CTestStepAudOutStream::NewL()

@@ -96,6 +96,7 @@ _LIT( KTagMidiClient, "MidiClient");
 _LIT( KTagDrmPlayer, "DrmPlayer");
 _LIT( KTagVideoPlayer, "VideoPlayer");
 _LIT( KTagVideoRecord, "VideoRecord");
+_LIT(KTagAudioConvert,"AudioConvert");
 
 #ifdef __WINSCW__
 _LIT( KAudioMidiFile, "c:\\testing\\data\\aqualung.mid");
@@ -393,6 +394,7 @@ NONSHARABLE_CLASS(CAudioRoutingTestClass) : public CScriptBase,
 		TInt CreateAudioInput( CStifItemParser& aItem );
 		void CreateInput();
 		void CreateOutput();
+		void   CreateOutput_AudioConvert();
 		TInt CreateVideoInput();
 
 		/*To create and destroy the window to start the CVideoPlayerUtility */
@@ -412,6 +414,11 @@ NONSHARABLE_CLASS(CAudioRoutingTestClass) : public CScriptBase,
 		TInt SetAudioOutputL();
 		TInt SetSecureOutputL();
 		TInt UnregisterObserver();
+		TInt CustomCommandSyncAsync(); 
+		TInt CustomCommandRecord();   
+		TInt CustomCommandRouting();  
+		TInt CustomCommandVRecord(); 
+		
 
     public:     // Data
         // ?one_line_short_description_of_data
@@ -430,6 +437,7 @@ NONSHARABLE_CLASS(CAudioRoutingTestClass) : public CScriptBase,
     	CMdaAudioRecorderUtility* 	iRecorder;
     	CVideoRecorderUtility* 		iVideoRecord;
     	CMdaAudioPlayerUtility* 	iUtil;
+    	CMdaAudioConvertUtility*    iUtilConvert;
     	TBool						isInput;
 		CMMFDevSound*				iDevSound;
 		CCustomInterfaceUtility*   	iCustomInterfaceUtility;

@@ -2109,6 +2109,7 @@ TVerdict CTestStepRecorderSetPosition::DoTestStepL()
 	if (iCurrentState != CMdaAudioRecorderUtility::EPlaying)
 		return EInconclusive;
 	position = iRecorderUtility->Position();
+	INFO_PRINTF2(_L("Clip Position = %d microseconds"), I64LOW(position.Int64()));
 	iRecorderUtility->SetPosition(TTimeIntervalMicroSeconds(KTwoSeconds));
 
 	// wait once for end of play - this should produce KErrNone

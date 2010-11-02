@@ -15,6 +15,16 @@
 
 "\epoc32\release\armv5\urel\tsu_mmf_basecl.DLL"-"c:\sys\bin\tsu_mmf_basecl.DLL"
 
+"\epoc32\release\armv5\urel\mmfaudiotonetestcontroller.dll"-"c:\sys\bin\mmfaudiotonetestcontroller.dll"
+"\epoc32\localisation\2002C398\rsc\2002C398.rpp"-"c:\localisation\2002C398\rsc\2002C398.rpp"
+"\epoc32\localisation\group\2002C398.info"-"c:\localisation\group\2002C398.info"
+"\epoc32\data\z\resource\plugins\mmfaudiotonetestcontroller.rsc"-"c:\resource\plugins\mmfaudiotonetestcontroller.rsc"
+
+"\epoc32\release\armv5\urel\mmfaudiowavtestcontroller.dll"-"c:\sys\bin\mmfaudiowavtestcontroller.dll"
+"\epoc32\localisation\2002C397\rsc\2002C397.rpp"-"c:\localisation\2002C397\rsc\2002C397.rpp"
+"\epoc32\localisation\group\2002C397.info"-"c:\localisation\group\2002C397.info"
+"\epoc32\data\z\resource\plugins\mmfaudiowavtestcontroller.rsc"-"c:\resource\plugins\mmfaudiowavtestcontroller.rsc"
+
 "\epoc32\release\armv5\urel\tsu_mmf_basecl_testsrcsink.dll"-"c:\sys\bin\tsu_mmf_basecl_testsrcsink.dll"
 "\epoc32\localisation\101f77ca\rsc\101f77ca.rpp"-"c:\localisation\101f77ca\rsc\101f77ca.rpp"
 "\epoc32\localisation\group\101f77ca.info"-"c:\localisation\group\101f77ca.info"
@@ -31,21 +41,21 @@
 "\epoc32\data\z\resource\plugins\tsu_mmf_basecl_testformat.rsc"-"c:\resource\plugins\tsu_mmf_basecl_testformat.rsc"
 
 // script files
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\TSU_MMF_BASECL.script"-"c:\tsu_mmf_basecl.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\TSU_MMF_BASECL_Alloc.script"-"c:\tsu_mmf_basecl_alloc.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\TSU_MMF_BASECL.script"-"c:\tsu_mmf_basecl.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\TSU_MMF_BASECL_Alloc.script"-"c:\tsu_mmf_basecl_alloc.script"
 
 // ini file
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\tsu_mmf_basecl.ini"-"c:\tsu_mmf_basecl.ini"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\tsu_mmf_basecl.ini"-"c:\tsu_mmf_basecl.ini"
 
 //data files
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_1_8000_2.refsnd"-"c:\reference100hztone8000_1_8000_2.refsnd"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_2_8000_1.refsnd"-"c:\reference100hztone8000_2_8000_1.refsnd"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_1_11025_1.refsnd"-"c:\reference100hztone8000_1_11025_1.refsnd"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_1_11025_2.refsnd"-"c:\reference100hztone8000_1_11025_2.refsnd"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_1_6500_1.refsnd"-"c:\reference100hztone8000_1_6500_1.refsnd"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_1_6500_2.refsnd"-"c:\reference100hztone8000_1_6500_2.refsnd"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_2_11025_1.refsnd"-"c:\reference100hztone8000_2_11025_1.refsnd"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_2_11025_2.refsnd"-"c:\reference100hztone8000_2_11025_2.refsnd"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_2_6500_1.refsnd"-"c:\reference100hztone8000_2_6500_1.refsnd"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_2_6500_2.refsnd"-"c:\reference100hztone8000_2_6500_2.refsnd"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_1_8000_2.refsnd"-"c:\reference100hztone8000_1_8000_2.refsnd"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_2_8000_1.refsnd"-"c:\reference100hztone8000_2_8000_1.refsnd"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_1_11025_1.refsnd"-"c:\reference100hztone8000_1_11025_1.refsnd"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_1_11025_2.refsnd"-"c:\reference100hztone8000_1_11025_2.refsnd"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_1_6500_1.refsnd"-"c:\reference100hztone8000_1_6500_1.refsnd"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_1_6500_2.refsnd"-"c:\reference100hztone8000_1_6500_2.refsnd"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_2_11025_1.refsnd"-"c:\reference100hztone8000_2_11025_1.refsnd"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_2_11025_2.refsnd"-"c:\reference100hztone8000_2_11025_2.refsnd"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_2_6500_1.refsnd"-"c:\reference100hztone8000_2_6500_1.refsnd"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\basecl\data\Reference100HzTone8000_2_6500_2.refsnd"-"c:\reference100hztone8000_2_6500_2.refsnd"
 

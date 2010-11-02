@@ -217,11 +217,20 @@ void CMMFDataPath::ObtainSyncBuffersL()
 	//CreateSourceBufferL and CreateSinkBufferL we will need to obtain them by 
 	//asynchronous buffer creation when playing starts.
 
+	TInt err = KErrNone;
 	if (iBuffersToUse & ENeedSourceBuffer)
 		{
 		if (!iSourceBuffer) //we may already have a buffer from a previous initialization
 			{
-			TRAPD(err, iSourceBuffer = iDataSource->CreateSourceBufferL(iMediaId,*iSinkBuffer, iSrcBufRef));
+	        if(iSinkBuffer)
+	            {
+	            TRAP(err, iSourceBuffer = iDataSource->CreateSourceBufferL(iMediaId,*iSinkBuffer, iSrcBufRef));
+	            }
+	        else
+	            {
+	            TRAP(err, iSourceBuffer = iDataSource->CreateSourceBufferL(iMediaId,iSrcBufRef));
+	            }
+	      
 			if(err != KErrNone && err != KErrNotSupported)
 				{
 #ifdef _DP_DEBUG

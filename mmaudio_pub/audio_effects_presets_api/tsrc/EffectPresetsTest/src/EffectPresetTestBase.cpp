@@ -502,6 +502,6 @@ void CEffectPresetsTest::MvpuoPlayComplete(TInt aError)
 
 void CEffectPresetsTest::MvpuoEvent(const TMMFEvent& aEvent)
 	{
-	iLogger->Log(_L("MvpuoPrepareComplete: %x"), aEvent);
-	RDebug::Print(_L("CEffectPresetsTest::MvpuoPrepareComplete :-> Error[%x]"), aEvent);
+ 	iLogger->Log(_L("MvpuoPrepareComplete: %d"), aEvent.iErrorCode); 
+	RDebug::Print(_L("CEffectPresetsTest::MvpuoPrepareComplete :-> Error[%d]"), aEvent.iErrorCode);
 	}

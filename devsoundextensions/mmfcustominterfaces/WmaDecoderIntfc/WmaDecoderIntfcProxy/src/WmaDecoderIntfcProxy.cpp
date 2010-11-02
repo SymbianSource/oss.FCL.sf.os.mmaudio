@@ -511,7 +511,7 @@ EXPORT_C TInt CWmaDecoderIntfcProxy::GetSupportedMaxBitrate(TUint& aSupportedMax
 //------------------------------------------------------------------------------
 // Get Supported Max Sample Rate
 //------------------------------------------------------------------------------
-TInt CWmaDecoderIntfcProxy::GetSupportedMaxSampleRate(TUint& aSupportedMaxSampleRate)
+EXPORT_C TInt CWmaDecoderIntfcProxy::GetSupportedMaxSampleRate(TUint& aSupportedMaxSampleRate)
 	{
     TInt status = KErrNone;
     

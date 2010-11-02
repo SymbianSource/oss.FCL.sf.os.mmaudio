@@ -21,7 +21,7 @@
 #include <simulprocclient.h>
 
 #include <e32msgqueue.h>
-const TInt KMaxMessageQueueItems = 16;
+
 
 TAny GetDriveName(TDes& aFileName)
 	{

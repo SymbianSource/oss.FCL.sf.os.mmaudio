@@ -32,6 +32,7 @@ PRJ_TESTEXPORTS
 ../scripts/TSU_MMF_ACLNT_01_POS_5.script		c:/mm/TSU_MMF_ACLNT_01_POS_5.script
 ../scripts/TSU_MMF_ACLNT_01_POS_6.script		c:/mm/TSU_MMF_ACLNT_01_POS_6.script
 ../scripts/TSU_MMF_ACLNT_01_POS_7.script		c:/mm/TSU_MMF_ACLNT_01_POS_7.script
+../scripts/TSU_MMF_ACLNT_01_POS_8.script		c:/mm/TSU_MMF_ACLNT_01_POS_8.script
 ../scripts/TSU_MMF_ACLNT_01_tone.script		c:/mm/TSU_MMF_ACLNT_01_tone.script
 ../scripts/TSU_MMF_ACLNT_01_PREEMPTION.script		c:/mm/tsu_mmf_aclnt_01_preemption.script
 ../scripts/TSU_MMF_ACLNT_01_NOTIFICATION.script		c:/mm/tsu_mmf_aclnt_01_notification.script
@@ -77,7 +78,7 @@ PRJ_TESTEXPORTS
 ../TSU_MMF_ACLNT_01/data/PCM16bitStereo.wav	c:/mm/mmf/testfiles/aclnt/pcm16bitstereo.wav
 ../TSU_MMF_ACLNT_01/data/4sec_wav.wav		c:/mm/mmf/testfiles/aclnt/4sec_wav.wav
 ../TSU_MMF_ACLNT_01/data/sample.wav		c:/mm/mmf/testfiles/aclnt/sample.wav
-../TSU_MMF_ACLNT_01/data/sequence2.sqn		c:/mm/mmf/testfiles/aclnt/sequence2.sqn
+../TSU_MMF_ACLNT_01/data/NokiaTune.nrt		c:/mm/mmf/testfiles/aclnt/NokiaTune.nrt
 ../TSU_MMF_ACLNT_01/data/testheaderTag.au		c:/mm/mmf/testfiles/aclnt/testheadertag.au
 ../TSU_MMF_ACLNT_01/data/cdec_ff_wav_fr.wav	c:/mm/mmf/testfiles/aclnt/cdec_ff_wav_fr.wav
 ../TSU_MMF_ACLNT_01/data/CorruptSampleRate.wav	c:/mm/mmf/testfiles/aclnt/corruptsamplerate.wav

@@ -28,5 +28,5 @@
 
 #include "../../avictrl/group/bld.inf"
 
-#include "../../vclnt/group/bld.inf"
+#include "../../VCLNT/group/bld.inf"
 

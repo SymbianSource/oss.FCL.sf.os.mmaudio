@@ -183,7 +183,11 @@ TInt CAudioRoutingTestClass::RunMethodL( CStifItemParser& aItem )
 		ENTRY( "SetAudioOutput", CAudioRoutingTestClass::SetAudioOutputL),
 		ENTRY( "SetSecureOutput", CAudioRoutingTestClass::SetSecureOutputL),
 		ENTRY( "UnregisterObserver", CAudioRoutingTestClass::UnregisterObserver),
-        };
+		ENTRY( "CustomCommandPlay",CAudioRoutingTestClass::CustomCommandSyncAsync),
+		ENTRY("CustomCommandRec",CAudioRoutingTestClass::CustomCommandRecord),
+		ENTRY("CustomCommandRoute",CAudioRoutingTestClass::CustomCommandRouting),
+		ENTRY("CustomCommandVRecord",CAudioRoutingTestClass::CustomCommandVRecord)
+		 };
 
     const TInt count = sizeof( KFunctions ) / sizeof( TStifFunctionInfo );
 
@@ -491,6 +495,14 @@ TInt CAudioRoutingTestClass::CreateObject( CStifItemParser& aItem )
 			{
 			TRAP(error,iCustomCommandUtility = CCustomCommandUtility::NewL(*iUtil));
 			}
+		if (type == KTagAudioConvert)
+		    {
+		     TRAP(error,iCustomCommandUtility = CCustomCommandUtility::NewL(*iUtilConvert));
+		    }
+		if(type ==KTagCustomCommand)
+		    {
+               TRAP(error,iCustomCommandUtility = CCustomCommandUtility::NewL(*iUtil));
+		    }
 		else
 			{
 			TRAP(error,iCustomCommandUtility = CCustomCommandUtility::NewL(*iRecorder,ETrue));
@@ -512,6 +524,14 @@ TInt CAudioRoutingTestClass::CreateObject( CStifItemParser& aItem )
 			{
 			TRAP(error,iCustomInterfaceUtility = CCustomInterfaceUtility::NewL(*iRecorder,ETrue));
 			}
+		else if(type == KTagAudioConvert)
+		    {
+            TRAP(error,iCustomInterfaceUtility = CCustomInterfaceUtility::NewL(*iUtilConvert));
+		    }
+		else if(type == KTagDevSound)
+	    {
+		  TRAP(error,iCustomInterfaceUtility = CCustomInterfaceUtility::NewL(*iDevSound));
+		 }
 		}
 	else if (object == KTagInputStream)
 		{
@@ -570,8 +590,8 @@ TInt CAudioRoutingTestClass::CreateObject( CStifItemParser& aItem )
 		TRAP(error, CreateSessionAndScreen());
 		TRAP(error, CreateWindowGroup());
 		TRAP(error, CreateVideoWindow());
-		TRAP(error, CreateVideoObject());	    
-		}
+		TRAP(error, CreateVideoObject());
+    }
 	else if(object == KTagVideoRecord)
 	    {
         TRAP(error, CreateVideoRecorderObject());        
@@ -603,9 +623,10 @@ TInt CAudioRoutingTestClass::CreateAudioInput( CStifItemParser& aItem )
 		FTRACE(FPrint(_L("CAudioRoutingTest::CAudioInput")));
 		iLog->Log(_L("CAudioRoutingTest::CAudioInput"));		
 		TRAP(error, iAudioInput = CAudioInput::NewL(*iVideoRecord));
-		if (error == KErrNone)
+		if (error == KErrNotFound)
 			{
-			iLog->Log(_L("CAudioInput::NewL(*iVideoRecord) OK"));
+		    error = KErrNone;
+			iLog->Log(_L("CAudioInput::NewL(*iVideoRecord) OK with expected error"));
 			}
 		}
 
@@ -785,6 +806,11 @@ void CAudioRoutingTestClass::CreateOutput()
 	iUtil = CMdaAudioPlayerUtility::NewFilePlayerL(KMp3TestFile, *this);
    }
 
+void CAudioRoutingTestClass::CreateOutput_AudioConvert()
+    {
+    isInput = EFalse;
+    iUtilConvert = CMdaAudioConvertUtility::NewL(*this,NULL);
+    }
 TInt CAudioRoutingTestClass::CreateVideoInput()
    {
   // TInt error1 = KErrNone;
@@ -1041,4 +1067,92 @@ TInt CAudioRoutingTestClass::UnregisterObserver()
 	iLog->Log(_L("iAudioOutput - UnregisterObserver "));
 	return KErrNone;
 }
+TInt CAudioRoutingTestClass::CustomCommandSyncAsync()
+     {
+    iLog->Log(_L("CustomCommandPlay-CustomCommandSyncAsync"));
+     TMMFMessageDestination temp(TUid::Uid(0),NULL);
+     const TMMFMessageDestinationPckg destination(temp) ;
+     TInt function = 1;
+           _LIT8(KData1, "NULL");
+               
+           const TDesC8&   dataTo1 = KData1;
+           const TDesC8&   dataTo2 = KData1;
+           TRequestStatus status = NULL;
+           TBuf8 <50> test;
+          iCustomCommandUtility = CCustomCommandUtility::NewL(*iUtil);
+          iCustomCommandUtility->CustomCommandAsync(destination,function,dataTo1,dataTo2,status);
+          iCustomCommandUtility->CustomCommandSync(destination,function,dataTo1,dataTo2);
+          iCustomCommandUtility->CustomCommandAsync(destination,function,dataTo1,dataTo2,test,status);
+             
+             return KErrNone;
+             }
+
+TInt CAudioRoutingTestClass::CustomCommandRecord()
+     {
+    iLog->Log(_L("CustomCommandRecord"));
+     TMMFMessageDestination temp(TUid::Uid(0),NULL);
+     const TMMFMessageDestinationPckg destination(temp) ;
+     TInt function = 1;
+           _LIT8(KData1, "NULL");
+               
+           const TDesC8&   dataTo1 = KData1;
+           const TDesC8&   dataTo2 = KData1;
+           TBuf8 <50> test;
+        	 TBool recstream = 0;
+           TBool recstream1 = 1;
+           TRequestStatus status = NULL;
+                   
+           iCustomCommandUtility = CCustomCommandUtility::NewL(*iRecorder,recstream);
+           iCustomCommandUtility->CustomCommandSync(destination,function,dataTo1,dataTo2,test);
+           iCustomCommandUtility->CustomCommandSync(destination,function,dataTo1,dataTo2);
+           iCustomCommandUtility = CCustomCommandUtility::NewL(*iRecorder,recstream1);
+           iCustomCommandUtility->CustomCommandAsync(destination,function,dataTo1,dataTo2,status);
+           iCustomCommandUtility->CustomCommandAsync(destination,function,dataTo1,dataTo2,test,status);
+           
+            return KErrNone;
+     }
+
+
+TInt CAudioRoutingTestClass::CustomCommandRouting()
+     {
+     	 iLog->Log(_L("CustomCommandRouting"));
+    
+     TMMFMessageDestination temp(TUid::Uid(0),NULL);
+     const TMMFMessageDestinationPckg destination(temp) ;
+     TInt function = 1;
+           _LIT8(KData1, "NULL");
+               
+           const TDesC8&   dataTo1 = KData1;
+           const TDesC8&   dataTo2 = KData1;
+          TRequestStatus status = NULL;
+           TBuf8 <50> test;
+                   
+           iCustomCommandUtility = CCustomCommandUtility::NewL(*iUtilConvert);
+          iCustomCommandUtility->CustomCommandAsync(destination,function,dataTo1,dataTo2,status);
+          iCustomCommandUtility->CustomCommandSync(destination,function,dataTo1,dataTo2);
+          iCustomCommandUtility->CustomCommandAsync(destination,function,dataTo1,dataTo2,test,status);
+                
+                 return KErrNone;
+          }
+
+TInt CAudioRoutingTestClass::CustomCommandVRecord()
+     {
+     iLog->Log(_L("CustomCommandVideoRecord"));
+     TMMFMessageDestination temp(TUid::Uid(0),NULL);
+     const TMMFMessageDestinationPckg destination(temp) ;
+     TInt function = 1;
+           _LIT8(KData1, "NULL");
+               
+           const TDesC8&   dataTo1 = KData1;
+           const TDesC8&   dataTo2 = KData1;
+           TRequestStatus status = NULL;
+           TBuf8 <50> test;
+                   
+          iCustomCommandUtility = CCustomCommandUtility::NewL(*iVideoRecord);
+          iCustomCommandUtility->CustomCommandAsync(destination,function,dataTo1,dataTo2,status);
+          iCustomCommandUtility->CustomCommandSync(destination,function,dataTo1,dataTo2);
+          iCustomCommandUtility->CustomCommandAsync(destination,function,dataTo1,dataTo2,test,status);
+                
+                 return KErrNone;
+          }
 //  End of File

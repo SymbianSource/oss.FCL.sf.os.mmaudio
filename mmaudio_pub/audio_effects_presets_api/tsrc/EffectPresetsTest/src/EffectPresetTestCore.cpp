@@ -396,9 +396,8 @@ TInt CTestAudioEqualizerUtility::BassBoostTest(CStifItemParser  */*aItem*/, TTes
 {
 	TInt err=KErrNone;
 
-	CBassBoost* bassBoost = NULL;
 	//iBassBoost = &iAudioEqualizerUtility->BassBoost();
-	TRAP(err, bassBoost = &iAudioEqualizerUtility->BassBoost());
+	TRAP(err, CBassBoost* bassBoost = &iAudioEqualizerUtility->BassBoost());
 
 	aResult.iResult = err;
 	if (err)

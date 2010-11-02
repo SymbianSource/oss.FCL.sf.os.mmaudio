@@ -1,0 +1,44 @@
+;
+; Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+; All rights reserved.
+; This component and the accompanying materials are made available
+; under the terms of "Eclipse Public License v1.0"
+; which accompanies this distribution, and is available
+; at the URL "http://www.eclipse.org/legal/epl-v10.html".
+;
+; Initial Contributors:
+; Nokia Corporation - initial contribution.
+;
+; Contributors:
+;
+; Description: TelephonyAudioRouting TestApplication
+;
+;Language - standard language definitions
+&EN
+
+; standard SIS file header
+#{"myplayer"},(0xe0edbe14),1,0,0
+
+;Localised Vendor name
+%{"Vendor-EN"}
+
+;Unique Vendor name
+:"Vendor"
+
+;Supports Series 60 v 3.0
+[0x101F7961], 0, 0, 0, {"Series60ProductID"}
+
+;Files to install
+;You should change the source paths to match that of your environment
+;<source> <destination>
+"$(EPOCROOT)Epoc32\release\$(PLATFORM)\$(TARGET)\myplayer_0xe0edbe14.exe"		-"!:\sys\bin\myplayer_0xe0edbe14.exe"
+"$(EPOCROOT)Epoc32\data\z\resource\apps\myplayer_0xe0edbe14.rsc"		-"!:\resource\apps\myplayer_0xe0edbe14.rsc"
+"$(EPOCROOT)Epoc32\data\z\private\10003a3f\apps\myplayer_0xe0edbe14_reg.rsc"	-"!:\private\10003a3f\import\apps\myplayer_0xe0edbe14_reg.rsc"
+"$(EPOCROOT)Epoc32\data\z\resource\apps\myplayer_0xe0edbe14.mif" -"!:\resource\apps\myplayer_0xe0edbe14.mif"
+"..\help\myplayer_0xe0edbe14.hlp"							 -"!:\resource\help\myplayer_0xe0edbe14.hlp"
+
+; Add any installation notes if applicable
+;"MyPlayer.txt"		-"!:\private\e0edbe14\MyPlayer.txt"
+
+;required for application to be covered by backup/restore facility 
+"..\sis\backup_registration.xml"		-"!:\private\e0edbe14\backup_registration.xml"

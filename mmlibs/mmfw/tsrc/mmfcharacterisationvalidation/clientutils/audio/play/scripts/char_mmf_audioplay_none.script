@@ -20,7 +20,7 @@ LOAD_SUITE char_mmf_audioplay.dll
 # wait for ring.wav to finish playing
 delay 1000
 
-//!@SYMTestCaseID             MM-MMF-APLCLNT-CHRTZ-NONE-I-0003
+//!@SYMTestCaseID             MM-MMF-APLCLNT-CHRTZ-NONE-I-0003  //This test is not running as the functionality is not supported.
 //!@SYMTestCaseDesc           Open an audio file with no controller to support the audio file format.
 //!@SYMTestPriority           4
 //!@SYMTestActions            1. Create audio player utility 2. Open an audio file with no controller to support the audio file format.

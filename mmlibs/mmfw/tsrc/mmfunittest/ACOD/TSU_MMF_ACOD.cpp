@@ -36,8 +36,8 @@ This code assumes the flash card is represented by drive E: on the target board.
 If this is not the case, the KSourceFilesDir and KComparisonFilesDir strings 
 need to be changed accordingly.
 */
-_LIT(KSourceFilesDir, "e:\\");
-_LIT(KComparisonFilesDir, "e:\\");
+_LIT(KSourceFilesDir, "c:\\");
+_LIT(KComparisonFilesDir, "c:\\");
 #endif
 
 //8KHz source files

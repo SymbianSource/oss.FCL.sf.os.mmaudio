@@ -13,7 +13,7 @@
 // Description:
 // MMF 'Deprecated Audio Clients' Unit Testing script 13/08/2002
 // 
-//
+////This script is not running as the functionality is not supported.
 
 # wait for ring.wav to finish playing
 delay 1000

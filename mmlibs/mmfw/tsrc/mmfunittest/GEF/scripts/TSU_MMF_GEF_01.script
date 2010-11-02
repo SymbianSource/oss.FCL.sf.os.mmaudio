@@ -19,7 +19,7 @@ LOAD_SUITE TSU_MMF_GEF.dll
 
 DELAY 10000
 
-//! @SYMTestCaseID MM-MMF-GEF-U-001
+//! @SYMTestCaseID MM-MMF-GEF-U-001    //This test is not running as the functionality is not supported.
 
 //RUN_TEST_STEP 30000, TSU_MMF_GEF, MM-MMF-GEF-U-001
 //TEST_COMPLETE
@@ -29,12 +29,12 @@ DELAY 10000
 RUN_TEST_STEP 30000, TSU_MMF_GEF, MM-MMF-GEF-U-002
 TEST_COMPLETE
 
-//! @SYMTestCaseID MM-MMF-GEF-U-003
+//! @SYMTestCaseID MM-MMF-GEF-U-003   //This test is not running as the functionality is not supported.
 
 //RUN_TEST_STEP 30000, TSU_MMF_GEF, MM-MMF-GEF-U-003
 //TEST_COMPLETE
 
-//! @SYMTestCaseID MM-MMF-GEF-U-004
+//! @SYMTestCaseID MM-MMF-GEF-U-004   //This test is not running as the functionality is not supported.
 
 //RUN_TEST_STEP 30000, TSU_MMF_GEF, MM-MMF-GEF-U-004
 //TEST_COMPLETE

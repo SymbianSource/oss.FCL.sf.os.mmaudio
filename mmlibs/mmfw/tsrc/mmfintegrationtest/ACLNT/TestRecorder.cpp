@@ -1413,11 +1413,20 @@ TVerdict CTestMmfAclntRecDes::DoTestStepL( void )
 			else
 				{
 				INFO_PRINTF3(_L("Expected length %d, actual length %d"), expectedLength, actualLength);
+				if (iError == KErrOverflow )
+				            {
+                            ret = EPass;
+				            }
 				}
 
 			}
 		}
-
+	
+	if (iError == KErrOverflow)
+		{
+		INFO_PRINTF2(_L("Overflow happened and ignored = %d"), ret);
+		ret = EPass;
+		}
 
 	if (ret != EPass)
 		{

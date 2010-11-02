@@ -1,6 +1,4 @@
-"\epoc32\release\$(platform)\urel\tsi_mmf_sdevsound.dll"-"c:\sys\bin\tsi_mmf_sdevsound.dll"
-"\epoc32\release\$(platform)\urel\sdsmmddtestserver.exe"-"c:\sys\bin\sdsmmddtestserver.exe"
-"\epoc32\release\$(platform)\urel\sdscaptestserver.exe"-"c:\sys\bin\sdscaptestserver.exe"
+"\epoc32\release\armv5\urel\tsi_mmf_sdevsound.dll"-"c:\sys\bin\tsi_mmf_sdevsound.dll"
 
 // script files
 "\epoc32\data\c\TSI_MMF_SDEVSOUND_01.script"-"c:\TSI_MMF_SDEVSOUND_01.script"

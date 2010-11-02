@@ -21,12 +21,12 @@
 #include <caf.h>
 #include <caf/supplier.h>
 #include <caf/importfile.h>
-#include <BAUTILS.H>
+#include <bautils.h>
 
 using namespace ContentAccess;
 
 	// Constants
-	const TInt CDRMAudioPlay::MAX_TESTCASE_ID = 1046;
+	const TInt CDRMAudioPlay::MAX_TESTCASE_ID = 1047;
 	const TInt CDRMAudioPlay::KDefaultRepeats = 5;
 	const TInt CDRMAudioPlay::KDefaultRepeatForever = -2;
 	const TInt CDRMAudioPlay::KDefaultPauseDelay = 1000000;
@@ -84,6 +84,8 @@ using namespace ContentAccess;
     const TInt CDRMAudioPlay::KCasePlayRepeatDRMFileWithPlayWindow                  = 1044;
     const TInt CDRMAudioPlay::KCasePlayPauseRepeatDRMFileWithPlayWindow             = 1045;
     const TInt CDRMAudioPlay::KCasePlayRepeatForeverDRMFileWithPlayWindow           = 1046;
+    const TInt CDRMAudioPlay::KCaseCustomCommand                                    = 1047;
+    
 
 // ** FilePlay *******************************************************
 TInt CDRMAudioPlay::TestCasePlayFileWithPauseL(CStifSectionParser *section , TTestResult &aResult)
@@ -339,7 +341,7 @@ TInt CDRMAudioPlay::TestCasePlayFileL(CStifSectionParser *section , TTestResult 
         	parseError = item->GetInt(KTagFileType, FileType);
         	CleanupStack::PopAndDestroy(item);
         	}
-
+        iLogger->Log(_L("Parse error:%d"),parseError);
         CSimpleSoundPlayer *sndPlayer = CSimpleSoundPlayer::NewL( FileName, TestModuleIf() , *iLogger, Immediate, FileType);
 
 		CleanupStack::PushL(sndPlayer);
@@ -935,7 +937,7 @@ TInt CDRMAudioPlay::TestCasePlayFileWithBalanceL(CStifSectionParser *section , T
 			iLogger->Log(_L("Setting Balance to: %d"), Balance);
 			sndPlayer->iBalance = Balance;
 			}
-
+    iLogger->Log(_L("Parse error:%d"),ParseError);
 		sndPlayer->iSetBalance = true;
 
 //		iLogger->Log(_L("Setting Balance to: %d"), Balance);
@@ -1005,7 +1007,7 @@ TInt CDRMAudioPlay::TestCasePlayDesL(CStifSectionParser *section , TTestResult &
         	parseError = item->GetInt(KTagDesReadOnly, DesReadOnly);
         	CleanupStack::PopAndDestroy(item);
         	}
-
+    iLogger->Log(_L("Parse error:%d"),parseError);
 		iLogger->Log(_L("Creating simple player with descriptor from [%S]"), &FileNamePtr);
 		CSimpleSoundPlayer *sndPlayer = CSimpleSoundPlayer::NewL( *SoundFile, TestModuleIf() , *iLogger, Immediate, DesReadOnly);
 
@@ -3455,6 +3457,8 @@ TInt CDRMAudioPlay::RunTestCaseFunctionL(TInt id , CStifSectionParser *section ,
             return TestCasePlayPauseRepeatDRMFileWithPlayWindow(section, aResult);
         case KCasePlayRepeatForeverDRMFileWithPlayWindow:
             return TestCasePlayRepeatForeverDRMFileWithPlayWindow(section, aResult);
+       case KCaseCustomCommand:
+           return TestCaseCustomCommand(section, aResult);
 		}
 	aResult.iResultDes.Copy(KConfigInvalid());
 	aResult.iResult = KErrNotExecuted;
@@ -4042,3 +4046,53 @@ TInt CDRMAudioPlay::TestCasePlayRepeatForeverDRMFileWithPlayWindow(CStifSectionP
         return KErrConfigInvalid;
         }
     }
+TInt CDRMAudioPlay:: TestCaseCustomCommand(CStifSectionParser *section , TTestResult &aResult)
+    {
+    TPtrC FileNamePtr;
+        TTimeIntervalMicroSeconds32 ReportDelay=KDefaultReportDelay;
+
+        if ( !section->GetLine(KTagSoundFile, FileNamePtr, ENoTag) )
+            {
+            TBool UsingDefaultReportDelay;;
+            TFileName FileName = FileNamePtr;
+            iLogger->Log(_L("Creating simple player with file [%S]"), &FileNamePtr);
+            CSimpleSoundPlayer *sndPlayer = CSimpleSoundPlayer::NewL( FileName, TestModuleIf() , *iLogger);
+            CleanupStack::PushL(sndPlayer);
+
+            //###############################################
+            ReportDelay = GetTimeIntervalL(section, KTagDelay, UsingDefaultReportDelay, (TTimeIntervalMicroSeconds32)KDefaultReportDelay);
+            iLogger->Log(_L("Setting delays to report position to [%d]"), ReportDelay.Int());
+            //###############################################
+
+            CParameters *reportParams = new(ELeave)CParameters(CSimpleSoundPlayer::KPlayerActionCustomCommand);
+            CleanupStack::PushL(reportParams);
+            CMediaEvent *mEventGetAudioLoadingProgress = CMediaEvent::NewLC(TestModuleIf() , *iLogger, ReportDelay, ReportDelay, sndPlayer, reportParams);
+
+            iLogger->Log(_L("Starting scheduler"));
+            CActiveScheduler::Start();
+
+            iLogger->Log(_L("Returned from player, errorcode: %d"), sndPlayer->iFinalError );
+
+            aResult.iResult = sndPlayer->iFinalError;
+
+          
+            if(aResult.iResult == KErrNotSupported)
+                {
+                  aResult.iResult = KErrNone;
+                }
+            CleanupStack::PopAndDestroy(mEventGetAudioLoadingProgress);
+            CleanupStack::Pop(reportParams);
+
+            CleanupStack::PopAndDestroy(sndPlayer);
+            return KErrNone;    //aResult.iResult;
+
+            }
+        else
+            {
+            //The file name of the clip to play is missing
+            aResult.iResultDes.Copy(KConfigInvalid());
+            aResult.iResult = KErrNotExecuted;
+            return KErrConfigInvalid;
+            }
+    }
+

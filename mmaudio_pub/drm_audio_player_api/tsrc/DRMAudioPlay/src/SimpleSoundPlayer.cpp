@@ -40,6 +40,7 @@ const TInt CSimpleSoundPlayer::KplayerActionSetPriority = 20;
 const TInt CSimpleSoundPlayer::KplayerActionSetRepeats = 21;
 const TInt CSimpleSoundPlayer::KPlayerActionGetMetaDataEntry = 22;
 const TInt CSimpleSoundPlayer::KPlayerActionGetNumberOfMetaDataEntries = 23;
+const TInt CSimpleSoundPlayer::KPlayerActionCustomCommand = 24;
 
 
 CSimpleSoundPlayer::CSimpleSoundPlayer(CTestModuleIf &aConsole, CStifLogger &aLogger, TBool aImmediate, TBool aFileType)
@@ -766,8 +767,8 @@ TInt CSimpleSoundPlayer::ExecuteL(CParameters *aParams)
             return ETrue;
             //break;
         case KplayerActionRegisterForAudioLoadingNotification:
- //       	MAudioLoadingObserver &aLoadingObserver=0;
- //       	RegisterForAudioLoadingNotification(aLoadingObserver);
+       	
+        	RegisterForAudioLoadingNotification(*this);
             return ETrue;
             //break;
         case KplayerActionControllerImplementationInformation:
@@ -799,9 +800,42 @@ TInt CSimpleSoundPlayer::ExecuteL(CParameters *aParams)
 		case KPlayerActionOpenFileHandler:
 			OpenFileHandlerL((static_cast<CFileNameParameters*>(aParams) )->GetFileName() , ETrue);
 			break;
+		case KPlayerActionCustomCommand:
+		    CustomCommand();
 		}
 	if (iIsLoopPlayEnabled)
 	    return ETrue;
 	else
 	    return EFalse;
 	}
+
+
+void CSimpleSoundPlayer::MaloLoadingStarted()
+    {
+     iLogger.Log(_L("CSimpleSoundPlayer::MaloLoadingStarted"));
+    }
+void CSimpleSoundPlayer::MaloLoadingComplete()
+    {
+    iLogger.Log(_L("CSimpleSoundPlayer::MaloLoadingComplete"));
+    }
+
+void CSimpleSoundPlayer::CustomCommand()
+    {
+          TBuf8<25> dataFrom;
+
+            TRequestStatus status;
+            TMMFMessageDestinationPckg dummyPckg;
+            TInt dummyFunc = 100;
+            TBuf8<8> dummyBuff;
+            iMdaPlayer->CustomCommandSync(dummyPckg,dummyFunc,dummyBuff,dummyBuff);
+            iMdaPlayer->CustomCommandSync(dummyPckg,dummyFunc,dummyBuff,dummyBuff,dataFrom);
+
+            iMdaPlayer->CustomCommandAsync(dummyPckg,dummyFunc,dummyBuff,dummyBuff,status);
+            User::WaitForRequest(status);
+
+            iMdaPlayer->CustomCommandAsync(dummyPckg,dummyFunc,dummyBuff,dummyBuff,dataFrom,status);
+           
+            User::WaitForRequest(status);
+
+            
+    }

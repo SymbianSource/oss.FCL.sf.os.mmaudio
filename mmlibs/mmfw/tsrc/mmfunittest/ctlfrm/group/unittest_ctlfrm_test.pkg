@@ -13,11 +13,22 @@
 // Description:
 //*Files (scripts, data, etc.) To Copy...<src> <destination>
 
+"\epoc32\release\armv5\urel\mmfaudiotonetestcontroller.dll"-"c:\sys\bin\mmfaudiotonetestcontroller.dll"
+"\epoc32\localisation\2002C398\rsc\2002C398.rpp"-"c:\localisation\2002C398\rsc\2002C398.rpp"
+"\epoc32\localisation\group\2002C398.info"-"c:\localisation\group\2002C398.info"
+"\epoc32\data\z\resource\plugins\mmfaudiotonetestcontroller.rsc"-"c:\resource\plugins\mmfaudiotonetestcontroller.rsc"
+
+"\epoc32\release\armv5\urel\mmfaudiowavtestcontroller.dll"-"c:\sys\bin\mmfaudiowavtestcontroller.dll"
+"\epoc32\localisation\2002C397\rsc\2002C397.rpp"-"c:\localisation\2002C397\rsc\2002C397.rpp"
+"\epoc32\localisation\group\2002C397.info"-"c:\localisation\group\2002C397.info"
+"\epoc32\data\z\resource\plugins\mmfaudiowavtestcontroller.rsc"-"c:\resource\plugins\mmfaudiowavtestcontroller.rsc"
+
 "\epoc32\release\armv5\urel\mmfmp3format.dll"-"c:\sys\bin\mmfmp3format.dll"
 "\epoc32\localisation\101f7d99\rsc\101f7d99.rpp"-"c:\localisation\101f7d99\rsc\101f7d29.rpp"
 "\epoc32\localisation\group\101f7d99.info"-"c:\localisation\group\101f7d99.info"
 "\epoc32\data\z\resource\plugins\mmfmp3format.rsc"-"c:\resource\plugins\mmfmp3format.rsc"
 
+"\epoc32\release\armv5\urel\mmfmp3nullcodec.dll"-"c:\sys\bin\mmfmp3nullcodec.dll"
 "\epoc32\localisation\101f7d9a\rsc\101f7d9a.rpp"-"c:\localisation\101f7d9a\rsc\101f7d9a.rpp"
 "\epoc32\localisation\group\101f7d9a.info"-"c:\localisation\group\101f7d9a.info"
 "\epoc32\data\z\resource\plugins\mmfmp3nullcodec.rsc"-"c:\resource\plugins\mmfmp3nullcodec.rsc"
@@ -72,10 +83,10 @@
 "\epoc32\release\armv5\urel\ts_cmmftestcustomcommands.dll"-"c:\sys\bin\ts_cmmftestcustomcommands.dll"
 
 // Script files
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\ctlfrm\scripts\TSU_MMF_CTLFRM.script"-"c:\tsu_mmf_ctlfrm.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\ctlfrm\scripts\TSU_MMF_CTLFRM_SDRM.script"-"c:\tsu_mmf_ctlfrm_sdrm.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\ctlfrm\scripts\TSU_MMF_CTLFRM_SDRM_ALLOC.script"-"c:\tsu_mmf_ctlfrm_sdrm_alloc.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\ctlfrm\scripts\tsu_mmf_ctlfrm_subtitles.script"-"c:\tsu_mmf_ctlfrm_subtitles.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\ctlfrm\scripts\TSU_MMF_CTLFRM.script"-"c:\tsu_mmf_ctlfrm.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\ctlfrm\scripts\TSU_MMF_CTLFRM_SDRM.script"-"c:\tsu_mmf_ctlfrm_sdrm.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\ctlfrm\scripts\TSU_MMF_CTLFRM_SDRM_ALLOC.script"-"c:\tsu_mmf_ctlfrm_sdrm_alloc.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\ctlfrm\scripts\tsu_mmf_ctlfrm_subtitles.script"-"c:\tsu_mmf_ctlfrm_subtitles.script"
 
 
 

@@ -44,4 +44,4 @@ PRJ_MMPFILES
 
 PRJ_TESTMMPFILES
 
-#include "../AudioEffectTestModule/Group/bld.inf"
+#include "../AudioEffectTestModule/group/bld.inf"

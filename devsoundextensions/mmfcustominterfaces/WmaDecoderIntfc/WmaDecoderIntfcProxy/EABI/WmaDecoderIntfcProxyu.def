@@ -34,4 +34,5 @@ EXPORTS
 	_ZN21CWmaDecoderIntfcProxyD2Ev @ 33 NONAME
 	_ZTI21CWmaDecoderIntfcProxy @ 34 NONAME ; #<TI>#
 	_ZTV21CWmaDecoderIntfcProxy @ 35 NONAME ; #<VT>#
+	_ZN21CWmaDecoderIntfcProxy25GetSupportedMaxSampleRateERj @ 36 NONAME
 

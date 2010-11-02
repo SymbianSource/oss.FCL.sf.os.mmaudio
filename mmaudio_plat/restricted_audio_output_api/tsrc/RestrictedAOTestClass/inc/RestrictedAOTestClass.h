@@ -24,14 +24,15 @@
 #include <StifLogger.h>
 #include <TestScripterInternal.h>
 #include <StifTestModule.h>
-
+#include <RestrictedAudioOutputMessageHandler.h>
 #include <e32svr.h>
 #include <e32base.h>
 #include <e32cons.h>
 #include <customInterfaceUtility.h>
 #include <SoundDevice.h>
+#include <ConfigurationComponentsFactory.h>
 #include <RestrictedAudioOutput.h>
-
+#include <RestrictedAudioOutputProxy.h>
 
 
 #include "TimeoutController.h"
@@ -298,7 +299,7 @@ NONSHARABLE_CLASS(CRestrictedAOTestClass) : public CScriptBase,
 		TInt GetAllowedOutput( CStifItemParser& aItem );
 		TInt Reset( CStifItemParser& aItem );
 		TInt Commit( CStifItemParser& aItem );
-
+		TInt GetUid(CStifItemParser& aItem);
 
 
     public:     // Data
@@ -314,10 +315,11 @@ NONSHARABLE_CLASS(CRestrictedAOTestClass) : public CScriptBase,
     // reference to TestModuleIf
     CTestModuleIf& iTestModuleIf;
 
+    	CConfigurationComponentsFactory* iFactory;
 			CMMFDevSound*	iDevSound;
 			CRestrictedAudioOutput* iRestrictedAudioOutput;
-
-
+			CRestrictedAudioOutputMessageHandler* iRestrictedAudioOutputMessageHandler;
+			CRestrictedAudioOutputProxy* iRestrictedAudioOutputProxy;
 
 
     // Active object with a timer to timeout the test case

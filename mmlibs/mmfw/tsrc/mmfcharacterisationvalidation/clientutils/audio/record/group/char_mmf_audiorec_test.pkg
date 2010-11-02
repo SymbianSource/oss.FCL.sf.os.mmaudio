@@ -15,28 +15,38 @@
 
 "\epoc32\release\armv5\urel\char_mmf_audiorec.dll"-"c:\sys\bin\char_mmf_audiorec.dll"
 
+"\epoc32\release\armv5\urel\mmfaudiotonetestcontroller.dll"-"c:\sys\bin\mmfaudiotonetestcontroller.dll"
+"\epoc32\localisation\2002C398\rsc\2002C398.rpp"-"c:\localisation\2002C398\rsc\2002C398.rpp"
+"\epoc32\localisation\group\2002C398.info"-"c:\localisation\group\2002C398.info"
+"\epoc32\data\z\resource\plugins\mmfaudiotonetestcontroller.rsc"-"c:\resource\plugins\mmfaudiotonetestcontroller.rsc"
+
+"\epoc32\release\armv5\urel\mmfaudiowavtestcontroller.dll"-"c:\sys\bin\mmfaudiowavtestcontroller.dll"
+"\epoc32\localisation\2002C397\rsc\2002C397.rpp"-"c:\localisation\2002C397\rsc\2002C397.rpp"
+"\epoc32\localisation\group\2002C397.info"-"c:\localisation\group\2002C397.info"
+"\epoc32\data\z\resource\plugins\mmfaudiowavtestcontroller.rsc"-"c:\resource\plugins\mmfaudiowavtestcontroller.rsc"
+
 // ini
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec.ini" - "c:\char\mmf\char_mmf_audiorec.ini"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec.ini" - "c:\char\mmf\char_mmf_audiorec.ini"
 
 // scripts
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_wav.script" - "c:\char_mmf_audiorec_wav.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_wav_1.script" - "c:\char_mmf_audiorec_wav_1.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_wav_2.script" - "c:\char_mmf_audiorec_wav_2.script"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_ogg.script" - "c:\char_mmf_audiorec_ogg.script"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_ogg_overflow.script" - "c:\char_mmf_audiorec_ogg_overflow.script"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_panic_emu_debug.script" - "c:\char_mmf_audiorec_panic_emu_debug.script"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_wav_notification.script" - "c:\char_mmf_audiorec_wav_notification.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_wav.script" - "c:\char_mmf_audiorec_wav.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_wav_1.script" - "c:\char_mmf_audiorec_wav_1.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_wav_2.script" - "c:\char_mmf_audiorec_wav_2.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_ogg.script" - "c:\char_mmf_audiorec_ogg.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_ogg_overflow.script" - "c:\char_mmf_audiorec_ogg_overflow.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_panic_emu_debug.script" - "c:\char_mmf_audiorec_panic_emu_debug.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_wav_notification.script" - "c:\char_mmf_audiorec_wav_notification.script"
 
 //#ifdef SYMBIAN_MULTIMEDIA_A3FDEVSOUND
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_ogg_notification.script" - "c:\char_mmf_audiorec_ogg_notification.script"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_amr.script" - "c:\char_mmf_audiorec_amr.script"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_aac.script" - "c:\char_mmf_audiorec_aac.script"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_amr_notification.script" - "c:\char_mmf_audiorec_amr_notification.script"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_aac_notification.script" - "c:\char_mmf_audiorec_aac_notification.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_ogg_notification.script" - "c:\char_mmf_audiorec_ogg_notification.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_amr.script" - "c:\char_mmf_audiorec_amr.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_aac.script" - "c:\char_mmf_audiorec_aac.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_amr_notification.script" - "c:\char_mmf_audiorec_amr_notification.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\record\scripts\char_mmf_audiorec_aac_notification.script" - "c:\char_mmf_audiorec_aac_notification.script"
 
 //Data
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\data\maintst2.wav"-"c:\char\mmf\data\maintst2.wav"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\data\maintst2.wav"-"c:\char\mmf\data\maintst2.wav"
 
 //PV Resource files
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\data\hwdev0x1027290aamrencopt.rsc"-"c:\resource\a3f\hwdev0x1027290a.rsc"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\data\hwdev0x1027290aamrencopt.rsc"-"c:\resource\a3f\hwdev0x1027290a.rsc"
 //#endif // SYMBIAN_MULTIMEDIA_A3FDEVSOUND

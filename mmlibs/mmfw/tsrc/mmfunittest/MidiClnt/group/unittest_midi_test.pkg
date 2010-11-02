@@ -22,18 +22,18 @@
 
 
 //MIDI script files
-"\sf\os\\mm\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\scripts\TSU_MMF_MIDICLNT_00.script"-"c:\tsu_mmf_midiclnt_00.script"
-"\sf\os\\mm\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\scripts\TSU_MMF_MIDICLNT_00_Alloc.script"-"c:\tsu_mmf_midiclnt_00_alloc.script"
-"\sf\os\\mm\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\scripts\TSU_MMF_MIDICLNT_RF.script"-"c:\tsu_mmf_midiclnt_rf.script"
-"\sf\os\\mm\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\scripts\TSU_MMF_MIDICLNT_RF_Alloc.script"-"c:\tsu_mmf_midiclnt_rf_alloc.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\scripts\TSU_MMF_MIDICLNT_00.script"-"c:\tsu_mmf_midiclnt_00.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\scripts\TSU_MMF_MIDICLNT_00_Alloc.script"-"c:\tsu_mmf_midiclnt_00_alloc.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\scripts\TSU_MMF_MIDICLNT_RF.script"-"c:\tsu_mmf_midiclnt_rf.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\scripts\TSU_MMF_MIDICLNT_RF_Alloc.script"-"c:\tsu_mmf_midiclnt_rf_alloc.script"
 
 //ini file
-"\sf\os\\mm\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\scripts\midi.ini"-"c:\mm\midi.ini"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\scripts\midi.ini"-"c:\mm\midi.ini"
 
 // MIDI test files
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\data\midi.mid"-"c:\midiclntitestdata\midi.mid"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\data\textmidi.mid"-"c:\midiclntitestdata\textmidi.mid"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\data\midi.mid"-"c:\midiclntitestdata\midi.mid"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\data\textmidi.mid"-"c:\midiclntitestdata\textmidi.mid"
 
 // SYMBIAN_CAF_V2
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\data\Midi.contentrights"-"c:\midiclntitestdata\midi.contentrights"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\data\Midi.content"-"c:\midiclntitestdata\midi.content"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\data\Midi.contentrights"-"c:\midiclntitestdata\midi.contentrights"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfunittest\MidiClnt\data\Midi.content"-"c:\midiclntitestdata\midi.content"

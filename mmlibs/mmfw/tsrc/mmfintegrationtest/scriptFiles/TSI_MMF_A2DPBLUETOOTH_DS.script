@@ -12,7 +12,7 @@
 //
 // Description:
 // TSI_MMF_A2DP_01.script
-//
+//This script is not running as the functionality is not supported.
 
 
 LOAD_SUITE TSI_MMF_A2DP.dll

@@ -108,8 +108,8 @@ PRJ_TESTEXPORTS
 ../Data/100khzSRate1KhzTone.wav	c:/aclntitestdata/100khzsrate1khztone.wav
 ../Data/7.33khzSRate1KhzTone.wav	c:/aclntitestdata/7.33khzsrate1khztone.wav
 ../Data/OneSample.wav		c:/aclntitestdata/onesample.wav
-../Data/sequence1.sqn		c:/aclntitestdata/sequence1.sqn
-../Data/sequence2.sqn		c:/aclntitestdata/sequence2.sqn
+../Data/ringing_tone.rng	c:/aclntitestdata/ringing_tone.rng
+../Data/NokiaTune.nrt		c:/aclntitestdata/NokiaTune.nrt
 ../Data/16bitmPcm.xxx		c:/aclntitestdata/16bitmpcm.xxx
 ../Data/explo.wav			c:/aclntitestdata/explo.wav
 ../Data/drmwavfile.drm		c:/aclntitestdata/drmwavfile.drm

@@ -285,8 +285,8 @@ public:
 	                               const TDesC8&                      aDataTo2,
 	                                     TDes8&                       aDataFrom)
 		{
-		iUtility.CustomCommandSync(aDestination, aFunction, aDataTo1, aDataTo2, aDataFrom);
-		return KErrNone;
+		return iUtility.CustomCommandSync(aDestination, aFunction, aDataTo1, aDataTo2, aDataFrom);
+		
 		}
 
 	virtual TInt CustomCommandSync(const TMMFMessageDestinationPckg&  aDestination,
@@ -294,8 +294,8 @@ public:
 	                               const TDesC8&                      aDataTo1,
 	                               const TDesC8&                      aDataTo2)
 		{
-		iUtility.CustomCommandSync(aDestination, aFunction, aDataTo1, aDataTo2);
-		return KErrNone;
+	    return iUtility.CustomCommandSync(aDestination, aFunction, aDataTo1, aDataTo2);
+		
 		}
 
 	virtual void CustomCommandAsync(const TMMFMessageDestinationPckg& aDestination,
@@ -335,8 +335,8 @@ public:
 	                               const TDesC8&                      aDataTo2,
 	                                     TDes8&                       aDataFrom)
 		{
-		iUtility.CustomCommandSync(aDestination, aFunction, aDataTo1, aDataTo2, aDataFrom);
-		return KErrNone;
+		return iUtility.CustomCommandSync(aDestination, aFunction, aDataTo1, aDataTo2, aDataFrom);
+		
 		}
 
 	virtual TInt CustomCommandSync(const TMMFMessageDestinationPckg&  aDestination,
@@ -344,8 +344,8 @@ public:
 	                               const TDesC8&                      aDataTo1,
 	                               const TDesC8&                      aDataTo2)
 		{
-		iUtility.CustomCommandSync(aDestination, aFunction, aDataTo1, aDataTo2);
-		return KErrNone;
+		return iUtility.CustomCommandSync(aDestination, aFunction, aDataTo1, aDataTo2);
+		
 		}
 
 	virtual void CustomCommandAsync(const TMMFMessageDestinationPckg& aDestination,
@@ -385,8 +385,7 @@ public:
 	                               const TDesC8&                      aDataTo2,
 	                                     TDes8&                       aDataFrom)
 		{
-		iUtility.CustomCommandSync(aDestination, aFunction, aDataTo1, aDataTo2, aDataFrom);
-		return KErrNone;
+		return iUtility.CustomCommandSync(aDestination, aFunction, aDataTo1, aDataTo2, aDataFrom);		
 		}
 
 	virtual TInt CustomCommandSync(const TMMFMessageDestinationPckg&  aDestination,
@@ -394,8 +393,7 @@ public:
 	                               const TDesC8&                      aDataTo1,
 	                               const TDesC8&                      aDataTo2)
 		{
-		iUtility.CustomCommandSync(aDestination, aFunction, aDataTo1, aDataTo2);
-		return KErrNone;
+		return iUtility.CustomCommandSync(aDestination, aFunction, aDataTo1, aDataTo2);		
 		}
 
 	virtual void CustomCommandAsync(const TMMFMessageDestinationPckg& aDestination,

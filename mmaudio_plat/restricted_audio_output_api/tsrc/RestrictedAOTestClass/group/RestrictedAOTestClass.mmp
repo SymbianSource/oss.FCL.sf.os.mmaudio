@@ -61,10 +61,12 @@ LIBRARY					mediaclientaudio.lib
 LIBRARY					CustomInterfaceUtility.lib
 LIBRARY					CustomCommandUtility.lib
 
-LIBRARY			  RestrictedAudioOutputProxy.lib
+LIBRARY    		ConfigurationComponentsFactory.lib
 LIBRARY				RestrictedAudioOutput.lib
 LIBRARY				MmfDevSound.lib
-
+LIBRARY 	RestrictedAudioOutputProxy.lib
+LIBRARY		RestrictedAudioOutputMessageHandler.lib
+EPOCALLOWDLLDATA 
 LANG            SC
 
 

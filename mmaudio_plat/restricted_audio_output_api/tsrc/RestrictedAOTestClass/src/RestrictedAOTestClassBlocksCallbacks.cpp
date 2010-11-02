@@ -84,3 +84,4 @@ void CRestrictedAOTestClass::DeviceMessage(TUid /*aMessageType*/, const TDesC8& 
 	 }
 
 /*************************************************************************/
+

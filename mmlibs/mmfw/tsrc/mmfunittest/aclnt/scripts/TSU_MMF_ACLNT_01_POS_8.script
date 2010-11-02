@@ -1,0 +1,169 @@
+// Copyright (c) 2002-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+// Creation Date 29/07/2002
+// MMF 'Deprecated Audio Clients' Unit Testing script 13/08/2002
+// 
+//
+
+PRINT Run all the MMF 'Deprecated Audio Clients' unit tests, excluding memory Alloc failure tests
+PRINT 
+# wait for ring.wav to finish playing
+delay 1000
+
+//PAUSE_AT_END
+
+// 
+MULTITHREAD
+
+
+//
+LOAD_SUITE TSU_MMF_ACLNT_01.dll
+
+//////////////////////////////
+
+// Negative testing
+// CustomInterface CR - Add CustomInterface() to CMdaAudioOutputStream
+//! @SYMTestCaseID MM-MMF-ACLNT-U-1000-HP
+RUN_TEST_STEP 320000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-1000-HP
+TEST_COMPLETE
+
+// CustomInterface CR - Add CustomInterface() to CMdaAudioInputStream
+//! @SYMTestCaseID MM-MMF-ACLNT-U-1001-HP
+RUN_TEST_STEP 320000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-1001-HP
+TEST_COMPLETE
+
+// CustomInterface CR - Add CustomInterface() to CMdaAudioOutputStream
+//! @SYMTestCaseID MM-MMF-ACLNT-U-1002-HP
+RUN_TEST_STEP 320000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-1002-HP
+TEST_COMPLETE
+
+// DEF068366  Using record utility, callback of PlaybackBalance APIs fail.
+//! @SYMTestCaseID MM-MMF-ACLNT-U-1003-HP
+RUN_TEST_STEP 200000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-1003-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE 
+
+// temporarly moved here as causes problem with the other tests.
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0014-CP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0014-CP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+// DEF078081: TCK fail: CMMFMdaAudioPlayerUtility::Duration can't handle infinite sounds
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0960-HP
+RUN_TEST_STEP 200000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0960-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+// DEF078081: TCK fail: CMMFMdaAudioPlayerUtility::Duration can't handle infinite sounds
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0961-HP
+RUN_TEST_STEP 200000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0961-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+//CR0632 uri scheme
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0957-CP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0957-CP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+//CR0632 uri scheme
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0958-CP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0958-CP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+//CR0632 uri scheme
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0959-CP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0959-CP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+//CR0632 uri scheme
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0960-CP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0960-CP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+// DEF083334  Checking for ControllerImplementation info
+//! @SYMTestCaseID MM-MMF-ACLNT-U-1004-HP
+RUN_TEST_STEP 200000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-1004-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE 
+
+// DEF083334  Checking for ControllerImplementation info
+//! @SYMTestCaseID MM-MMF-ACLNT-U-1005-HP
+RUN_TEST_STEP 200000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-1005-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE 
+
+// DEF083334  Checking for ControllerImplementation info
+//! @SYMTestCaseID MM-MMF-ACLNT-U-1006-HP
+RUN_TEST_STEP 200000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-1006-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE 
+
+// DEF083334  Checking for ControllerImplementation info
+//! @SYMTestCaseID MM-MMF-ACLNT-U-1007-HP
+RUN_TEST_STEP 200000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-1007-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE 
+
+// DEF085172: Incorrect documentation of CMdaAudioRecorderUtility::SetVolume( )
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0965-HP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0965-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+// DEF087609: APIREG CMdaAudioPlayerUtility Panic tests fail with wrong panic
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0967-HP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0967-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+// PDEF092098: DevSound fails to update policy if error occurs in StartPlayDataL
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0858-CP
+RUN_TEST_STEP 320000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0858-CP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+// PDEF090287: CMdaAudioOutputStream resumes incorrectly after an error
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0859-CP
+RUN_TEST_STEP 320000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0859-CP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+// DEF090666 : T:Aclnt - Pausing during repeat causes the file to close itself
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0968-HP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0968-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+// DEF093014: T: CMdaAudioRecorderUtility::SetDestinationFormatL causes panic
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0969-HP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0969-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+// INC107513: Startup tone is played before tone initialization is completed.
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0970-HP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0970-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+
+//DEF120980:Creating two audiooutputstreams concurrently makes policyserver panic 
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0971-CP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE
+
+//DEF121928: Concurrently calling RecordL by audiorecorder in 3 threads make server panics
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0972-CP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0972-CP
+TEST_COMPLETE
+
+//DEF121928: Concurrently calling RecordL by audiorecorder in 3 threads make server panics
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0973-CP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0973-CP
+TEST_COMPLETE
+
+//DEF121928: Concurrently calling RecordL by audiorecorder in 3 threads make server panics
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0974-CP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0974-CP
+TEST_COMPLETE
+
+//DEF070060: Paused WAV can't always be resumed - Java TCK test setloopcount2 fails
+//! @SYMTestCaseID MM-MMF-ACLNT-U-0958-HP
+RUN_TEST_STEP 120000, TSU_MMF_ACLNT_01, MM-MMF-ACLNT-U-0958-HP C:\MM\TSU_MMF_ACLNT_01.ini
+TEST_COMPLETE

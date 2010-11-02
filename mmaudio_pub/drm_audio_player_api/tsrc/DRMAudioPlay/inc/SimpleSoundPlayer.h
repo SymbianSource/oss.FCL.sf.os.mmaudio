@@ -35,7 +35,7 @@
 
 const TUid KUidInterfaceMMFController = {KMmfUidPluginInterfaceController};
 
-class CSimpleSoundPlayer: public CBase , public MEventTarget , public MDrmAudioPlayerCallback
+class CSimpleSoundPlayer: public CBase , public MEventTarget , public MDrmAudioPlayerCallback,public MAudioLoadingObserver
 	{
 public:
 	static CSimpleSoundPlayer* NewUrlL(const TDesC &aDescriptor, TInt aIapId, const TDesC8 &aMime, CTestModuleIf &aConsole, CStifLogger &aLogger, TBool aImmediate=ETrue);
@@ -91,7 +91,10 @@ public:
 	TInt GetNumberOfMetaDataEntries(TInt &aNumEntries);
 	CMMFMetaDataEntry *GetMetaDataEntryL(TInt aMetaDataIndex);
 	TInt OpenL(const TFileName &aFileName , const TBool &aImmediate);
-
+	void CustomCommand();
+	//MAudioLoadingObserver
+	    virtual void MaloLoadingStarted();
+	    virtual void MaloLoadingComplete();
 private:
 	TInt OpenUrlL(const TDesC &aUrl, TInt aIapId, const TDesC8 &aMime) ;
 	TInt Pause();
@@ -146,6 +149,7 @@ public:
 	static const TInt KplayerActionGetAudioLoadingProgress;
 	static const TInt KplayerActionRegisterForAudioLoadingNotification;
 	static const TInt KplayerActionControllerImplementationInformation;
+	static const TInt KPlayerActionCustomCommand;
 
 	TInt ExecuteL(CParameters *aParams) ;
 

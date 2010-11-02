@@ -44,4 +44,4 @@ PRJ_MMPFILES
 
 PRJ_TESTMMPFILES
 
-#include "../AudioRoutingTestClass/Group/bld.inf"
+#include "../AudioRoutingTestClass/group/bld.inf"

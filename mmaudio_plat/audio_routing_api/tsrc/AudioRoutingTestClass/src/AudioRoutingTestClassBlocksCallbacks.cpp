@@ -328,7 +328,7 @@ void CAudioRoutingTestClass::MvpuoPlayComplete(TInt aError)
 
 void CAudioRoutingTestClass::MvpuoEvent(const TMMFEvent& aEvent)
 	{
-    iLog->Log(_L("MvpuoEvent, return code =%x!!!"),aEvent);
+    iLog->Log(_L("MvpuoEvent, return code =%x!!!"),aEvent.iEventType);
 	}
 
 void CAudioRoutingTestClass::MvruoOpenComplete(TInt aError)

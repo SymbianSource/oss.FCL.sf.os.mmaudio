@@ -19,7 +19,7 @@ DEFAULT
 // WINS ARMI THUMB
 // MINT
 
-#include "videoGroup/bld.inf"
+#include "videogroup/bld.inf"
 
 #ifdef SYMBIAN_MULTIMEDIA_CODEC_API
 #include "../devsound/group/bld.inf"
@@ -29,9 +29,9 @@ DEFAULT
 #define SYMBIAN_MMF_MODEL_CONTROLLERS
 #endif
 
-#include "../SDevsound/group/bld.inf"
+#include "../SDevSound/group/bld.inf"
 #include "../ACLNT/group/bld.inf"
-#include "../CTLFRM/group/bld.inf"
+#include "../Ctlfrm/group/bld.inf"
 #include "../SecureDRM/group/bld.inf"
 
 

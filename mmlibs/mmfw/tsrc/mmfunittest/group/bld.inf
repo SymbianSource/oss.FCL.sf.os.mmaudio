@@ -14,7 +14,7 @@
 //
 
 #include "../aclnt/group/bld.inf"
-#include "../actrl/group/bld.inf"
+#include "../Actrl/group/bld.inf"
 #include "../AFMT/group/bld.inf"
 #include "../basecl/group/bld.inf"
 #include "../ctlfrm/group/bld.inf"
@@ -22,8 +22,10 @@
 #include "../MidiClnt/group/bld.inf"
 #include "../Recogniser/group/bld.inf"
 #include "../srssnk/group/bld.inf"
+#include "../SbcCodec/group/bld.INF"
 #include "../ACOD/group/bld.inf"
-#include "../DevSoundTest/group/bld.INF"
+#include "../DevSoundTest/group/bld.inf"
+#include "../DevSoundTest/CIPlugins/group/bld.inf"
 #include "videogroup/bld.inf"
 
 #ifdef SYMBIAN_VARIABLE_BITRATE_CODEC // use system wide flag to trigger model controller build

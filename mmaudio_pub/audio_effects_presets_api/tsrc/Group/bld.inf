@@ -44,4 +44,4 @@ PRJ_MMPFILES
 
 PRJ_TESTMMPFILES
 
-#include "../EffectPresetsTest/Group/bld.inf"
+#include "../EffectPresetsTest/group/bld.inf"

@@ -338,6 +338,7 @@ NONSHARABLE_CLASS(CDRMAudioPlay) : public CTestModuleBase
         TInt TestCasePlayRepeatDRMFileWithPlayWindow(CStifSectionParser *section , TTestResult &aResult) ;
         TInt TestCasePlayPauseRepeatDRMFileWithPlayWindow(CStifSectionParser *section , TTestResult &aResult) ;
         TInt TestCasePlayRepeatForeverDRMFileWithPlayWindow(CStifSectionParser *section , TTestResult &aResult) ;
+        TInt TestCaseCustomCommand(CStifSectionParser *section , TTestResult &aResult) ;
     protected:  // Functions from base classes
 
         /**
@@ -427,6 +428,8 @@ NONSHARABLE_CLASS(CDRMAudioPlay) : public CTestModuleBase
 		static const TInt KCasePlayRepeatDRMFileWithPlayWindow;
         static const TInt KCasePlayPauseRepeatDRMFileWithPlayWindow;
 		static const TInt KCasePlayRepeatForeverDRMFileWithPlayWindow;
+		static const TInt KCaseRegisterForAudioLoadingNotification;
+		static const TInt KCaseCustomCommand ;
 
     protected:  // Data
 

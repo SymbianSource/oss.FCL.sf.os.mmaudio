@@ -83,7 +83,7 @@ TInt CDRMAudioPlay::TestCasePlayFileFormatsL(CStifSectionParser * section , TTes
 
 	//=/TInt KErrRecFormats = -1130;
 	//[*]TPtrC FileNamePtr;
-	TInt Error=KErrNone;
+
 	//[*]if ( !section->GetLine(KTagSoundFile, FileNamePtr, ENoTag) )
 	//[*]	{
 	//[*]	TFileName FileName = FileNamePtr;
@@ -134,7 +134,7 @@ TInt CDRMAudioPlay::TestCasePlayFileFormatsL(CStifSectionParser * section , TTes
 				if (err3 != KErrNone)
 					{
 					iLogger->Log(_L("Error %d openning controller"),err3);
-					aResult.iResult = Error = err3;
+					aResult.iResult  = err3;
 					break;
 					//continue;
 					}
@@ -150,7 +150,7 @@ TInt CDRMAudioPlay::TestCasePlayFileFormatsL(CStifSectionParser * section , TTes
 					for (TInt l = 0; l < (info->SupportedFileExtensions()).Count(); l++)
 						{
 						iLogger->Log(_L("Calling CMMFFormatImplementationInformation::SupportedFileExtensions()"));
-						iLogger->Log(_L("Format supported: %S"),(info->SupportedFileExtensions())[l]);
+						//iLogger->Log(_L("Format supported: %S"),(info->SupportedFileExtensions())[l]);
 						}
 					CleanupStack::PopAndDestroy();
 					}

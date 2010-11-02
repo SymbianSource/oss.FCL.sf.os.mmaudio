@@ -98,7 +98,8 @@ TBool CCIPlatformMsgHndlrPlugin::HandleMessage( const RMmfIpcMessage& aMessage )
     // Get the destination info from the client into TMMFMessage.
     TMMFMessage message(aMessage);
     TRAPD(status, message.FetchDestinationL());
-
+    if(status != KErrNone)
+    DEB_TRACE1(_L("CI* CCIPlatformMsgHndlrPlugin::HandleMessage status:%d"),status);
     // Check if Custom Command Parser manager can handle the message...
     if (!handled)
         {

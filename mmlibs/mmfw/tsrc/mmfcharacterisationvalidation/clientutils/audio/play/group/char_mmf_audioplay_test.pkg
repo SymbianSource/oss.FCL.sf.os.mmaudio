@@ -15,16 +15,26 @@
 
 "\epoc32\release\armv5\urel\char_mmf_audioplay.dll"-"c:\sys\bin\char_mmf_audioplay.dll"
 
+"\epoc32\release\armv5\urel\mmfaudiotonetestcontroller.dll"-"c:\sys\bin\mmfaudiotonetestcontroller.dll"
+"\epoc32\localisation\2002C398\rsc\2002C398.rpp"-"c:\localisation\2002C398\rsc\2002C398.rpp"
+"\epoc32\localisation\group\2002C398.info"-"c:\localisation\group\2002C398.info"
+"\epoc32\data\z\resource\plugins\mmfaudiotonetestcontroller.rsc"-"c:\resource\plugins\mmfaudiotonetestcontroller.rsc"
+
+"\epoc32\release\armv5\urel\mmfaudiowavtestcontroller.dll"-"c:\sys\bin\mmfaudiowavtestcontroller.dll"
+"\epoc32\localisation\2002C397\rsc\2002C397.rpp"-"c:\localisation\2002C397\rsc\2002C397.rpp"
+"\epoc32\localisation\group\2002C397.info"-"c:\localisation\group\2002C397.info"
+"\epoc32\data\z\resource\plugins\mmfaudiowavtestcontroller.rsc"-"c:\resource\plugins\mmfaudiowavtestcontroller.rsc"
+
 // ini
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\play\scripts\char_mmf_audioplay.ini" - "c:\char\mmf\char_mmf_audioplay.ini"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\play\scripts\char_mmf_audioplay.ini" - "c:\char\mmf\char_mmf_audioplay.ini"
 
 // scripts
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\play\scripts\char_mmf_audioplay_none.script" - "c:\char_mmf_audioplay_none.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\play\scripts\char_mmf_audioplay_wav.script" - "c:\char_mmf_audioplay_wav.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\play\scripts\char_mmf_audioplay_none.script" - "c:\char_mmf_audioplay_none.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\clientutils\audio\play\scripts\char_mmf_audioplay_wav.script" - "c:\char_mmf_audioplay_wav.script"
 
 //Data
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\data\maintst.wav"-"c:\char\mmf\data\maintst.wav"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\data\Corrupt.wav"-"c:\char\mmf\data\Corrupt.wav"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\data\maintst2.wav"-"c:\char\mmf\data\maintst2.wav"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\data\OneSample.wav"-"c:\char\mmf\data\OneSample.wav"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\data\maintst.wma"-"c:\char\mmf\data\maintst.wma"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\data\maintst.wav"-"c:\char\mmf\data\maintst.wav"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\data\Corrupt.wav"-"c:\char\mmf\data\Corrupt.wav"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\data\maintst2.wav"-"c:\char\mmf\data\maintst2.wav"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\data\OneSample.wav"-"c:\char\mmf\data\OneSample.wav"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfcharacterisationvalidation\data\maintst.wma"-"c:\char\mmf\data\maintst.wma"

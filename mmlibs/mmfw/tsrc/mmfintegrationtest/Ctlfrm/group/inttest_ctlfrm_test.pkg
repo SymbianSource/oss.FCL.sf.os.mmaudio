@@ -17,6 +17,16 @@
 
 "\epoc32\release\armv5\udeb\tsi_mmfcustomcommands.dll"-"c:\sys\bin\tsi_mmfcustomcommands.dll"
 
+"\epoc32\release\armv5\urel\mmfaudiotonetestcontroller.dll"-"c:\sys\bin\mmfaudiotonetestcontroller.dll"
+"\epoc32\localisation\2002C398\rsc\2002C398.rpp"-"c:\localisation\2002C398\rsc\2002C398.rpp"
+"\epoc32\localisation\group\2002C398.info"-"c:\localisation\group\2002C398.info"
+"\epoc32\data\z\resource\plugins\mmfaudiotonetestcontroller.rsc"-"c:\resource\plugins\mmfaudiotonetestcontroller.rsc"
+
+"\epoc32\release\armv5\urel\mmfaudiowavtestcontroller.dll"-"c:\sys\bin\mmfaudiowavtestcontroller.dll"
+"\epoc32\localisation\2002C397\rsc\2002C397.rpp"-"c:\localisation\2002C397\rsc\2002C397.rpp"
+"\epoc32\localisation\group\2002C397.info"-"c:\localisation\group\2002C397.info"
+"\epoc32\data\z\resource\plugins\mmfaudiowavtestcontroller.rsc"-"c:\resource\plugins\mmfaudiowavtestcontroller.rsc"
+
 "\epoc32\release\armv5\urel\tsi_mmfcontroller.dll"-"c:\sys\bin\tsi_mmfcontroller.dll"
 "\epoc32\localisation\101f7bf9\rsc\101f7bf9.rpp"-"c:\localisation\101f7bf9\rsc\101f7bf9.rpp"
 "\epoc32\localisation\group\101f7bf9.info"-"c:\localisation\group\101f7bf9.info"
@@ -50,17 +60,17 @@
 //"\epoc32\release\armv5\urel\tsi_mmfrecog.dll"-"c:\sys\bin\tsi_mmfrecog.dll"
 
 // script files
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_CTLFRM.script"-"c:\TSI_MMF_CTLFRM.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_CTLFRM_NEG.script"-"c:\TSI_MMF_CTLFRM_NEG.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_CTLFRM_NEG_PREEMPTION.script"-"c:\TSI_MMF_CTLFRM_NEG_PREEMPTION.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_CTLFRM_POS.script"-"c:\TSI_MMF_CTLFRM_POS.script"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_CTLFRM_POS_PREEMPTION.script"-"c:\TSI_MMF_CTLFRM_POS_PREEMPTION.script"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_CTLFRM_PREEMPTION.script"-"c:\TSI_MMF_CTLFRM_PREEMPTION.script"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_RECOG.script"-"c:\TSI_MMF_RECOG.script"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_RECOG_ALLOC.script"-"c:\TSI_MMF_RECOG_ALLOC.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_CTLFRM.script"-"c:\TSI_MMF_CTLFRM.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_CTLFRM_NEG.script"-"c:\TSI_MMF_CTLFRM_NEG.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_CTLFRM_NEG_PREEMPTION.script"-"c:\TSI_MMF_CTLFRM_NEG_PREEMPTION.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_CTLFRM_POS.script"-"c:\TSI_MMF_CTLFRM_POS.script"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_CTLFRM_POS_PREEMPTION.script"-"c:\TSI_MMF_CTLFRM_POS_PREEMPTION.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_CTLFRM_PREEMPTION.script"-"c:\TSI_MMF_CTLFRM_PREEMPTION.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_RECOG.script"-"c:\TSI_MMF_RECOG.script"
+//"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\scripts\TSI_MMF_RECOG_ALLOC.script"-"c:\TSI_MMF_RECOG_ALLOC.script"
 
 // Data files
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\data\test.wav"-"c:\tsimmfctlfrmdata\test.wav"
-"\sf\os\mm\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\data\test2.wav"-"c:\tsimmfctlfrmdata\test2.wav"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\data\Test.abc"-"c:\tsimmfctlfrmdata\Test.abc"
-//"\sf\os\mm\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\data\Test.xyz"-"c:\tsimmfctlfrmdata\Test.xyz"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\data\test.wav"-"c:\tsimmfctlfrmdata\test.wav"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\data\test2.wav"-"c:\tsimmfctlfrmdata\test2.wav"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\data\Test.abc"-"c:\tsimmfctlfrmdata\Test.abc"
+"\sf\os\mmaudio\mmlibs\mmfw\tsrc\mmfintegrationtest\Ctlfrm\data\Test.xyz"-"c:\tsimmfctlfrmdata\Test.xyz"

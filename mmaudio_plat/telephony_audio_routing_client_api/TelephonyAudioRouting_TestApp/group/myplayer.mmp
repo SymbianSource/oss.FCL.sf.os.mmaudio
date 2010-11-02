@@ -1,0 +1,91 @@
+/*
+* Copyright (c) 2002 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  TelephonyAudioRouting Test Application
+*
+*/
+
+
+TARGET			myplayer_0xe0edbe14.exe
+TARGETTYPE		exe
+UID		  0x100039CE 0xe0edbe14
+
+SOURCEPATH		..\src
+SOURCE			myplayer.cpp
+SOURCE			myplayerapplication.cpp
+SOURCE			myplayerappview.cpp
+SOURCE			myplayerappUi.cpp
+SOURCE			myplayerdocument.cpp
+SOURCE 			playercode.cpp
+SOURCEPATH		..\data
+
+START RESOURCE	myplayer.rss
+HEADER
+TARGET myplayer_0xE0EDBE14
+TARGETPATH resource\apps
+END //RESOURCE
+
+START RESOURCE	myplayer_reg.rss
+TARGET myplayer_0xE0EDBE14_reg
+TARGETPATH 	  \private\10003a3f\apps
+END //RESOURCE
+
+
+
+USERINCLUDE	   ..\inc
+USERINCLUDE    ..\help
+
+SYSTEMINCLUDE	 \epoc32\include
+SYSTEMINCLUDE	 \epoc32\include\mw
+SYSTEMINCLUDE	 \epoc32\include\platform
+SYSTEMINCLUDE	 \epoc32\include\platform\mw
+SYSTEMINCLUDE   \epoc32\include\mmf\common
+
+
+LIBRARY		   euser.lib
+LIBRARY		   apparc.lib
+LIBRARY		   cone.lib
+LIBRARY		   eikcore.lib
+LIBRARY		   avkon.lib
+LIBRARY		   CommonEngine.lib
+LIBRARY		   efsrv.lib 
+LIBRARY		   estor.lib
+LIBRARY        aknnotify.lib
+LIBRARY        hlplch.lib
+//LIBRARY		   mediaclientaudio.lib 
+LIBRARY        AudioOutputRouting.lib 
+LIBRARY        mmfcontrollerframework.lib	
+//LIBRARY       ConfigurationComponentsFactory.lib
+LIBRARY         CommonDialogs.lib 
+  
+LIBRARY         TelephonyAudioRoutingSession.lib 
+LIBRARY         TelephonyAudioRoutingManager.lib
+
+#if defined(WINSCW)
+LIBRARY         telephonyaudiorouting.lib  
+#else
+LIBRARY         TelephonyAudioRouting.lib 
+#endif
+
+
+LANG SC
+
+VENDORID	  	  0
+SECUREID		  0xe0edbe14
+CAPABILITY	  	  ReadUserData //DRM
+
+#ifdef ENABLE_ABIV2_MODE
+DEBUGGABLE_UDEBONLY
+#endif
+// End of File
+
