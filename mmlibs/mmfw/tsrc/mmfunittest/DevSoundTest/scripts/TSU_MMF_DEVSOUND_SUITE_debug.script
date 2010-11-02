@@ -1,4 +1,4 @@
-// Copyright (c) 2003-2009 Nokia Corporation and/or its subsidiary(-ies).
+// Copyright (c) 2003-2010 Nokia Corporation and/or its subsidiary(-ies).
 // All rights reserved.
 // This component and the accompanying materials are made available
 // under the terms of "Eclipse Public License v1.0"
@@ -173,4 +173,10 @@ TEST_COMPLETE
 //! @SYMTestCaseID MM-MMF-DEVSOUND-U-0104-HP
 
 RUN_TEST_STEP 60000, TSU_MMF_DEVSOUND_SUITE, MM-MMF-DEVSOUND-U-0104-HP, c:\tsu_mmf_devsound_record.ini
+TEST_COMPLETE
+
+// Test that the teststart server has started - talks to tsu_mmf_devsound_starttest.dll
+//
+//! @SYMTestCaseID MM-MMF-DEVSOUND-U-0300-HP
+RUN_TEST_STEP 60000, TSU_MMF_DEVSOUND_SUITE, MM-MMF-DEVSOUND-U-0300-HP
 TEST_COMPLETE

@@ -59,13 +59,14 @@ enum TMMFAudioServerPanicCodes
 class CMMFAudioServer : public CMmfIpcServer, public MGlobalProperties
 	{
 public:
-
+	
 	/**
-		Constructs, and returns a pointer to, a new CMMFAudioServer
-		object.
-		@return CMMFAudioServer* A pointer to newly created object.
-	*/
-	static CMMFAudioServer* NewL();
+        Constructs, and returns a pointer to, a new CMMFAudioServer
+        object.
+        @param aStayOpen whether or not the server should stay open permanently
+        @return CMMFAudioServer* A pointer to newly created object.
+    */
+	static CMMFAudioServer* NewL(TBool aStayOpen);
 
 	/**
 		Destructor.
@@ -167,14 +168,12 @@ private:
 		void ConstructL();
 
 		RTimer iShutDownTimer;
+		
 		};
 
 private:
-
 	
-	//Default constructor.
-	
-	CMMFAudioServer();
+	CMMFAudioServer(TBool aStayOpen);
 
 	
 	//Second phase constructor.
@@ -194,6 +193,8 @@ private:	// Data
 	mutable RPointerArray<CStartAndMonitorDevSoundThread> iDevSoundServList;
 	
 	CMMFAudioServerFactory* iFactory;
+	//if the server is to stay open permanently
+	TBool iStayOpen;
 	};
 
 /**

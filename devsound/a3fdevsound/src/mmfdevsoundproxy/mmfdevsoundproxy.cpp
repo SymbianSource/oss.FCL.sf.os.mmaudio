@@ -856,33 +856,6 @@ EXPORT_C void RMMFDevSoundProxy::PlayToneSequenceL(const TDesC8& aData )
 	}
 
 // -----------------------------------------------------------------------------
-// RMMFDevSoundProxy::PlayFixedSequenceL
-// Plays the fixed sequence.
-// (other items were commented in a header).
-// -----------------------------------------------------------------------------
-//
-EXPORT_C void RMMFDevSoundProxy::PlayFixedSequenceL(TInt aSequenceNumber)
-	{
-	SYMBIAN_DEBPRN0(_L("RMMFDevSoundProxy[0x%x]::PlayFixedSequenceL - Enter"));
-	if(iState==ETonePlaying)
-		{
-		SYMBIAN_DEBPRN0(_L("RMMFDevSoundProxy[0x%x]::PlayFixedSequenceL - Exit"));
-		return;
-		}
-			
-	if (!iDevSoundObserver || iState!=EInitialized)
-		{
-		User::Leave(KErrNotReady);
-		}
-
-	TPckgBuf<TInt> seqNum(aSequenceNumber);
-	User::LeaveIfError(SendReceive(EMMFDevSoundProxyPlayFixedSequence, iDestinationPckg, seqNum));
-	iState = ETonePlaying;
-	iToneMode = EFixedSequence;
-	SYMBIAN_DEBPRN0(_L("RMMFDevSoundProxy[0x%x]::PlayFixedSequenceL - Exit"));
-	}
-
-// -----------------------------------------------------------------------------
 // RMMFDevSoundProxy::SetDTMFLengths
 // Set attributes for playing DTMF String.
 // (other items were commented in a header).
@@ -1102,20 +1075,6 @@ EXPORT_C void RMMFDevSoundProxy::SetPrioritySettings(
 	}
 
 // -----------------------------------------------------------------------------
-// RMMFDevSoundProxy::FixedSequenceName
-// Returns the name of fixed sequence for a given sequence number.
-// (other items were commented in a header).
-// -----------------------------------------------------------------------------
-//
-EXPORT_C const TDesC& RMMFDevSoundProxy::FixedSequenceName(TInt /*aSequenceNumber*/)
-	{
-	SYMBIAN_DEBPRN0(_L("RMMFDevSoundProxy[0x%x]::FixedSequenceName - Enter"));
-	_LIT(KNullDesC, "");
-	SYMBIAN_DEBPRN0(_L("RMMFDevSoundProxy[0x%x]::FixedSequenceName - Exit"));
-	return KNullDesC;
-	}
-
-// -----------------------------------------------------------------------------
 // RMMFDevSoundProxy::CustomInterface
 // Returns a pointer to CustomInterface object.
 // (other items were commented in a header).
@@ -1144,25 +1103,6 @@ EXPORT_C TAny* RMMFDevSoundProxy::CustomInterface(TUid aInterfaceId)
 	return reinterpret_cast<TAny*> (customInterface);
 	}
 	
-// -----------------------------------------------------------------------------
-// RMMFDevSoundProxy::FixedSequenceCount
-// Returns the number of fixed sequences supported by DevSound.
-// (other items were commented in a header).
-// -----------------------------------------------------------------------------
-//
-EXPORT_C TInt RMMFDevSoundProxy::FixedSequenceCount()
-	{
-	SYMBIAN_DEBPRN0(_L("RMMFDevSoundProxy[0x%x]::FixedSequenceCount - Enter"));
-	TPckgBuf<TInt> fixSeqCountPckg;
-	SendReceiveResult(EMMFDevSoundProxyFixedSequenceCount,
-					iDestinationPckg,
-					KNullDesC8,
-					fixSeqCountPckg);
-
-	SYMBIAN_DEBPRN0(_L("RMMFDevSoundProxy[0x%x]::FixedSequenceCount - Exit"));
-	return fixSeqCountPckg();
-	}
-
 // -----------------------------------------------------------------------------
 // RMMFDevSoundProxy::BufferToBeFilledData
 // Returns data buffer for playback.

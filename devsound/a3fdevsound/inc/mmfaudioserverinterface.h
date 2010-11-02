@@ -42,9 +42,11 @@ public:
 	/**
 	Constructs and returns a pointer to a new CAudioSvrLoader object.
 	Leaves on failure. 
+	@param aStayOpen optional parameter to control whether or not the server should stay open permanently, defaults to EFalse
 	@return CAudioSvrLoader* - on success, pointer to new class instance. 
 	*/	
 	IMPORT_C static CAudioSvrLoader* NewL();
+	IMPORT_C static CAudioSvrLoader* NewL(TBool aStayOpen);
 	/**
 	Destructor.
 	*/

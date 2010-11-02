@@ -423,20 +423,6 @@ public: // New functions
 	IMPORT_C void PlayToneSequenceL(const TDesC8& aData);
 
 	/**
-	* Initializes the audio device and starts playing the specified
-	* pre-defined tone sequence.
-	* Leaves on failure.
-	* @since 
-	* @param TInt aSequenceNumber The index identifying the specific
-	*        pre-defined tone sequence. Index values are relative to zero.
-	*        This can be any value from zero to the value returned by a call
-	*        to FixedSequenceCount() - 1. The function raises a panic if the
-	*        sequence number is not within this range.
-	* @return void
-	*/
-	IMPORT_C void PlayFixedSequenceL(TInt aSequenceNumber);
-
-	/**
 	* Defines the duration of tone on, tone off and tone pause to be used
 	* during the DTMF tone playback operation.
 	* Supported only during tone playing.
@@ -572,23 +558,6 @@ public: // New functions
 	              const TMMFPrioritySettings& aPrioritySettings);
 
 	/**
-	* Returns the name assigned to a specific pre-defined tone sequence.
-	* This is the number of the fixed sequence supported by DevSound by
-	* default.
-	* The function raises a panic if sequence number specified is invalid.
-	* @since 
-	* @param TInt aSequenceNumber The index identifying the specific
-	*        pre-defined tone sequence. Index values are relative to zero.
-	*        This can be any value from zero to the value returned by a call
-	*        to CMdaAudioPlayerUtility::FixedSequenceCount() - 1. The
-	*        function raises a panic if sequence number is not within this
-	*        range.
-	* @return const TDesC & A reference to a Descriptor containing the fixed
-	*        sequence name indexed by aSequenceNumber.
-	*/
-	IMPORT_C const TDesC& FixedSequenceName(TInt aSequenceNumber);
-
-	/**
 	* Retrieves a custom interface to the device.
 	* @since 
 	* @param TUid aInterfaceId The interface UID, defined with the custom
@@ -598,15 +567,6 @@ public: // New functions
 	*        return value must be cast to the correct type by the user.
 	*/
 	IMPORT_C TAny* CustomInterface(TUid aInterfaceId);
-
-	/**
-	* Returns the number of available pre-defined tone sequences.
-	* This is the number of fixed sequence supported by DevSound by default.
-	* @since 
-	* @return TInt  The fixed sequence count. This value is implementation
-	*        dependent.
-	*/
-	IMPORT_C TInt FixedSequenceCount();
 
 	/**
 	* Returns data buffer from the DevSound server for playback.

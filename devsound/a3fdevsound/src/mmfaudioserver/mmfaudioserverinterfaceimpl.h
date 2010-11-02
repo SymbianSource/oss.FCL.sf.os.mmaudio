@@ -34,7 +34,7 @@ class CAudioSvrLoaderImpl : public CAudioSvrLoader
 public:
 	~CAudioSvrLoaderImpl();
 protected:
-	void ConstructL();
+	void ConstructL(TBool aStayOpen);
 	CAudioSvrLoaderImpl();
 private:
 	

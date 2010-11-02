@@ -68,6 +68,7 @@ data=EPOCROOT##epoc32\data\c\TSU_MMF_DEVSOUND_SUITE\Input\PCMU8Source.raw	\TSU_M
 
 ECOM_PLUGIN(tsu_mmf_devsound_testinterface.dll, 102070af.rsc)
 ECOM_PLUGIN(tsu_mmf_devsound_testinterface1.dll, 1028664D.rsc)
+ECOM_PLUGIN(tsu_mmf_devsound_starttest.dll, tsu_mmf_devsound_starttest.rsc)
 
 #endif
 

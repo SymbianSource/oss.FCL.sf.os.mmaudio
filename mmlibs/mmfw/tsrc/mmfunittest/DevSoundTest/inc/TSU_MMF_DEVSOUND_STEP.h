@@ -2219,6 +2219,32 @@ private:
 /*
  *========================================================================================================
   */
+
+//
+// MM-MMF-DEVSOUND-U-0300-HP
+//
+
+// these delarations should be the same as in tsu_mmf_devsound_starttest.h
+_LIT(KStartToolTestSvrName, "!StartToolSvr");
+const TInt KStartToolTestCaseErrorCode = -999;
+
+class RA3FDevSoundSvrStartToolTest : public RAsyncTestStep
+    {
+public:
+    static RA3FDevSoundSvrStartToolTest* NewL(const TDesC& aTestName);
+private:
+    RA3FDevSoundSvrStartToolTest(const TDesC& aTestName);
+    // from RAsyncTestStep
+    void KickoffTestL();
+    void CloseTest();
+    };
+
+class RSrvStartTestSession : public RSessionBase
+// virtually dummy client session, try to connect to server which is expected to fail
+    {
+public:
+    TInt CreateSession();
+    };
 	
 /**
  *

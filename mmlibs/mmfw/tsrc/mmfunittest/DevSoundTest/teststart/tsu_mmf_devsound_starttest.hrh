@@ -1,4 +1,3 @@
-
 // Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies).
 // All rights reserved.
 // This component and the accompanying materials are made available
@@ -14,7 +13,10 @@
 // Description:
 //
 
-PRJ_PLATFORMS
-WINSCW
+#ifndef TSU_MMF_DEVSOUND_STARTTEST_HRH
+#define TSU_MMF_DEVSOUND_STARTTEST_HRH
 
-#include "../group/bld_common.inf"
+#define KUidStartTestDll    0x20031C96
+#define KUidStartTestPlugin 0x20031C97
+
+#endif

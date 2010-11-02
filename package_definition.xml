@@ -13,7 +13,7 @@
    <component id="a3fdevsound" name="A3F DevSound" introduced="^2" purpose="optional">
     <unit bldFile="devsound/a3fdevsound/group" mrp="devsound/a3fdevsound/group/multimedia_a3f_devsound.mrp"/>
    </component>
-   <component id="a3facf" name="A3F Audio Component Framework" introduced="^2" purpose="m">
+   <component id="a3facf" name="A3F Audio Component Framework" introduced="^2" purpose="optional">
     <unit bldFile="devsound/a3facf/group" mrp="devsound/a3facf/group/multimedia_a3f_acf.mrp"/>
    </component>
    <component id="a3ftrace" name="A3F Trace Utility" introduced="^2" purpose="development">

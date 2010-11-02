@@ -21,6 +21,7 @@ PRJ_TESTMMPFILES
 ../mmpfiles/TSU_MMF_DEVSOUND_NOTIFICATION_SUITE.mmp
 ../mmpfiles/TSU_MMF_DEVSOUND_TESTINTERFACE.mmp
 ../mmpfiles/TSU_MMF_DEVSOUND_TESTINTERFACE1.mmp
+../mmpfiles/tsu_mmf_devsound_starttest.mmp
 
 
 PRJ_TESTEXPORTS

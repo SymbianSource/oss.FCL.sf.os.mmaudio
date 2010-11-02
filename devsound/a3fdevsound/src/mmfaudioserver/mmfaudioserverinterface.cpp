@@ -29,12 +29,22 @@
 //
 EXPORT_C CAudioSvrLoader* CAudioSvrLoader::NewL()
 	{
-	CAudioSvrLoaderImpl* self = new(ELeave) CAudioSvrLoaderImpl();
-	CleanupStack::PushL(self);
-	self->ConstructL();
-	CleanupStack::Pop(self);
-	return self;
+    return CAudioSvrLoader::NewL(EFalse);
 	}
+
+// -----------------------------------------------------------------------------
+// CAudioSvrLoader::NewL
+// Two-phased constructor.
+// -----------------------------------------------------------------------------
+//
+EXPORT_C CAudioSvrLoader* CAudioSvrLoader::NewL(TBool aStayOpen)
+    {
+    CAudioSvrLoaderImpl* self = new(ELeave) CAudioSvrLoaderImpl();
+    CleanupStack::PushL(self);
+    self->ConstructL(aStayOpen);
+    CleanupStack::Pop(self);
+    return self;
+    }
 
 // -----------------------------------------------------------------------------
 // CAudioSvrLoader::CAudioSvrLoader
@@ -87,9 +97,9 @@ CAudioSvrLoaderImpl::CAudioSvrLoaderImpl()
 // (other items were commented in a header).
 // -----------------------------------------------------------------------------
 //
- void CAudioSvrLoaderImpl::ConstructL()
+ void CAudioSvrLoaderImpl::ConstructL(TBool aStayOpen)
 	{
-	iServer = CMMFAudioServer::NewL();
+	iServer = CMMFAudioServer::NewL(aStayOpen);
 	}
 
 

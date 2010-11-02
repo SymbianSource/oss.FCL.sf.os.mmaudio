@@ -22,7 +22,7 @@ EXPORTS
 	_ZN17RMMFDevSoundProxy16RegisterAsClientE4TUidRK6TDesC8 @ 21 NONAME
 	_ZN17RMMFDevSoundProxy17CustomCommandSyncERK8TPckgBufI22TMMFMessageDestinationEiRK6TDesC8S7_ @ 22 NONAME
 	_ZN17RMMFDevSoundProxy17CustomCommandSyncERK8TPckgBufI22TMMFMessageDestinationEiRK6TDesC8S7_R5TDes8 @ 23 NONAME
-	_ZN17RMMFDevSoundProxy17FixedSequenceNameEi @ 24 NONAME
+	_ZN17RMMFDevSoundProxy17FixedSequenceNameEi @ 24 NONAME ABSENT
 	_ZN17RMMFDevSoundProxy17GetRecordBalanceLERiS0_ @ 25 NONAME
 	_ZN17RMMFDevSoundProxy17PlayToneSequenceLERK6TDesC8 @ 26 NONAME
 	_ZN17RMMFDevSoundProxy17SetRecordBalanceLEii @ 27 NONAME
@@ -30,8 +30,8 @@ EXPORTS
 	_ZN17RMMFDevSoundProxy18AsyncCustomCommandE4TUidR14TRequestStatusRK6TDesC8S5_P5TDes8 @ 29 NONAME
 	_ZN17RMMFDevSoundProxy18CustomCommandAsyncERK8TPckgBufI22TMMFMessageDestinationEiRK6TDesC8S7_R14TRequestStatus @ 30 NONAME
 	_ZN17RMMFDevSoundProxy18CustomCommandAsyncERK8TPckgBufI22TMMFMessageDestinationEiRK6TDesC8S7_R5TDes8R14TRequestStatus @ 31 NONAME
-	_ZN17RMMFDevSoundProxy18FixedSequenceCountEv @ 32 NONAME
-	_ZN17RMMFDevSoundProxy18PlayFixedSequenceLEi @ 33 NONAME
+	_ZN17RMMFDevSoundProxy18FixedSequenceCountEv @ 32 NONAME ABSENT
+	_ZN17RMMFDevSoundProxy18PlayFixedSequenceLEi @ 33 NONAME ABSENT
 	_ZN17RMMFDevSoundProxy19SetPrioritySettingsERK20TMMFPrioritySettings @ 34 NONAME
 	_ZN17RMMFDevSoundProxy20BufferToBeFilledDataER8TPckgBufI22TMMFDevSoundProxyHwBufE @ 35 NONAME ABSENT
 	_ZN17RMMFDevSoundProxy21BufferToBeEmptiedDataER8TPckgBufI22TMMFDevSoundProxyHwBufE @ 36 NONAME

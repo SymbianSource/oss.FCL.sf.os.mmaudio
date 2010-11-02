@@ -11535,6 +11535,60 @@ void RA3FDevSoundPauseAndResumeAndInitPlayingTest::DoKickoffTestL()
     iTimer = CPeriodic::NewL(CActive::EPriorityHigh);
     }
 
+// MM-MMF-DEVSOUND-U-0300-HP
+// RA3FDevSoundSvrStartToolTest
+// Try to connect to the MAudioSvrService TestServer - will only work if the test MAudioSvrService plugin has itself worked
 
+RA3FDevSoundSvrStartToolTest* RA3FDevSoundSvrStartToolTest::NewL(const TDesC& aTestName)
+    {
+    RA3FDevSoundSvrStartToolTest* result = new (ELeave) RA3FDevSoundSvrStartToolTest(aTestName);
+    return result;
+    }
 
+RA3FDevSoundSvrStartToolTest::RA3FDevSoundSvrStartToolTest(const TDesC& aTestName)
+    {
+    iTestStepName = aTestName;
+    }
 
+void RA3FDevSoundSvrStartToolTest::KickoffTestL()
+    {
+    // we try and connect to the test server. This should exit with a special fail code
+    // which shows that the message has got there ok. If the first version does not
+    // work we try a second time - to cover the scenario where this is the first time
+    // and perhaps the server takes a little while to start
+    CMMFDevSound* devsound = CMMFDevSound::NewL(); // need a devsound to ensure we have audiosvr
+    CleanupStack::PushL(devsound);
+    RSrvStartTestSession client;
+    CleanupClosePushL(client);
+    TBool worked = EFalse;
+    TInt err;
+    for (TInt index=0; index<2 && !worked; index++)
+        {
+        INFO_PRINTF3(_L("Attempt to connect to server '%S'(%d)"), &KStartToolTestSvrName, index);
+        err = client.CreateSession();
+        INFO_PRINTF2(_L("Error from server is %d"), err);
+        if (err==KStartToolTestCaseErrorCode)
+            {
+            INFO_PRINTF1(_L("Error is that expected"));
+            worked = ETrue;
+            }
+        User::After(5000000); // wait 5s to give server a chance to come up fully, in case
+        }
+    if (!worked)
+        {
+        INFO_PRINTF3(_L("Error received is wrong - %d not %d"), err, KStartToolTestCaseErrorCode);
+        StopTest(0, EFail);
+        }
+    CleanupStack::PopAndDestroy(2, devsound); // client and devsound
+    StopTest();
+    }
+
+void RA3FDevSoundSvrStartToolTest::CloseTest()
+    {
+    // nothing to do
+    }
+
+TInt RSrvStartTestSession::CreateSession()
+    {
+    return RSessionBase::CreateSession(KStartToolTestSvrName, TVersion(0,0,0));
+    }

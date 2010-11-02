@@ -1,4 +1,4 @@
-// Copyright (c) 2002-2009 Nokia Corporation and/or its subsidiary(-ies).
+// Copyright (c) 2002-2010 Nokia Corporation and/or its subsidiary(-ies).
 // All rights reserved.
 // This component and the accompanying materials are made available
 // under the terms of "Eclipse Public License v1.0"
@@ -254,6 +254,8 @@ void CTestSuiteDevSound::InitialiseL(void)
 	CTestSuite::AddTestStepL(RA3FDevSoundPauseAndResumeAndInitPlayingTest::NewL(_L("MM-MMF-DEVSOUND-U-0199-HP")));
 	//SMP: MultCustomInterface framework test
 	CTestSuite::AddTestStepL(RTestStepMultipleCustomInterface::NewL());	
+	
+	CTestSuite::AddTestStepL(RA3FDevSoundSvrStartToolTest::NewL(_L("MM-MMF-DEVSOUND-U-0300-HP")));
 	
 #else
 	CTestSuite::AddTestStepL(RNonA3FDevSoundPauseAndResumePlayingTest::NewL(_L("MM-MMF-DEVSOUND-U-0087-HP")));

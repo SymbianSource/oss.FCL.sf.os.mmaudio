@@ -20,12 +20,12 @@ EXPORTS
 	_ZN22CMMFDevSoundAdaptation15SetClientConfigERK16TMMFClientConfig @ 19 NONAME ABSENT
 	_ZN22CMMFDevSoundAdaptation15SetPlayBalanceLEiiRi @ 20 NONAME
 	_ZN22CMMFDevSoundAdaptation16CancelInitializeEv @ 21 NONAME
-	_ZN22CMMFDevSoundAdaptation17FixedSequenceNameEi @ 22 NONAME
+	_ZN22CMMFDevSoundAdaptation17FixedSequenceNameEi @ 22 NONAME ABSENT
 	_ZN22CMMFDevSoundAdaptation17GetRecordBalanceLERiS0_ @ 23 NONAME
 	_ZN22CMMFDevSoundAdaptation17PlayToneSequenceLERK6TDesC8 @ 24 NONAME
 	_ZN22CMMFDevSoundAdaptation17SetRecordBalanceLEiiRi @ 25 NONAME
-	_ZN22CMMFDevSoundAdaptation18FixedSequenceCountEv @ 26 NONAME
-	_ZN22CMMFDevSoundAdaptation18PlayFixedSequenceLEi @ 27 NONAME
+	_ZN22CMMFDevSoundAdaptation18FixedSequenceCountEv @ 26 NONAME ABSENT
+	_ZN22CMMFDevSoundAdaptation18PlayFixedSequenceLEi @ 27 NONAME ABSENT
 	_ZN22CMMFDevSoundAdaptation19SetPrioritySettingsERK20TMMFPrioritySettings @ 28 NONAME
 	_ZN22CMMFDevSoundAdaptation26ProcessingFinishedReceivedERi @ 29 NONAME
 	_ZN22CMMFDevSoundAdaptation4GainEv @ 30 NONAME

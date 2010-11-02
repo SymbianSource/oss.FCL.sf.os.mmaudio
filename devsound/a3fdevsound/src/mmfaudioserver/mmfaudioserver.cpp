@@ -32,8 +32,12 @@
 #ifdef _DEBUG
 #include "e32debug.h"
 #define SYMBIAN_DEBPRN0(str)    RDebug::Print(str, this)
+#define SYMBIAN_DEBPRN1(str, val1)          RDebug::Print(str, this, val1)
+#define SYMBIAN_DEBPRN2(str, val1, val2)    RDebug::Print(str, this, val1, val2)
 #else
 #define SYMBIAN_DEBPRN0(str)
+#define SYMBIAN_DEBPRN1(str, val1)
+#define SYMBIAN_DEBPRN2(str, val1, val2)
 #endif //_DEBUG
 
 
@@ -50,19 +54,22 @@ void Panic(TInt aPanicCode)
 
 // ============================ MEMBER FUNCTIONS ===============================
 
+
 // -----------------------------------------------------------------------------
 // CMMFAudioServer::NewL
 // Two-phased constructor.
+// @param aStayOpen whether or not the server should stay open permanently
 // -----------------------------------------------------------------------------
 //
-CMMFAudioServer* CMMFAudioServer::NewL()
-	{
-	CMMFAudioServer* self = new(ELeave) CMMFAudioServer();
-	CleanupStack::PushL(self);
-	self->ConstructL();
-	CleanupStack::Pop(self);
-	return self;
-	}
+CMMFAudioServer* CMMFAudioServer::NewL(TBool aStayOpen)
+    {
+    
+    CMMFAudioServer* self = new(ELeave) CMMFAudioServer(aStayOpen);
+    CleanupStack::PushL(self);
+    self->ConstructL();
+    CleanupStack::Pop(self);
+    return self;
+    }
 
 // -----------------------------------------------------------------------------
 // CMMFAudioServer::CMMFAudioServer
@@ -70,8 +77,9 @@ CMMFAudioServer* CMMFAudioServer::NewL()
 // might leave.
 // -----------------------------------------------------------------------------
 //
-CMMFAudioServer::CMMFAudioServer()
-	: CMmfIpcServer(EPriorityStandard)
+CMMFAudioServer::CMMFAudioServer(TBool aStayOpen)
+	: CMmfIpcServer(EPriorityStandard), iStayOpen (aStayOpen)
+
 	{
 	}
 
@@ -81,19 +89,22 @@ CMMFAudioServer::CMMFAudioServer()
 // -----------------------------------------------------------------------------
 //
 void CMMFAudioServer::ConstructL()
-	{
+ 	{
 	SYMBIAN_DEBPRN0(_L("CMMFAudioServer[0x%x]::ConstructL - enter"));
-
+	
 	SetPinClientDescriptors(ETrue);
 	// Call base class to Start server
 	StartL(KAudioServerName);
 
 	iFourCCConvertor = CFourCCConvertor::NewL();
-	iDelayAudioServerShutDown = CDelayAudioServerShutDown::NewL();
+	
+	if(!iStayOpen)
+	    {
+	    iDelayAudioServerShutDown = CDelayAudioServerShutDown::NewL();
+	    }
 
 	iFactory = CMMFAudioServerFactory::NewL();
 	iFactory->StartL(*this);	
-
 	SYMBIAN_DEBPRN0(_L("CMMFAudioServer[0x%x]::ConstructL - exit"));
 	}
 
@@ -191,16 +202,19 @@ void CMMFAudioServer::DecrementSessionId()
 //
 void CMMFAudioServer::IncrementDevSoundCount()
 	{
-	iDevSoundCount++;
-	//in the case we started the shutdown due to no more DevSound
-	if(iDevSoundCount)
-		{
-		ASSERT(iDelayAudioServerShutDown);
-		if (iDelayAudioServerShutDown)
-			{
-			iDelayAudioServerShutDown->Cancel();
-			}
-		}
+    if(!iStayOpen)
+        {
+        iDevSoundCount++;
+        //in the case we started the shutdown due to no more DevSound
+        if(iDevSoundCount)
+            {
+            ASSERT(iDelayAudioServerShutDown);
+            if (iDelayAudioServerShutDown)
+                {
+                iDelayAudioServerShutDown->Cancel();
+                }
+            }
+        }
 	}
 
 // -----------------------------------------------------------------------------
@@ -211,15 +225,22 @@ void CMMFAudioServer::IncrementDevSoundCount()
 //
 void CMMFAudioServer::DecrementDevSoundCount()
 	{
-	iDevSoundCount--;
-	if (iDevSoundCount == 0)
-		{
-		ASSERT(iDelayAudioServerShutDown);
-		if (iDelayAudioServerShutDown)
-			{
-			iDelayAudioServerShutDown->SetDelay(TTimeIntervalMicroSeconds32(KAudioServerShutDownDelay));
-			}
-		}
+
+    if(!iStayOpen)
+        {
+        iDevSoundCount--;
+        //dont shut down if iStayOpen is set
+        if (iDevSoundCount == 0)
+            {
+            
+            ASSERT(iDelayAudioServerShutDown);
+            if (iDelayAudioServerShutDown)
+                {
+                SYMBIAN_DEBPRN0(_L("CMMFAudioServer[0x%x]::DecrementDevSoundCount - shutting down server"));
+                iDelayAudioServerShutDown->SetDelay(TTimeIntervalMicroSeconds32(KAudioServerShutDownDelay));
+                }
+            }
+        }
 	}
 
 // -----------------------------------------------------------------------------

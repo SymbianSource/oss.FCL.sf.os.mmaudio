@@ -383,9 +383,6 @@ void CMMFDevSoundSession::DoServiceRequestL(const RMmfIpcMessage& aMessage)
 			case EMMFDevSoundProxyPlayToneSequence:
 				complete = DoPlayToneSequenceL(aMessage);
 				break;
-			case EMMFDevSoundProxyPlayFixedSequence:
-				complete = DoPlayFixedSequenceL(aMessage);
-				break;
 			case EMMFDevSoundProxySetDTMFLengths:
 				complete = DoSetDTMFLengthsL(aMessage);
 				break;
@@ -412,9 +409,6 @@ void CMMFDevSoundSession::DoServiceRequestL(const RMmfIpcMessage& aMessage)
 				break;
 			case EMMFDevSoundProxySetPrioritySettings:
 				complete = DoSetPrioritySettingsL(aMessage);
-				break;
-			case EMMFDevSoundProxyFixedSequenceCount:
-				complete = DoFixedSequenceCountL(aMessage);
 				break;
 			case EMMFDevSoundProxyCancelInitialize:
 				complete = DoCancelInitializeL(aMessage);
@@ -535,9 +529,6 @@ void CMMFDevSoundSession::DoServiceAlreadyCompletedRequestL(const TInt aFunction
 			break;
 		case EMMFDevSoundProxyPlayToneSequence:
 			DoAlreadyCompletedPlayToneSequenceL();
-			break;
-		case EMMFDevSoundProxyPlayFixedSequence:
-			DoAlreadyCompletedPlayFixedSequenceL();
 			break;
 		default:
 			User::Leave(KErrNotSupported);
@@ -722,7 +713,6 @@ TBool CMMFDevSoundSession::DoCancelInitializeL(const RMmfIpcMessage& aMessage)
 		{
 		aMessage.Complete(err);
 		iOperationCompletePending = EFalse;
-		return ETrue;
 		}
 	else
 		{
@@ -1158,33 +1148,6 @@ void CMMFDevSoundSession::DoAlreadyCompletedPlayToneSequenceL()
 	}
 
 //
-// CMMFDevSoundSession::DoPlayFixedSequenceL
-// (other items were commented in a header).
-//
-TBool CMMFDevSoundSession::DoPlayFixedSequenceL(const RMmfIpcMessage& aMessage)
-	{
-    SYMBIAN_DEBPRN0(_L("CMMFDevSoundSession[0x%x]::DoPlayFixedSequenceL - Enter"));
-    TPckgBuf<TInt> buf;
-	User::LeaveIfError(MessageRead(aMessage,TInt(1),buf));
-	TInt seqNum = buf();
-	iSeqNum = seqNum;
-	iAdapter->PlayFixedSequenceL(seqNum);
-	iOperationCompletePending = ETrue;
-	SYMBIAN_DEBPRN1(_L("CMMFDevSoundSession[0x%x]::DoPlayFixedSequenceL - Exit. Return value is [%d]"), ETrue);
-	return ETrue;
-	}
-
-//
-// CMMFDevSoundSession::DoAlreadyCompletedPlayFixedSequenceL
-// (other items were commented in a header).
-//
-void CMMFDevSoundSession::DoAlreadyCompletedPlayFixedSequenceL()
-	{
-	iAdapter->PlayFixedSequenceL(iSeqNum);
-	iOperationCompletePending = ETrue;
-	}
-
-//
 // CMMFDevSoundSession::DoSetDTMFLengthsL
 // (other items were commented in a header).
 //
@@ -1316,24 +1279,6 @@ TBool CMMFDevSoundSession::DoSetPrioritySettingsL(
 	iOperationCompletePending = EFalse;
 	return ETrue;
 	}
-
-//
-// CMMFDevSoundSession::DoFixedSequenceCountL
-// (other items were commented in a header).
-//
-TBool CMMFDevSoundSession::DoFixedSequenceCountL(
-					const RMmfIpcMessage& aMessage)
-	{
-    SYMBIAN_DEBPRN0(_L("CMMFDevSoundSession[0x%x]::DoFixedSequenceCountL - Enter"));
-    TPckgBuf<TInt> fixSeqCountPckg;
-	TInt fixSeqCount = iAdapter->FixedSequenceCount();
-	fixSeqCountPckg = fixSeqCount;
-
-	User::LeaveIfError(MessageWrite(aMessage,TInt(2),fixSeqCountPckg));
-    SYMBIAN_DEBPRN1(_L("CMMFDevSoundSession[0x%x]::DoFixedSequenceCountL - Exit. Return value is [%d]"), ETrue);
-	return ETrue;
-	}
-
 
 //
 // CMMFDevSoundSession::DoCopyFourCCArrayDataL

@@ -799,23 +799,6 @@ void CMMFDevSoundAdaptation::CBody::PlayToneSequenceL(const TDesC8& aData)
 	}
 
 // -----------------------------------------------------------------------------
-// CMMFDevSoundAdaptation::CBody::PlayFixedSequenceL
-// Initializes audio device and start playing the specified pre-defined tone
-// sequence.
-//
-// Leaves on failure.
-// (other items were commented in a header).
-// -----------------------------------------------------------------------------
-//
-void CMMFDevSoundAdaptation::CBody::PlayFixedSequenceL(TInt /*aSequenceNumber*/)
-	{
-	DP_CONTEXT(CMMFDevSoundAdaptation::CBody::PlayFixedSequenceL *CD1*, CtxDevSound, DPLOCAL);
-	DP_IN();
-	User::Leave(KErrNotSupported);
-	DP_OUT();
-	}
-
-// -----------------------------------------------------------------------------
 // CMMFDevSoundAdaptation::CBody::SetToneRepeats
 // Defines the number of times the audio is to be repeated during the tone
 // playback operation. A period of silence can follow each playing of tone.
@@ -929,36 +912,6 @@ TAny* CMMFDevSoundAdaptation::CBody::CustomInterface(TUid aInterfaceId)
 		{
 		DP0_RET(NULL, "%d");
 		}
-	}
-
-// -----------------------------------------------------------------------------
-// CMMFDevSoundAdaptation::CBody::FixedSequenceCount
-// Returns the number of available pre-defined tone sequences.
-// This is the number of fixed sequence supported by DevSound by default.
-// (other items were commented in a header).
-// -----------------------------------------------------------------------------
-//
-TInt CMMFDevSoundAdaptation::CBody::FixedSequenceCount()
-	{
-	DP_CONTEXT(CMMFDevSoundAdaptation::CBody::FixedSequenceCount *CD1*, CtxDevSound, DPLOCAL);
-	DP_IN();
-	DP0_RET(0, "%d");
-	}
-
-// -----------------------------------------------------------------------------
-// CMMFDevSoundAdaptation::CBody::FixedSequenceName
-// Returns the name assigned to a specific pre-defined tone sequence.
-// This is the number of fixed sequence supported by DevSound by default.
-// The function raises a panic if sequence number specified invalid.
-// (other items were commented in a header).
-// -----------------------------------------------------------------------------
-//
-const TDesC& CMMFDevSoundAdaptation::CBody::FixedSequenceName(
-								TInt /*aSequenceNumber*/)
-	{
-	DP_CONTEXT(CMMFDevSoundAdaptation::CBody::FixedSequenceName *CD1*, CtxDevSound, DPLOCAL);
-	DP_IN();
-	DP0_RET(KNullDesC, "");
 	}
 
 // -----------------------------------------------------------------------------

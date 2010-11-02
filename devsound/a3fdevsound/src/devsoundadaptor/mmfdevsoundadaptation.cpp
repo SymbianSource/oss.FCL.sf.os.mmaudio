@@ -578,23 +578,6 @@ EXPORT_C void CMMFDevSoundAdaptation::PlayToneSequenceL(
 	}
 
 // -----------------------------------------------------------------------------
-// CMMFDevSoundAdaptation::PlayFixedSequenceL
-// Initializes audio device and start playing the specified pre-defined tone
-// sequence.
-// Leaves on failure.
-// (other items were commented in a header).
-// -----------------------------------------------------------------------------
-//
-EXPORT_C void CMMFDevSoundAdaptation::PlayFixedSequenceL(
-								TInt aSequenceNumber)
-	{
-	DP_CONTEXT(CMMFDevSoundAdaptation::PlayFixedSequenceL *CD1*, CtxDevSound, DPLOCAL);
-	DP_IN();
-	iBody->PlayFixedSequenceL(aSequenceNumber);
-	DP_OUT();
-	}
-
-// -----------------------------------------------------------------------------
 // CMMFDevSoundAdaptation::SetToneRepeats
 // Defines the number of times the audio is to be repeated during the tone
 // playback operation. A period of silence can follow each playing of tone.
@@ -677,38 +660,6 @@ EXPORT_C TAny* CMMFDevSoundAdaptation::CustomInterface(
     // TODO - Need to revisit this to allow for async operation
 	TAny* retVal = iBody->CustomInterface(aInterfaceId);
 	DP0_RET(retVal, "0x%x");	
-	}
-
-// -----------------------------------------------------------------------------
-// CMMFDevSoundAdaptation::FixedSequenceCount
-// Returns the number of available pre-defined tone sequences.
-// This is the number of fixed sequence supported by DevSound by default.
-// (other items were commented in a header).
-// -----------------------------------------------------------------------------
-//
-EXPORT_C TInt CMMFDevSoundAdaptation::FixedSequenceCount()
-	{
-	DP_CONTEXT(CMMFDevSoundAdaptation::FixedSequenceCount *CD1*, CtxDevSound, DPLOCAL);
-	DP_IN();
-	TInt retVal = iBody->FixedSequenceCount();
-	DP0_RET(retVal, "%d");			
-	}
-
-// -----------------------------------------------------------------------------
-// CMMFDevSoundAdaptation::FixedSequenceName
-// Returns the name assigned to a specific pre-defined tone sequence.
-// This is the number of fixed sequence supported by DevSound by default.
-// The function raises a panic if sequence number specified invalid.
-// (other items were commented in a header).
-// -----------------------------------------------------------------------------
-//
-EXPORT_C const TDesC& CMMFDevSoundAdaptation::FixedSequenceName(
-								TInt aSequenceNumber)
-	{
-	DP_CONTEXT(CMMFDevSoundAdaptation::FixedSequenceName *CD1*, CtxDevSound, DPLOCAL);
-	DP_IN();
-	DP_OUT();
-	return(iBody->FixedSequenceName(aSequenceNumber));						
 	}
 
 // -----------------------------------------------------------------------------

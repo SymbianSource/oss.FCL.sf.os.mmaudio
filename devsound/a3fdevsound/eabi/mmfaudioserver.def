@@ -13,4 +13,5 @@ EXPORTS
 	_ZTV22CMMFAudioServerSession @ 12 NONAME
 	_ZTV30CStartAndMonitorDevSoundThread @ 13 NONAME
 	_ZTVN15CMMFAudioServer25CDelayAudioServerShutDownE @ 14 NONAME
+	_ZN15CAudioSvrLoader4NewLEi @ 15 NONAME
 

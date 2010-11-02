@@ -14,8 +14,7 @@
 // Description:
 //
 
-#ifdef WINS
+PRJ_PLATFORMS
+WINSCW
 
-#include "../group/bld.inf"
-
-#endif
+#include "../group/bld_common.inf"

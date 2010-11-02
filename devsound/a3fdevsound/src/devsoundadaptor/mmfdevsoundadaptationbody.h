@@ -420,20 +420,6 @@ public: // New functions
 	void PlayToneSequenceL(const TDesC8& aData);
 
 	/**
-	* Initializes the audio device and starts playing the specified
-	* pre-defined tone sequence.
-	* Leaves on failure.
-	* @since
-	* @param TInt aSequenceNumber The index identifying the specific
-	*        pre-defined tone sequence. Index values are relative to zero.
-	*        This can be any value from zero to the value returned by a call
-	*        to FixedSequenceCount() - 1. The function raises a panic if the
-	*        sequence number is not within this range.
-	* @return void
-	*/
-	void PlayFixedSequenceL(TInt aSequenceNumber);
-
-	/**
 	* Defines the number of times the audio is to be repeated during the
 	* tone playback operation. A period of silence can follow each playing
 	* of a tone. The tone playing can be repeated indefinitely
@@ -504,32 +490,6 @@ public: // New functions
 	*        return value must be cast to the correct type by the user.
 	*/
 	TAny* CustomInterface(TUid aInterfaceId);
-
-	/**
-	* Returns the number of available pre-defined tone sequences.
-	* This is the number of fixed sequence supported by DevSound by default.
-	* @since
-	* @return TInt  The fixed sequence count. This value is implementation
-	*        dependent.
-	*/
-	TInt FixedSequenceCount();
-
-	/**
-	* Returns the name assigned to a specific pre-defined tone sequence.
-	* This is the number of the fixed sequence supported by DevSound by
-	* default.
-	* The function raises a panic if sequence number specified is invalid.
-	* @since
-	* @param TInt aSequenceNumber The index identifying the specific
-	*        pre-defined tone sequence. Index values are relative to zero.
-	*        This can be any value from zero to the value returned by a call
-	*        to CMdaAudioPlayerUtility::FixedSequenceCount() - 1. The
-	*        function raises a panic if sequence number is not within this
-	*        range.
-	* @return const TDesC & A reference to a Descriptor containing the fixed
-	*        sequence name indexed by aSequenceNumber.
-	*/
-	const TDesC& FixedSequenceName(TInt aSequenceNumber);
 
 	/**
 	* Returns a list of the supported input datatypes that can be sent to
